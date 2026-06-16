@@ -1,10 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG, CASE_STUDIES } from "@/lib/constants";
-import { BLOG_POSTS } from "@/data/blog";
+import { prisma } from "@/lib/prisma";
 
-export const dynamic = "force-static";
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
 
   const staticPages = [
@@ -33,12 +31,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const blogPages = BLOG_POSTS.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.createdAt),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+    });
+    blogPages = posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // fallback blog slugs
+    blogPages = [
+      "enterprise-ai-adoption-2026",
+      "responsible-ai-governance",
+      "generative-ai-roi",
+    ].map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  }
 
   return [...staticPages, ...caseStudyPages, ...blogPages];
 }
