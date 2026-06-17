@@ -28,8 +28,11 @@ jobs:
           node-version: "20"
           cache: npm
 
-      - name: Install and build
-        run: npm ci && npm run build:pages
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build:pages
         env:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_SITE_URL: https://logeshOfficial.github.io/provizient
@@ -40,7 +43,7 @@ jobs:
         run: touch out/.nojekyll
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: out
 
