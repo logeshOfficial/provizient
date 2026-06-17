@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/shared/google-analytics";
+import { DemoBanner } from "@/components/shared/demo-banner";
 
 export default function MarketingLayout({
   children,
@@ -10,6 +11,7 @@ export default function MarketingLayout({
   return (
     <>
       <GoogleAnalytics />
+      <DemoBanner />
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

@@ -60,6 +60,18 @@ export function ConsultationForm() {
   const onSubmit = async (data: ConsultationFormData) => {
     setIsSubmitting(true);
     try {
+      if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") {
+        await new Promise((r) => setTimeout(r, 600));
+        toast({
+          title: "Demo: request received!",
+          description:
+            "This is a POC demo — no email was sent. Production uses Azure + Resend.",
+          variant: "success",
+        });
+        reset();
+        return;
+      }
+
       const res = await fetch("/api/consultation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

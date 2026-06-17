@@ -30,7 +30,15 @@ npx @azure/static-web-apps-cli start ./out --api-location ./api
 
 ## Deploy to Azure
 
-See **[AZURE-DEPLOY.md](./AZURE-DEPLOY.md)** for step-by-step instructions.
+See **[AZURE-DEPLOY.md](./AZURE-DEPLOY.md)** for production hosting with real email forms.
+
+## Share a POC demo (GitHub Pages — free)
+
+See **[GITHUB-PAGES.md](./GITHUB-PAGES.md)** — live demo URL:
+
+**https://logeshOfficial.github.io/provizient/**
+
+Enable **Settings → Pages → Source: GitHub Actions**, then push to `main`.
 
 ## Updating Content
 

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/copy-swa-config.js",
+    "build:pages": "next build && node scripts/copy-swa-config.js",
     "start": "npx serve out",
     "lint": "eslint"
   },
