@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { generateSEO } from "@/lib/seo";
-import { prisma } from "@/lib/prisma";
+import { getPublishedPosts } from "@/data/blog";
 import { formatDate } from "@/lib/utils";
 
 export const metadata = generateSEO({
@@ -13,58 +13,8 @@ export const metadata = generateSEO({
   path: "/blog",
 });
 
-const FALLBACK_POSTS = [
-  {
-    slug: "enterprise-ai-adoption-2026",
-    title: "Enterprise AI Adoption in 2026: Trends & Strategies",
-    excerpt:
-      "Explore the key trends shaping enterprise AI adoption and how leading organizations are building competitive advantages.",
-    author: "ProVizient Team",
-    tags: ["AI Strategy", "Enterprise"],
-    createdAt: new Date("2026-01-15"),
-  },
-  {
-    slug: "responsible-ai-governance",
-    title: "Building a Responsible AI Governance Framework",
-    excerpt:
-      "A practical guide to establishing AI governance that balances innovation with ethics, compliance, and risk management.",
-    author: "ProVizient Team",
-    tags: ["Governance", "Ethics"],
-    createdAt: new Date("2026-02-01"),
-  },
-  {
-    slug: "generative-ai-roi",
-    title: "Measuring ROI from Generative AI Investments",
-    excerpt:
-      "How to quantify the business value of generative AI initiatives and build compelling business cases for stakeholders.",
-    author: "ProVizient Team",
-    tags: ["Generative AI", "ROI"],
-    createdAt: new Date("2026-03-10"),
-  },
-];
-
-async function getPosts() {
-  try {
-    const posts = await prisma.blogPost.findMany({
-      where: { published: true },
-      orderBy: { createdAt: "desc" },
-      select: {
-        slug: true,
-        title: true,
-        excerpt: true,
-        author: true,
-        tags: true,
-        createdAt: true,
-      },
-    });
-    return posts.length > 0 ? posts : FALLBACK_POSTS;
-  } catch {
-    return FALLBACK_POSTS;
-  }
-}
-
-export default async function BlogPage() {
-  const posts = await getPosts();
+export default function BlogPage() {
+  const posts = getPublishedPosts();
 
   return (
     <>

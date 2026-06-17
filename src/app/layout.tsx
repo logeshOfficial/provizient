@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { AuthProvider } from "@/components/providers/session-provider";
 import { ToastProviderWrapper } from "@/components/ui/use-toast";
 import "./globals.css";
 
@@ -33,9 +32,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col gradient-bg text-foreground">
-        <AuthProvider>
-          <ToastProviderWrapper>{children}</ToastProviderWrapper>
-        </AuthProvider>
+        <ToastProviderWrapper>{children}</ToastProviderWrapper>
       </body>
     </html>
   );

@@ -1,85 +1,57 @@
 # Deploy ProVizient to Azure Static Web Apps
 
-This site is a **static Next.js export** hosted on **Azure Static Web Apps**. Contact and consultation forms use **Azure Functions** in the `/api` folder.
+Static marketing site with **no database**. Forms send email via Azure Functions + Resend.
+
+| Component | Azure service |
+|-----------|---------------|
+| Website (HTML/CSS/JS) | Azure Static Web Apps |
+| Contact & consultation forms | Azure Functions (in `/api`) |
+| Email delivery | Resend (third-party API) |
 
 ---
 
-## What changed (static site)
+## Step 1 — Create Static Web App
 
-| Removed | Replaced with |
-|---------|----------------|
-| Admin dashboard (`/admin`) | Edit content in `src/data/blog.ts` and `src/lib/constants.ts` |
-| PostgreSQL + Prisma | Static data files |
-| NextAuth | Not needed |
-| Vercel API routes | Azure Functions (`api/contact`, `api/consultation`) |
-
----
-
-## Option A — Deploy from Azure Portal (quickest)
-
-### 1. Create the Static Web App
-
-1. Sign in to [Azure Portal](https://portal.azure.com)
-2. **Create a resource** → search **Static Web App** → **Create**
-3. Fill in:
-   - **Subscription:** your subscription
-   - **Resource group:** create new (e.g. `rg-provizient`)
-   - **Name:** `provizient` (or your choice — becomes `https://<name>.azurestaticapps.net`)
-   - **Plan type:** Free (fine for marketing sites)
-   - **Region:** pick closest to your users
+1. [Azure Portal](https://portal.azure.com) → **Create a resource** → **Static Web App**
+2. Settings:
+   - **Resource group:** `rg-provizient`
+   - **Name:** `provizient` → `https://provizient.azurestaticapps.net`
+   - **Plan:** Free
    - **Deployment source:** GitHub
-4. Sign in to GitHub and select:
-   - **Organization:** your account
-   - **Repository:** `logeshOfficial/provizient` (or your repo)
+   - **Repository:** `logeshOfficial/provizient`
    - **Branch:** `main`
-5. **Build Details:**
+3. **Build details:**
    - **Build Presets:** Custom
    - **App location:** `/`
    - **Api location:** `api`
    - **Output location:** `out`
-6. Click **Review + create** → **Create**
+4. **Review + create**
 
-Azure creates a GitHub Actions workflow and deploys automatically on push to `main`.
+Azure adds a deploy token to GitHub secrets automatically when you connect the repo.
 
-### 2. Configure environment variables (for forms)
+---
 
-In Azure Portal → your Static Web App → **Settings** → **Environment variables** → **Add**:
+## Step 2 — Environment variables
+
+Static Web App → **Settings** → **Environment variables**:
 
 | Name | Value |
 |------|-------|
 | `RESEND_API_KEY` | Your [Resend](https://resend.com) API key |
 | `RESEND_FROM_EMAIL` | `ProVizient <noreply@yourdomain.com>` |
 | `NOTIFICATION_EMAIL` | Email that receives form submissions |
-| `NEXT_PUBLIC_SITE_URL` | `https://<your-app>.azurestaticapps.net` |
+| `NEXT_PUBLIC_SITE_URL` | `https://provizient.azurestaticapps.net` |
 | `NEXT_PUBLIC_SITE_NAME` | `ProVizient` |
 
-Redeploy after adding variables (**Deployments** → **Redeploy**).
-
-### 3. Custom domain (optional)
-
-Static Web App → **Custom domains** → **Add** → follow DNS steps for your domain.
+Redeploy after saving.
 
 ---
 
-## Option B — Deploy manually (no GitHub)
+## Step 3 — Verify
 
-```powershell
-cd D:\provizient
-npm install
-npm run build
-```
-
-Install [Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/):
-
-```powershell
-npm install -g @azure/static-web-apps-cli
-```
-
-Deploy (get deployment token from Azure Portal → Static Web App → **Manage deployment token**):
-
-```powershell
-swa deploy ./out --api-location ./api --deployment-token <YOUR_TOKEN>
-```
+1. Visit your Azure URL
+2. Submit the contact form at `/contact`
+3. Check `NOTIFICATION_EMAIL` inbox
 
 ---
 
@@ -91,87 +63,61 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
-**Note:** Forms call `/api/contact` and `/api/consultation`. Those only work when deployed to Azure (or with SWA CLI):
+Forms only work with the SWA emulator:
 
 ```powershell
 npm run build
-swa start ./out --api-location ./api
+npx @azure/static-web-apps-cli start ./out --api-location ./api
 ```
+
+---
+
+## GitHub Actions
+
+Workflow: `.github/workflows/azure-static-web-apps.yml`
+
+If deploying manually, add secret `AZURE_STATIC_WEB_APPS_API_TOKEN` from:
+**Static Web App → Manage deployment token**
 
 ---
 
 ## Updating content
 
-### Blog posts
-
-Edit `src/data/blog.ts` — add or change posts, then commit and push (or redeploy).
-
-### Case studies, services, testimonials
-
-Edit `src/lib/constants.ts` and `src/components/home/testimonials.tsx`.
-
-After changes:
-
-```powershell
-npm run build
-git add .
-git commit -m "Update site content"
-git push
-```
+1. Edit `src/data/blog.ts`, `src/lib/constants.ts`, or testimonials component
+2. `npm run build`
+3. Push to `main`
 
 ---
 
-## Project structure
+## Architecture
 
 ```
-provizient/
-├── api/                    # Azure Functions (contact + consultation forms)
-│   ├── contact/
-│   ├── consultation/
-│   └── shared/
-├── out/                    # Generated static site (after npm run build)
-├── src/
-│   ├── app/(marketing)/    # Public pages
-│   ├── data/blog.ts        # Blog content (edit here)
-│   └── lib/constants.ts    # Services, case studies, etc.
-├── staticwebapp.config.json
-└── .github/workflows/      # CI/CD to Azure
+GitHub (main)
+    │
+    ▼
+GitHub Actions ──► Azure Static Web Apps
+                         ├── Static files (out/)
+                         └── Azure Functions (api/)
+                                    │
+                                    ▼
+                              Resend API (email)
 ```
+
+No PostgreSQL. No admin panel. Leads arrive by email.
 
 ---
 
 ## Troubleshooting
 
-### 404 on page refresh or deep links
-
-Ensure `staticwebapp.config.json` is copied into `out/` (the build script does this automatically).
-
-### Forms return 404 locally
-
-Expected — use `swa start ./out --api-location ./api` or test on the deployed Azure URL.
-
-### Forms fail in production
-
-1. Check `RESEND_API_KEY` is set in Azure environment variables
-2. Verify your Resend domain is verified
-3. View logs: Static Web App → **Monitoring** → **Log stream**
-
-### Build fails on GitHub Actions
-
-- Confirm **Output location** is `out` (not `.next`)
-- Confirm **Api location** is `api`
-- Node 20+ is required (set in workflow)
+| Issue | Fix |
+|-------|-----|
+| 404 on subpages | Ensure `staticwebapp.config.json` is in `out/` (build script copies it) |
+| Forms 404 locally | Use `swa start ./out --api-location ./api` |
+| Forms fail in production | Set `RESEND_API_KEY` in Azure env vars; verify Resend domain |
+| Build fails | Confirm output location is `out`, not `.next` |
 
 ---
 
 ## Cost
 
-Azure Static Web Apps **Free** tier includes:
-
-- 100 GB bandwidth/month
-- 2 custom domains
-- Azure Functions for the API (limited free executions)
-
-Sufficient for a consulting marketing website.
+**Free tier** includes 100 GB bandwidth/month and Azure Functions for the API — sufficient for a consulting marketing site.
