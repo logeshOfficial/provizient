@@ -32,10 +32,10 @@ export function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src={assetPath("/logo.png")}
-                alt="ProVizient"
-                width={180}
-                height={54}
-                className="h-12 w-auto object-contain"
+                alt="ProVizient — AI Training | Software Development | Consulting"
+                width={260}
+                height={78}
+                className="h-14 w-auto max-w-[260px] object-contain"
               />
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-2 max-w-sm font-medium">

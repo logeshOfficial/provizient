@@ -33,10 +33,10 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
               src={assetPath("/logo.png")}
-              alt="ProVizient"
-              width={160}
-              height={48}
-              className="h-10 w-auto object-contain"
+              alt="ProVizient — AI Training | Software Development | Consulting"
+              width={240}
+              height={72}
+              className="h-11 w-auto object-contain sm:h-12"
               priority
             />
           </Link>

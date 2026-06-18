@@ -51,7 +51,7 @@ export default function ContactPage() {
               <div className="glass-card p-6">
                 <Clock size={24} className="text-primary mb-3" />
                 <h3 className="font-semibold mb-1">Business Hours</h3>
-                <p className="text-muted">Mon – Fri: 9:00 AM – 6:00 PM PST</p>
+                <p className="text-muted">Mon – Fri: 9:00 AM – 6:00 PM CST</p>
               </div>
             </div>
 
