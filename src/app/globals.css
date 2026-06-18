@@ -81,36 +81,52 @@ body {
 .perspective-deck-glow {
   position: absolute;
   left: 50%;
-  top: 45%;
-  width: 420px;
-  height: 420px;
+  top: 50%;
+  width: 480px;
+  height: 480px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.14) 0%, transparent 68%);
+}
+
+.perspective-deck-ceiling {
+  position: absolute;
+  top: -10%;
+  left: -60%;
+  width: 220%;
+  height: 55%;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.32) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(520px) rotateX(-68deg);
+  transform-origin: center bottom;
+  mask-image: linear-gradient(to bottom, transparent 8%, black 38%, transparent 92%);
 }
 
 .perspective-deck-floor {
   position: absolute;
-  bottom: -8%;
+  bottom: -10%;
   left: -60%;
   width: 220%;
-  height: 70%;
+  height: 55%;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px);
+    linear-gradient(rgba(148, 163, 184, 0.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.32) 1px, transparent 1px);
   background-size: 56px 56px;
-  transform: perspective(520px) rotateX(72deg);
+  transform: perspective(520px) rotateX(68deg);
   transform-origin: center top;
-  mask-image: linear-gradient(to top, black 25%, transparent 88%);
+  mask-image: linear-gradient(to top, transparent 8%, black 38%, transparent 92%);
 }
 
 .perspective-deck-horizon {
   position: absolute;
-  bottom: 28%;
+  top: 50%;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.5), transparent);
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.55), transparent);
 }
 
 .chip-frame {
@@ -171,6 +187,62 @@ body {
     rgba(0, 163, 224, 0.08) 45%,
     transparent 70%
   );
+}
+
+@keyframes workbench-scan {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(52px); opacity: 0.9; }
+}
+
+.workbench-scan {
+  animation: workbench-scan 2.8s ease-in-out infinite;
+}
+
+.workbench-agent-glow {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 0;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.16) 0%, rgba(0, 102, 255, 0.1) 45%, transparent 72%);
+}
+
+.workbench-agent-ring {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.workbench-agent-ring-outer {
+  width: 340px;
+  height: 340px;
+  animation: workbench-ring-spin 18s linear infinite;
+}
+
+.workbench-agent-ring-inner {
+  width: 280px;
+  height: 280px;
+  border-style: dashed;
+  animation: workbench-ring-spin 12s linear infinite reverse;
+}
+
+@keyframes workbench-ring-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench-scan,
+  .workbench-agent-ring-outer,
+  .workbench-agent-ring-inner {
+    animation: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
