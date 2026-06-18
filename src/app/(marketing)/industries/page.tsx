@@ -69,7 +69,7 @@ const INDUSTRY_DETAILS: Record<string, string[]> = {
 export default function IndustriesPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero grid-pattern">
+      <section className="pt-32 pb-20 gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             badge="Industries"

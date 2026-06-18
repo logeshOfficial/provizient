@@ -150,7 +150,7 @@ export function ConsultationForm() {
           <Label htmlFor="industry">Industry *</Label>
           <select
             id="industry"
-            className="flex h-11 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("industry")}
             defaultValue=""
           >
@@ -173,7 +173,7 @@ export function ConsultationForm() {
           <Label htmlFor="service">Service of Interest *</Label>
           <select
             id="service"
-            className="flex h-11 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("service")}
             defaultValue=""
           >
@@ -199,7 +199,7 @@ export function ConsultationForm() {
           <Label htmlFor="budget">Estimated Budget</Label>
           <select
             id="budget"
-            className="flex h-11 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("budget")}
             defaultValue=""
           >

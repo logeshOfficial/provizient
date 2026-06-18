@@ -1,162 +1,182 @@
 export const SITE_CONFIG = {
   name: "ProVizient",
-  tagline: "Transforming Businesses Through Intelligent AI Solutions.",
+  tagline: "Empowering Careers. Elevating Futures.",
+  subtitle: "AI Training | Software Development | Consulting",
   description:
-    "ProVizient is a premium enterprise AI consulting firm helping organizations design, build, and deploy intelligent solutions that drive measurable business outcomes.",
+    "ProVizient delivers industry-aligned AI training, custom software development, and enterprise consulting to help you learn, build, and grow.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://provizient.com",
-  email: "contact@provizient.com",
-  phone: "+1 (555) 123-4567",
-  address: "100 Innovation Drive, Suite 500, San Francisco, CA 94105",
+  email: "info@ProVizient.com",
+  phone: "972 439 0452",
+  phoneTel: "+19724390452",
+  address: "12205 Settlers Drive, Frisco, TX 75035",
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/#courses", label: "Courses" },
+  { href: "/services", label: "For Business" },
+  { href: "/about", label: "Why ProVizient" },
+  { href: "/blog", label: "Resources" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/ai-solutions", label: "AI Solutions" },
-  { href: "/industries", label: "Industries" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
-export const SERVICES = [
+export const DEV_SERVICES = [
   {
-    id: "ai-strategy",
-    title: "AI Strategy Consulting",
+    id: "custom-software",
+    title: "Custom Software Development",
     description:
-      "Develop comprehensive AI roadmaps aligned with your business objectives, risk tolerance, and competitive landscape.",
-    icon: "Compass",
-    features: [
-      "AI maturity assessment",
-      "Strategic roadmap development",
-      "ROI modeling & business case",
-      "Governance framework design",
-    ],
-  },
-  {
-    id: "custom-ai",
-    title: "Custom AI Applications",
-    description:
-      "Build bespoke AI-powered applications tailored to your unique workflows, data assets, and operational requirements.",
+      "End-to-end development of scalable, secure applications tailored to your business workflows and goals.",
     icon: "Code2",
-    features: [
-      "End-to-end development",
-      "ML model training & deployment",
-      "Scalable cloud architecture",
-      "Continuous optimization",
-    ],
+    color: "blue",
   },
   {
-    id: "automation",
-    title: "Intelligent Automation",
+    id: "product-engineering",
+    title: "Product Engineering",
     description:
-      "Streamline operations with intelligent process automation that reduces costs while improving accuracy and speed.",
-    icon: "Zap",
-    features: [
-      "Process mining & analysis",
-      "RPA + AI integration",
-      "Workflow orchestration",
-      "Performance monitoring",
-    ],
+      "From concept to launch — we engineer digital products that users love and businesses rely on.",
+    icon: "PieChart",
+    color: "purple",
   },
   {
-    id: "ai-agents",
-    title: "AI Agent Solutions",
+    id: "cloud",
+    title: "Cloud Solutions",
     description:
-      "Deploy autonomous AI agents that handle complex tasks, customer interactions, and decision-making at scale.",
-    icon: "Bot",
-    features: [
-      "Multi-agent orchestration",
-      "Conversational AI agents",
-      "Task automation agents",
-      "Human-in-the-loop design",
-    ],
+      "Migrate, modernize, and optimize your infrastructure on AWS, Azure, and Google Cloud.",
+    icon: "Cloud",
+    color: "green",
   },
   {
-    id: "generative-ai",
-    title: "Generative AI Solutions",
+    id: "devops",
+    title: "DevOps & Automation",
     description:
-      "Harness the power of generative AI for content creation, code generation, and creative problem-solving.",
-    icon: "Sparkles",
-    features: [
-      "LLM integration & fine-tuning",
-      "RAG pipeline development",
-      "Content generation systems",
-      "Prompt engineering",
-    ],
+      "CI/CD pipelines, infrastructure as code, and automation that accelerates delivery.",
+    icon: "Settings",
+    color: "orange",
   },
   {
-    id: "integration",
-    title: "AI Integration Services",
+    id: "qa",
+    title: "Quality Assurance",
     description:
-      "Seamlessly integrate AI capabilities into your existing technology stack, ERP, CRM, and data platforms.",
-    icon: "Plug",
-    features: [
-      "API & microservices design",
-      "Legacy system modernization",
-      "Data pipeline integration",
-      "Security & compliance",
-    ],
+      "Comprehensive testing strategies ensuring reliability, performance, and security.",
+    icon: "ShieldCheck",
+    color: "slate",
+  },
+  {
+    id: "consulting",
+    title: "IT Consulting",
+    description:
+      "Strategic technology guidance to align IT investments with business outcomes.",
+    icon: "Users",
+    color: "blue",
   },
 ] as const;
 
-export const AI_SOLUTIONS = [
+export const TRAINING_PROGRAMS = [
   {
-    title: "Enterprise Knowledge AI",
+    id: "genai",
+    title: "GenAI",
     description:
-      "Transform organizational knowledge into intelligent, searchable, and actionable insights.",
-    image: "/images/solutions/knowledge-ai.jpg",
+      "Learn Generative AI concepts and build real-world applications using leading LLMs and tools.",
+    icon: "Sparkles",
+    color: "purple",
   },
   {
-    title: "Predictive Analytics Engine",
+    id: "agentic-ai",
+    title: "Agentic AI",
     description:
-      "Anticipate market trends, customer behavior, and operational risks with advanced predictive models.",
-    image: "/images/solutions/predictive-analytics.jpg",
+      "Build intelligent AI agents that plan, reason, and act autonomously to solve complex problems.",
+    icon: "Bot",
+    color: "blue",
   },
   {
-    title: "Intelligent Document Processing",
+    id: "rag",
+    title: "RAG",
     description:
-      "Automate document classification, extraction, and processing with 99%+ accuracy.",
-    image: "/images/solutions/document-processing.jpg",
+      "Master Retrieval Augmented Generation to build smarter, context-aware AI applications.",
+    icon: "Search",
+    color: "green",
   },
   {
-    title: "AI-Powered Customer Intelligence",
+    id: "ai-ml",
+    title: "AI/ML",
     description:
-      "Deliver hyper-personalized experiences through real-time customer behavior analysis.",
-    image: "/images/solutions/customer-intelligence.jpg",
+      "Learn machine learning basics to advanced models and build solutions that make an impact.",
+    icon: "Brain",
+    color: "yellow",
+  },
+  {
+    id: "python",
+    title: "Python",
+    description:
+      "From fundamentals to advanced programming — build strong coding skills for any career.",
+    icon: "Terminal",
+    color: "blue",
+  },
+  {
+    id: "data-analyst",
+    title: "Data Analyst",
+    description:
+      "Analyze data, uncover insights, and create impactful dashboards to drive better decisions.",
+    icon: "BarChart3",
+    color: "orange",
   },
 ] as const;
+
+export const DEV_TRUST_ITEMS = [
+  { icon: "RefreshCw", label: "Agile & Transparent Process" },
+  { icon: "Users", label: "Experienced Tech Experts" },
+  { icon: "Shield", label: "Secure & Scalable Solutions" },
+  { icon: "Clock", label: "On-time Delivery Every Time" },
+  { icon: "Headphones", label: "Ongoing Support & Maintenance" },
+] as const;
+
+export const TRAINING_TRUST_ITEMS = [
+  { icon: "Award", label: "Industry Expert Trainers" },
+  { icon: "Handshake", label: "Hands-on Projects" },
+  { icon: "BadgeCheck", label: "Certification" },
+  { icon: "Briefcase", label: "Career Support" },
+] as const;
+
+export const HERO_SERVICES_ORBIT = [
+  { icon: "Infinity", label: "DevOps & Automation" },
+  { icon: "Smartphone", label: "Mobile Development" },
+  { icon: "Globe", label: "Web Development" },
+  { icon: "Cloud", label: "Cloud Solutions" },
+  { icon: "Brain", label: "AI/ML Solutions" },
+  { icon: "ShieldCheck", label: "Testing & QA" },
+] as const;
+
+export const SERVICES = DEV_SERVICES;
+export const AI_SOLUTIONS = TRAINING_PROGRAMS;
 
 export const INDUSTRIES = [
   {
     title: "Financial Services",
-    description: "Risk modeling, fraud detection, and algorithmic trading solutions.",
+    description: "Risk modeling, fraud detection, and digital transformation.",
     icon: "Landmark",
   },
   {
     title: "Healthcare & Life Sciences",
-    description: "Clinical decision support, drug discovery, and patient care optimization.",
+    description: "Clinical AI, diagnostics, and patient care optimization.",
     icon: "HeartPulse",
   },
   {
     title: "Manufacturing",
-    description: "Predictive maintenance, quality control, and supply chain optimization.",
+    description: "Predictive maintenance, quality control, and supply chain.",
     icon: "Factory",
   },
   {
     title: "Retail & E-Commerce",
-    description: "Demand forecasting, personalization, and inventory management.",
+    description: "Personalization, demand forecasting, and inventory.",
     icon: "ShoppingCart",
   },
   {
     title: "Energy & Utilities",
-    description: "Grid optimization, asset management, and sustainability analytics.",
+    description: "Grid optimization and sustainability analytics.",
     icon: "Zap",
   },
   {
     title: "Government & Public Sector",
-    description: "Citizen services automation, policy analysis, and resource allocation.",
+    description: "Citizen services automation and policy analysis.",
     icon: "Building2",
   },
 ] as const;
@@ -164,41 +184,35 @@ export const INDUSTRIES = [
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Discovery & Assessment",
+    title: "Discover & Strategy",
     description:
-      "We analyze your business landscape, data maturity, and AI readiness to identify high-impact opportunities.",
+      "Align business goals, assess opportunities, and define a clear roadmap.",
   },
   {
     step: 2,
-    title: "Strategy & Roadmap",
+    title: "Design & Prototype",
     description:
-      "Our experts craft a tailored AI strategy with clear milestones, KPIs, and governance frameworks.",
+      "Build pilots, prove concepts, and refine features before full investment.",
   },
   {
     step: 3,
-    title: "Design & Prototype",
+    title: "Build & Deploy",
     description:
-      "Rapid prototyping and proof-of-concept development to validate solutions before full-scale investment.",
+      "Enterprise-grade development with rigorous testing and seamless deployment.",
   },
   {
     step: 4,
-    title: "Build & Deploy",
-    description:
-      "Enterprise-grade development with rigorous testing, security audits, and seamless deployment.",
-  },
-  {
-    step: 5,
     title: "Optimize & Scale",
     description:
-      "Continuous monitoring, model retraining, and performance optimization to maximize long-term value.",
+      "Continuous monitoring and optimization to maximize long-term value.",
   },
 ] as const;
 
 export const STATS = [
-  { value: 150, suffix: "+", label: "Enterprise Clients" },
+  { value: 37, suffix: "+", label: "Enterprise Clients" },
+  { value: 72, suffix: "+", label: "AI Use Cases Delivered" },
+  { value: 50, suffix: "+", label: "Active Projects" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 500, suffix: "+", label: "AI Projects Delivered" },
-  { value: 40, suffix: "%", label: "Average ROI Increase" },
 ] as const;
 
 export const CASE_STUDIES = [

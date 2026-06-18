@@ -16,9 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "ProVizient — Transforming Businesses Through Intelligent AI Solutions",
+  title: "ProVizient — AI Training | Software Development | Consulting",
   description:
-    "ProVizient is a premium enterprise AI consulting firm helping organizations design, build, and deploy intelligent solutions.",
+    "ProVizient delivers industry-aligned AI training, custom software development, and enterprise consulting. Empowering Careers. Elevating Futures.",
 };
 
 export default function RootLayout({
@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col gradient-bg text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <ToastProviderWrapper>{children}</ToastProviderWrapper>
       </body>
     </html>

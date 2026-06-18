@@ -1,109 +1,72 @@
-import { Brain, BarChart3, FileSearch, Users, CheckCircle } from "lucide-react";
+import * as LucideIcons from "lucide-react";
+import { Brain, Bot, Sparkles, BarChart3, Terminal, Search } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
+import { TRAINING_PROGRAMS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+
+const COLOR_MAP: Record<string, string> = {
+  purple: "service-card-purple",
+  blue: "service-card-blue",
+  green: "service-card-green",
+  orange: "service-card-orange",
+  yellow: "service-card-yellow",
+};
+
+const ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  Sparkles,
+  Bot,
+  Search,
+  Brain,
+  Terminal,
+  BarChart3,
+};
 
 export const metadata = generateSEO({
-  title: "AI Solutions",
+  title: "AI Training & Courses",
   description:
-    "Discover ProVizient's enterprise AI solution frameworks — knowledge AI, predictive analytics, document processing, and customer intelligence.",
+    "Industry-aligned AI training programs — GenAI, Agentic AI, RAG, AI/ML, Python, and Data Analytics.",
   path: "/ai-solutions",
 });
-
-const SOLUTIONS = [
-  {
-    icon: Brain,
-    title: "Enterprise Knowledge AI",
-    description:
-      "Transform organizational knowledge into intelligent, searchable, and actionable insights.",
-    capabilities: [
-      "Enterprise search & discovery",
-      "Knowledge graph construction",
-      "Semantic document understanding",
-      "Expert system automation",
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "Predictive Analytics Engine",
-    description:
-      "Anticipate market trends, customer behavior, and operational risks with advanced predictive models.",
-    capabilities: [
-      "Demand forecasting",
-      "Churn prediction",
-      "Risk scoring models",
-      "Anomaly detection",
-    ],
-  },
-  {
-    icon: FileSearch,
-    title: "Intelligent Document Processing",
-    description:
-      "Automate document classification, extraction, and processing with 99%+ accuracy.",
-    capabilities: [
-      "OCR & data extraction",
-      "Document classification",
-      "Contract analysis",
-      "Compliance automation",
-    ],
-  },
-  {
-    icon: Users,
-    title: "AI-Powered Customer Intelligence",
-    description:
-      "Deliver hyper-personalized experiences through real-time customer behavior analysis.",
-    capabilities: [
-      "Customer segmentation",
-      "Personalization engines",
-      "Sentiment analysis",
-      "Next-best-action recommendations",
-    ],
-  },
-];
 
 export default function AISolutionsPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero grid-pattern">
+      <section className="pt-32 pb-20 gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            badge="AI Solutions"
-            title="Purpose-Built AI Solutions"
-            description="Pre-architected solution frameworks that accelerate time-to-value while maintaining enterprise-grade security and scalability."
+            badge="Courses"
+            title="Future-Ready Skills Training"
+            description="Industry-aligned training in AI, Data, and Programming to help you learn, grow, and lead."
           />
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8 space-y-12">
-          {SOLUTIONS.map((solution) => (
-            <div key={solution.title} className="glass-card p-8 md:p-10">
-              <div className="flex flex-col lg:flex-row gap-8">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shrink-0">
-                  <solution.icon size={36} className="text-primary" />
+      <section className="py-20 bg-surface">
+        <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {TRAINING_PROGRAMS.map((program) => {
+            const Icon = ICONS[program.icon] || Brain;
+            return (
+              <div
+                key={program.id}
+                className={cn(
+                  "rounded-2xl p-8 border border-card-border",
+                  COLOR_MAP[program.color]
+                )}
+              >
+                <div className="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-5">
+                  <Icon size={28} className="text-primary" />
                 </div>
-                <div className="flex-1">
-                  <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">
-                    {solution.title}
-                  </h2>
-                  <p className="text-muted leading-relaxed mb-6">
-                    {solution.description}
-                  </p>
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-                    Key Capabilities
-                  </h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {solution.capabilities.map((cap) => (
-                      <div key={cap} className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-primary shrink-0" />
-                        <span className="text-sm">{cap}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <h2 className="font-display text-xl font-bold mb-3">
+                  {program.title}
+                </h2>
+                <p className="text-muted leading-relaxed text-sm">
+                  {program.description}
+                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

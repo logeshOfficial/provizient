@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
     }
 
     const notificationEmail =
-      process.env.NOTIFICATION_EMAIL || "contact@provizient.com";
+      process.env.NOTIFICATION_EMAIL || "info@ProVizient.com";
 
     await Promise.all([
       sendEmail({
