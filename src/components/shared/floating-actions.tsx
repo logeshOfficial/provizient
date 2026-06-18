@@ -13,7 +13,7 @@ export function FloatingActions() {
         aria-hidden="false"
       >
         <Link
-          href="/#courses"
+          href="/workbench"
           className="flex items-center gap-2 rounded-l-xl bg-primary px-3 py-5 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:translate-x-[-2px] [writing-mode:vertical-rl] rotate-180"
         >
           AI Training Hub

@@ -44,7 +44,7 @@ export function TrainingSection() {
               learn, grow, and lead.
             </p>
             <Button size="lg" className="rounded-full px-8" asChild>
-              <Link href="/contact">
+              <Link href="/workbench">
                 Explore Courses
                 <ArrowRight size={18} />
               </Link>

@@ -8,12 +8,12 @@ const FOOTER_LINKS = {
   company: [
     { href: "/about", label: "About Us" },
     { href: "/services", label: "For Business" },
-    { href: "/#courses", label: "Courses" },
+    { href: "/workbench", label: "Courses" },
     { href: "/blog", label: "Resources" },
   ],
   solutions: [
     { href: "/services", label: "Software Development" },
-    { href: "/#courses", label: "AI Training" },
+    { href: "/workbench", label: "AI Training" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/contact", label: "Contact Us" },
   ],

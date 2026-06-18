@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/#courses", label: "Courses" },
+  { href: "/workbench", label: "Courses" },
   { href: "/services", label: "For Business" },
   { href: "/about", label: "Why ProVizient" },
   { href: "/blog", label: "Resources" },
@@ -135,6 +135,78 @@ export const TRAINING_TRUST_ITEMS = [
   { icon: "BadgeCheck", label: "Certification" },
   { icon: "Briefcase", label: "Career Support" },
 ] as const;
+
+export const WORKBENCH_COURSE_META: Record<
+  string,
+  { duration: string; level: string; topics: string[] }
+> = {
+  genai: {
+    duration: "6–8 weeks",
+    level: "Intermediate",
+    topics: ["LLM fundamentals", "Prompt engineering", "Real-world apps"],
+  },
+  "agentic-ai": {
+    duration: "8 weeks",
+    level: "Advanced",
+    topics: ["Agent architecture", "Tool use & planning", "Autonomous workflows"],
+  },
+  rag: {
+    duration: "6 weeks",
+    level: "Intermediate",
+    topics: ["Vector databases", "Embeddings", "Context-aware AI"],
+  },
+  "ai-ml": {
+    duration: "10 weeks",
+    level: "Beginner → Advanced",
+    topics: ["Supervised learning", "Deep learning", "Model deployment"],
+  },
+  python: {
+    duration: "8 weeks",
+    level: "All levels",
+    topics: ["Core syntax", "APIs & automation", "Data scripting"],
+  },
+  "data-analyst": {
+    duration: "8 weeks",
+    level: "Beginner",
+    topics: ["SQL & analytics", "Dashboards", "Business insights"],
+  },
+};
+
+export const WORKBENCH_CONSULTING_META: Record<
+  string,
+  { delivery: string; outcome: string; highlights: string[] }
+> = {
+  "custom-software": {
+    delivery: "Agile sprints",
+    outcome: "Scalable apps",
+    highlights: ["Full-stack delivery", "Cloud-native", "Security-first"],
+  },
+  "product-engineering": {
+    delivery: "End-to-end",
+    outcome: "Market-ready products",
+    highlights: ["MVP to scale", "UX-focused", "Continuous iteration"],
+  },
+  cloud: {
+    delivery: "Migration & ops",
+    outcome: "Modern infrastructure",
+    highlights: ["AWS · Azure · GCP", "Cost optimization", "High availability"],
+  },
+  devops: {
+    delivery: "CI/CD pipelines",
+    outcome: "Faster releases",
+    highlights: ["IaC automation", "Monitoring", "Zero-downtime deploys"],
+  },
+  qa: {
+    delivery: "Test automation",
+    outcome: "Reliable software",
+    highlights: ["Performance testing", "Security audits", "Regression suites"],
+  },
+  consulting: {
+    delivery: "Strategic advisory",
+    outcome: "Aligned IT roadmap",
+    highlights: ["Architecture review", "Tech stack planning", "Team enablement"],
+  },
+};
 
 export const HERO_TYPEWRITER_WORDS = [
   "Advanced Agents",

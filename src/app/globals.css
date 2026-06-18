@@ -72,6 +72,80 @@ body {
   animation: blink 1s step-end infinite;
 }
 
+.perspective-deck {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.perspective-deck-glow {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 420px;
+  height: 420px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.12) 0%, transparent 70%);
+}
+
+.perspective-deck-floor {
+  position: absolute;
+  bottom: -8%;
+  left: -60%;
+  width: 220%;
+  height: 70%;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(520px) rotateX(72deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(to top, black 25%, transparent 88%);
+}
+
+.perspective-deck-horizon {
+  position: absolute;
+  bottom: 28%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.5), transparent);
+}
+
+.chip-frame {
+  clip-path: polygon(
+    8% 0%,
+    92% 0%,
+    100% 8%,
+    100% 92%,
+    92% 100%,
+    8% 100%,
+    0% 92%,
+    0% 8%
+  );
+}
+
+@keyframes robot-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.08); }
+}
+
+.robot-eye {
+  animation: robot-blink 3.5s ease-in-out infinite;
+}
+
+.robot-eye-delay {
+  animation-delay: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-eye,
+  .robot-eye-delay {
+    animation: none;
+  }
+}
+
 .hex-grid-bg {
   background-color: #f8fbff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-12l20-12V22L28 10 8 22v22l20 12z' fill='%230066ff' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
