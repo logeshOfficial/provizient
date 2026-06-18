@@ -28,7 +28,7 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-10 flex justify-center">
+          <div className="mb-8 flex justify-center sm:mb-10">
             <WorkbenchAgent />
           </div>
 
