@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { WorkbenchHero } from "@/components/workbench/workbench-hero";
-import { WorkbenchAlternatives } from "@/components/workbench/workbench-alternatives";
 import { WorkbenchCatalog } from "@/components/workbench/workbench-catalog";
 import { ClientMarquee } from "@/components/home/client-marquee";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
@@ -16,7 +15,6 @@ export function WorkbenchPageClient() {
   return (
     <>
       <WorkbenchHero activeTab={activeTab} onTabChange={setActiveTab} />
-      <WorkbenchAlternatives />
       <ClientMarquee />
       <WorkbenchCatalog activeTab={activeTab} onTabChange={setActiveTab} />
       <TrustBar items={TRAINING_TRUST_ITEMS} />

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PerspectiveDeck } from "@/components/workbench/perspective-deck";
-import { WorkbenchAgent } from "@/components/workbench/workbench-agent";
+import { RobotChip } from "@/components/workbench/robot-chip";
 import { cn } from "@/lib/utils";
 
 export type WorkbenchTab = "training" | "consulting";
@@ -29,7 +29,7 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-8 flex justify-center sm:mb-10">
-            <WorkbenchAgent />
+            <RobotChip variant="default" animate={false} />
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">

@@ -15,18 +15,6 @@ export function HeroHubVisual() {
     <div className="relative mx-auto w-full max-w-xl">
       <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
 
-      {/* Extended horizontal circuit lines behind the hub */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-[42%] z-0 hidden w-[130%] -translate-x-1/2 -translate-y-1/2 sm:block"
-        aria-hidden="true"
-      >
-        <div className="relative flex items-center">
-          <div className="hero-circuit-beam hero-circuit-beam-left flex-1" />
-          <div className="w-[42%] shrink-0" />
-          <div className="hero-circuit-beam hero-circuit-beam-right flex-1" />
-        </div>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}

@@ -19,7 +19,7 @@ export function RobotChip({
   animate = true,
 }: RobotChipProps) {
   const mode = variant ?? (compact ? "compact" : "default");
-  const showCircuits = mode !== "compact";
+  const showCircuits = mode === "default";
   const showLabel = mode !== "compact";
   const showGlow = mode !== "compact";
   const uid = useId().replace(/:/g, "");
@@ -32,7 +32,7 @@ export function RobotChip({
       {showGlow && <div className="agent-visual-glow" aria-hidden="true" />}
 
       <svg
-        viewBox={mode === "compact" ? "78 52 264 238" : "0 0 420 300"}
+        viewBox={mode === "compact" || mode === "hero" ? "78 52 264 238" : "0 0 420 300"}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={cn(
