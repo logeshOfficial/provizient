@@ -60,14 +60,26 @@ export function RobotChip({
           <>
             <path d="M0 150 H72" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
             <path d="M72 150 H92" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-            <circle cx="18" cy="150" r="4" fill="#22c55e" className="circuit-dot" />
-            <circle cx="36" cy="150" r="4" fill="#ef4444" className="circuit-dot circuit-dot-delay-1" />
-            <circle cx="54" cy="150" r="4" fill="#0066ff" className="circuit-dot circuit-dot-delay-2" />
+            <circle cx="18" cy="150" r="4" fill="#22c55e">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="36" cy="150" r="4" fill="#ef4444">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" begin="0.3s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="54" cy="150" r="4" fill="#0066ff">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" begin="0.6s" repeatCount="indefinite" />
+            </circle>
             <path d="M348 150 H420" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
             <path d="M328 150 H348" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-            <circle cx="366" cy="150" r="4" fill="#eab308" className="circuit-dot circuit-dot-delay-1" />
-            <circle cx="384" cy="150" r="4" fill="#0066ff" className="circuit-dot circuit-dot-delay-2" />
-            <circle cx="402" cy="150" r="4" fill="#22c55e" className="circuit-dot circuit-dot-delay-3" />
+            <circle cx="366" cy="150" r="4" fill="#eab308">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" begin="0.3s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="384" cy="150" r="4" fill="#0066ff">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" begin="0.6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="402" cy="150" r="4" fill="#22c55e">
+              <animate attributeName="opacity" values="0.55;1;0.55" dur="2.2s" begin="0.9s" repeatCount="indefinite" />
+            </circle>
           </>
         )}
 
@@ -97,17 +109,93 @@ export function RobotChip({
 
         <g filter={`url(#${softShadow})`}>
           <rect x="203" y="88" width="14" height="22" rx="4" fill="#e2e8f0" stroke="#cbd5e1" strokeWidth="1" />
-          <circle cx="210" cy="82" r="7" fill="#ef4444" className="agent-pulse-dot" />
+          <circle cx="210" cy="82" r="7" fill="#ef4444">
+            <animate
+              attributeName="opacity"
+              values="0.7;1;0.7"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+          </circle>
           <rect x="148" y="108" width="124" height="96" rx="28" fill="#ffffff" stroke="#e2e8f0" strokeWidth="2" />
           <rect x="132" y="138" width="16" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
           <rect x="272" y="138" width="16" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
-          <g className="robot-eye">
-            <ellipse cx="182" cy="148" rx="11" ry="13" fill="#0f172a" />
-            <circle cx="185" cy="144" r="3.5" fill="#ffffff" opacity="0.9" />
+          <g>
+            <ellipse cx="182" cy="148" rx="11" ry="13" fill="#0f172a">
+              <animate
+                attributeName="opacity"
+                values="1;1;0.05;1;1"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                repeatCount="indefinite"
+              />
+            </ellipse>
+            <circle cx="185" cy="144" r="3.5" fill="#ffffff" opacity="0.9">
+              <animate
+                attributeName="opacity"
+                values="1;1;0;1;1"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            {/* Eyelid — visible blink on all mobile browsers */}
+            <rect x="171" y="135" width="22" height="26" rx="4" fill="#ffffff">
+              <animate
+                attributeName="height"
+                values="0;0;26;0;0"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y"
+                values="148;148;135;148;148"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                repeatCount="indefinite"
+              />
+            </rect>
           </g>
-          <g className="robot-eye robot-eye-delay">
-            <ellipse cx="238" cy="148" rx="11" ry="13" fill="#0f172a" />
-            <circle cx="241" cy="144" r="3.5" fill="#ffffff" opacity="0.9" />
+          <g>
+            <ellipse cx="238" cy="148" rx="11" ry="13" fill="#0f172a">
+              <animate
+                attributeName="opacity"
+                values="1;1;0.05;1;1"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                begin="0.12s"
+                repeatCount="indefinite"
+              />
+            </ellipse>
+            <circle cx="241" cy="144" r="3.5" fill="#ffffff" opacity="0.9">
+              <animate
+                attributeName="opacity"
+                values="1;1;0;1;1"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                begin="0.12s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <rect x="227" y="135" width="22" height="26" rx="4" fill="#ffffff">
+              <animate
+                attributeName="height"
+                values="0;0;26;0;0"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                begin="0.12s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y"
+                values="148;148;135;148;148"
+                keyTimes="0;0.88;0.92;0.96;1"
+                dur="3.2s"
+                begin="0.12s"
+                repeatCount="indefinite"
+              />
+            </rect>
           </g>
           <path
             d="M178 178 Q210 196 242 178"
@@ -119,7 +207,14 @@ export function RobotChip({
           <rect x="198" y="204" width="24" height="10" rx="3" fill="#e2e8f0" />
           <rect x="162" y="214" width="96" height="52" rx="18" fill="#ffffff" stroke="#e2e8f0" strokeWidth="2" />
           <circle cx="210" cy="238" r="14" fill="#eff6ff" stroke="#0066ff" strokeWidth="2" opacity="0.9" />
-          <circle cx="210" cy="238" r="6" fill="#0066ff" className="agent-pulse-dot" />
+          <circle cx="210" cy="238" r="6" fill="#0066ff">
+            <animate
+              attributeName="opacity"
+              values="0.65;1;0.65"
+              dur="2.4s"
+              repeatCount="indefinite"
+            />
+          </circle>
         </g>
 
         {showLabel && (
