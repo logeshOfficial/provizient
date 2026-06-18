@@ -34,9 +34,9 @@ export function Footer() {
               <Image
                 src={assetPath("/logo.png")}
                 alt="ProVizient — AI Training | Software Development | Consulting"
-                width={260}
-                height={78}
-                className="h-14 w-auto max-w-[260px] object-contain"
+                width={320}
+                height={96}
+                className="h-16 w-auto max-w-[320px] object-contain sm:h-[72px]"
               />
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-2 max-w-sm font-medium">

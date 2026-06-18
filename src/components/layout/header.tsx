@@ -34,9 +34,9 @@ export function Header() {
             <Image
               src={assetPath("/logo.png")}
               alt="ProVizient — AI Training | Software Development | Consulting"
-              width={240}
-              height={72}
-              className="h-11 w-auto object-contain sm:h-12"
+              width={320}
+              height={96}
+              className="h-14 w-auto max-w-[min(100%,320px)] object-contain sm:h-16 lg:h-[72px]"
               priority
             />
           </Link>
