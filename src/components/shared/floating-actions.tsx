@@ -8,12 +8,12 @@ import { cn } from "@/lib/utils";
 export function FloatingActions() {
   return (
     <>
-      <div className="fixed bottom-6 left-1/2 z-40 hidden -translate-x-1/2 md:block">
+      <div className="pointer-events-none fixed bottom-6 left-1/2 z-40 hidden -translate-x-1/2 md:block">
         <Link
           href="/workbench"
           aria-label="Explore ProVizient training and consulting solutions"
           className={cn(
-            "group flex items-center gap-3 rounded-full border border-primary/20 bg-white/95 px-6 py-3",
+            "pointer-events-auto group flex items-center gap-3 rounded-full border border-primary/20 bg-white/95 px-6 py-3",
             "shadow-[0_8px_32px_rgba(0,102,255,0.18)] backdrop-blur-md",
             "transition-all hover:scale-[1.03] hover:border-primary/40 hover:shadow-[0_12px_40px_rgba(0,102,255,0.25)]"
           )}

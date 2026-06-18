@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Brain, Bot, Sparkles, BarChart3, Terminal, Search } from "lucide-react";
+import { TrainingHubVisual } from "@/components/home/training-hub-visual";
 import { Button } from "@/components/ui/button";
 import { TRAINING_PROGRAMS, TRAINING_TRUST_ITEMS } from "@/lib/constants";
 import { TrustBar } from "@/components/shared/trust-bar";
@@ -27,9 +28,9 @@ const TRAINING_ICONS: Record<string, React.ComponentType<{ size?: number; classN
 
 export function TrainingSection() {
   return (
-    <section id="courses" className="py-20 lg:py-28 bg-surface">
+    <section id="courses" className="scroll-mt-24 py-20 lg:py-28 bg-surface">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,25 +56,9 @@ export function TrainingSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative flex justify-center"
+            className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-br from-primary/10 via-white to-secondary/10 border border-primary/10 flex items-center justify-center">
-              <div className="relative">
-                <Brain size={120} className="text-primary/30" />
-                <div className="absolute -top-4 -right-8 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border border-card-border">
-                  <Bot size={22} className="text-primary" />
-                </div>
-                <div className="absolute -bottom-2 -left-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border border-card-border">
-                  <Terminal size={22} className="text-secondary" />
-                </div>
-                <div className="absolute top-1/2 -right-14 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border border-card-border">
-                  <Sparkles size={22} className="text-accent" />
-                </div>
-                <div className="absolute bottom-8 -right-6 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border border-card-border">
-                  <BarChart3 size={22} className="text-primary" />
-                </div>
-              </div>
-            </div>
+            <TrainingHubVisual variant="skills-hub" />
           </motion.div>
         </div>
 
@@ -81,7 +66,7 @@ export function TrainingSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center pt-8 md:pt-12 pb-20 md:pb-24 mb-12"
         >
           <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
             Our Popular Training Programs

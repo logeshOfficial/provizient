@@ -23,7 +23,7 @@ export function WhatWeDo() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-14 md:pb-24"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
             What We Do

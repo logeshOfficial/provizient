@@ -8,19 +8,19 @@ import { AboutEnterpriseVisual } from "@/components/about/about-enterprise-visua
 
 export function AboutHero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24 hex-grid-bg">
+    <section className="relative overflow-x-hidden pt-28 pb-16 lg:min-h-[540px] lg:pt-32 lg:pb-24 hex-grid-bg">
       <PerspectiveDeck />
 
       <div className="pointer-events-none absolute top-16 left-0 h-72 w-72 rounded-full bg-accent/5 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-stretch gap-12 lg:grid-cols-2 lg:gap-6 xl:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            className="flex flex-col justify-center text-center lg:text-left"
           >
             <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-primary">
               About ProVizient
@@ -55,9 +55,9 @@ export function AboutHero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.12 }}
-            className="flex items-center justify-center lg:justify-end"
+            className="flex min-h-[380px] w-full items-stretch overflow-visible py-8 sm:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px]"
           >
-            <div className="w-full max-w-sm sm:max-w-md">
+            <div className="flex w-full flex-1 items-stretch overflow-visible">
               <AboutEnterpriseVisual />
             </div>
           </motion.div>
