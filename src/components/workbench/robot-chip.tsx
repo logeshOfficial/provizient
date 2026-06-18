@@ -5,49 +5,123 @@ import { motion } from "framer-motion";
 export function RobotChip() {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.15 }}
-      className="relative mx-auto w-full max-w-md"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      className="agent-visual relative mx-auto w-full max-w-[420px]"
     >
-      <div className="absolute left-0 top-1/2 h-0.5 w-[18%] -translate-y-1/2 bg-foreground/80" />
-      <div className="absolute right-0 top-1/2 h-0.5 w-[18%] -translate-y-1/2 bg-foreground/80" />
+      <div className="agent-visual-glow" aria-hidden="true" />
 
-      <div className="absolute left-[16%] top-1/2 flex -translate-y-1/2 gap-1">
-        <span className="h-2 w-2 rounded-sm bg-green-500" />
-        <span className="h-2 w-2 rounded-sm bg-red-500" />
-        <span className="h-2 w-2 rounded-sm bg-primary" />
-      </div>
-      <div className="absolute right-[16%] top-1/2 flex -translate-y-1/2 gap-1">
-        <span className="h-2 w-2 rounded-sm bg-yellow-400" />
-        <span className="h-2 w-2 rounded-sm bg-primary" />
-        <span className="h-2 w-2 rounded-sm bg-green-500" />
-      </div>
+      <svg
+        viewBox="0 0 420 300"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="relative z-10 w-full drop-shadow-2xl"
+        role="img"
+        aria-label="AI agent illustration"
+      >
+        <defs>
+          <linearGradient id="chipFill" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f0f9ff" />
+            <stop offset="100%" stopColor="#ffffff" />
+          </linearGradient>
+          <linearGradient id="chipStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0066ff" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#00a3e0" stopOpacity="0.35" />
+          </linearGradient>
+          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" floodOpacity="0.12" />
+          </filter>
+        </defs>
 
-      <div className="relative mx-auto w-[min(100%,320px)]">
-        <div className="chip-frame relative mx-auto aspect-[1.15/1] max-w-[280px] rounded-2xl border-2 border-foreground/10 bg-gradient-to-b from-sky-50 to-white p-6 shadow-xl">
-          <div className="absolute inset-3 rounded-xl border border-primary/15" />
-          <div className="absolute left-4 top-4 h-3 w-8 rounded bg-green-400/80" />
-          <div className="absolute right-4 top-4 h-3 w-6 rounded bg-red-400/80" />
-          <div className="absolute bottom-4 left-4 h-3 w-6 rounded bg-primary/60" />
-          <div className="absolute bottom-4 right-4 h-3 w-10 rounded bg-yellow-400/80" />
+        {/* Circuit traces — left */}
+        <path d="M0 150 H72" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M72 150 H92" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+        <circle cx="18" cy="150" r="4" fill="#22c55e" />
+        <circle cx="36" cy="150" r="4" fill="#ef4444" />
+        <circle cx="54" cy="150" r="4" fill="#0066ff" />
 
-          <div className="relative flex h-full flex-col items-center justify-center pt-2">
-            <div className="robot-head relative mb-2 h-28 w-28 rounded-3xl border-2 border-foreground/10 bg-white shadow-inner">
-              <div className="absolute left-1/2 top-5 flex -translate-x-1/2 gap-5">
-                <span className="robot-eye h-4 w-4 rounded-full bg-foreground" />
-                <span className="robot-eye robot-eye-delay h-4 w-4 rounded-full bg-foreground" />
-              </div>
-              <div className="absolute bottom-7 left-1/2 h-3 w-10 -translate-x-1/2 rounded-full border-b-4 border-foreground" />
-              <div className="absolute -left-3 top-10 h-8 w-3 rounded-l-lg bg-white border border-foreground/10" />
-              <div className="absolute -right-3 top-10 h-8 w-3 rounded-r-lg bg-white border border-foreground/10" />
-            </div>
-            <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
-              AI Core
-            </p>
-          </div>
-        </div>
-      </div>
+        {/* Circuit traces — right */}
+        <path d="M348 150 H420" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M328 150 H348" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+        <circle cx="366" cy="150" r="4" fill="#eab308" />
+        <circle cx="384" cy="150" r="4" fill="#0066ff" />
+        <circle cx="402" cy="150" r="4" fill="#22c55e" />
+
+        {/* Chip body */}
+        <path
+          d="M118 58 L302 58 L338 94 L338 206 L302 242 L118 242 L82 206 L82 94 Z"
+          fill="url(#chipFill)"
+          stroke="url(#chipStroke)"
+          strokeWidth="2.5"
+          filter="url(#softShadow)"
+        />
+        <path
+          d="M102 94 L102 206 M318 94 L318 206 M134 42 L134 58 M286 42 L286 58 M134 242 L134 258 M286 242 L286 258"
+          stroke="#cbd5e1"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+
+        {/* Inner circuit board lines */}
+        <path d="M98 118 H118 M322 118 H342 M98 182 H118 M322 182 H342" stroke="#94a3b8" strokeWidth="1.5" opacity="0.6" />
+        <rect x="108" y="72" width="28" height="8" rx="2" fill="#4ade80" opacity="0.85" />
+        <rect x="284" y="72" width="22" height="8" rx="2" fill="#f87171" opacity="0.85" />
+        <rect x="108" y="220" width="20" height="8" rx="2" fill="#0066ff" opacity="0.7" />
+        <rect x="278" y="220" width="32" height="8" rx="2" fill="#facc15" opacity="0.85" />
+
+        {/* Robot group */}
+        <g filter="url(#softShadow)">
+          {/* Antenna */}
+          <rect x="203" y="88" width="14" height="22" rx="4" fill="#e2e8f0" stroke="#cbd5e1" strokeWidth="1" />
+          <circle cx="210" cy="82" r="7" fill="#ef4444" className="agent-pulse-dot" />
+
+          {/* Head */}
+          <rect x="148" y="108" width="124" height="96" rx="28" fill="#ffffff" stroke="#e2e8f0" strokeWidth="2" />
+
+          {/* Ears */}
+          <rect x="132" y="138" width="16" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
+          <rect x="272" y="138" width="16" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
+
+          {/* Eyes */}
+          <g className="robot-eye">
+            <ellipse cx="182" cy="148" rx="11" ry="13" fill="#0f172a" />
+            <circle cx="185" cy="144" r="3.5" fill="#ffffff" opacity="0.9" />
+          </g>
+          <g className="robot-eye robot-eye-delay">
+            <ellipse cx="238" cy="148" rx="11" ry="13" fill="#0f172a" />
+            <circle cx="241" cy="144" r="3.5" fill="#ffffff" opacity="0.9" />
+          </g>
+
+          {/* Smile */}
+          <path
+            d="M178 178 Q210 196 242 178"
+            stroke="#0f172a"
+            strokeWidth="4"
+            strokeLinecap="round"
+            fill="none"
+          />
+
+          {/* Neck */}
+          <rect x="198" y="204" width="24" height="10" rx="3" fill="#e2e8f0" />
+
+          {/* Body */}
+          <rect x="162" y="214" width="96" height="52" rx="18" fill="#ffffff" stroke="#e2e8f0" strokeWidth="2" />
+          <circle cx="210" cy="238" r="14" fill="#eff6ff" stroke="#0066ff" strokeWidth="2" opacity="0.9" />
+          <circle cx="210" cy="238" r="6" fill="#0066ff" className="agent-pulse-dot" />
+        </g>
+
+        {/* Label */}
+        <text
+          x="210"
+          y="285"
+          textAnchor="middle"
+          className="fill-primary font-display text-[11px] font-bold uppercase tracking-[0.35em]"
+          style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
+        >
+          Agentic AI Core
+        </text>
+      </svg>
     </motion.div>
   );
 }
