@@ -136,6 +136,38 @@ export const TRAINING_TRUST_ITEMS = [
   { icon: "Briefcase", label: "Career Support" },
 ] as const;
 
+export const HERO_TYPEWRITER_WORDS = [
+  "Advanced Agents",
+  "Autonomous Agents",
+  "Intelligent Agents",
+] as const;
+
+export const PLATFORM_PARTNERS = [
+  "AWS",
+  "Microsoft Azure",
+  "Google Cloud",
+  "Databricks",
+  "OpenAI",
+  "Python",
+  "Snowflake",
+  "Kubernetes",
+  "Terraform",
+  "LangChain",
+] as const;
+
+export const CLIENT_NAMES = [
+  "Meridian Financial",
+  "NovaTech Industries",
+  "HealthFirst Network",
+  "Global Retail Corp",
+  "Summit Manufacturing",
+  "Pacific Energy Group",
+  "Vertex Logistics",
+  "Atlas Healthcare",
+  "Pinnacle BFSI",
+  "Horizon Supply Chain",
+] as const;
+
 export const HERO_SERVICES_ORBIT = [
   { icon: "Infinity", label: "DevOps & Automation" },
   { icon: "Smartphone", label: "Mobile Development" },

@@ -56,8 +56,20 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center">
-            <Button size="default" className="rounded-full px-6" asChild>
+          <div className="hidden lg:flex items-center gap-3">
+            <Button
+              size="default"
+              className="rounded-full bg-foreground px-6 hover:bg-foreground/90"
+              asChild
+            >
+              <Link href="/book-consultation">Get Started</Link>
+            </Button>
+            <Button
+              size="default"
+              variant="outline"
+              className="rounded-full border-foreground px-6 text-foreground hover:bg-foreground/5"
+              asChild
+            >
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
