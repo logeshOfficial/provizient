@@ -1,5 +1,6 @@
 import { Calendar, CheckCircle } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
+import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
+import { ConsultationVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationForm } from "@/components/forms/consultation-form";
 import { generateSEO } from "@/lib/seo";
 
@@ -20,17 +21,17 @@ const BENEFITS = [
 export default function BookConsultationPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="Consultation"
-            title="Book Your Free AI Strategy Consultation"
-            description="Meet with our senior AI consultants to explore how intelligent solutions can transform your business."
-          />
-        </div>
-      </section>
+      <MarketingPageHero
+        badge="Consultation"
+        title="Book Your Free"
+        titleHighlight="AI Strategy Consultation"
+        description="Meet with our senior AI consultants to explore how intelligent solutions can transform your business."
+        primaryCta={{ href: "#consultation-form", label: "Request Session" }}
+        secondaryCta={{ href: "/contact", label: "Contact Us" }}
+        visual={<ConsultationVisual />}
+      />
 
-      <section className="py-20">
+      <section id="consultation-form" className="scroll-mt-24 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2">

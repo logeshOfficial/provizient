@@ -6,7 +6,8 @@ import {
   Zap,
   Building2,
 } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
+import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
+import { IndustriesVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
 import { INDUSTRIES } from "@/lib/constants";
@@ -69,17 +70,17 @@ const INDUSTRY_DETAILS: Record<string, string[]> = {
 export default function IndustriesPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="Industries"
-            title="Industry-Specific AI Expertise"
-            description="Deep domain knowledge across regulated and high-impact sectors, delivering AI solutions that meet industry-specific compliance and performance requirements."
-          />
-        </div>
-      </section>
+      <MarketingPageHero
+        badge="Industries"
+        title="Industry-Specific"
+        titleHighlight="AI Expertise"
+        description="Deep domain knowledge across regulated and high-impact sectors, delivering AI solutions that meet industry-specific compliance and performance requirements."
+        primaryCta={{ href: "#industries", label: "Explore Industries" }}
+        secondaryCta={{ href: "/contact", label: "Contact Us" }}
+        visual={<IndustriesVisual />}
+      />
 
-      <section className="py-20">
+      <section id="industries" className="scroll-mt-24 py-20">
         <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-8">
           {INDUSTRIES.map((industry) => {
             const Icon = iconMap[industry.icon as keyof typeof iconMap] || Building2;

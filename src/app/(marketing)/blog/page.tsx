@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
+import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
+import { BlogInsightsVisual } from "@/components/marketing/marketing-hero-visuals";
 import { generateSEO } from "@/lib/seo";
 import { getPublishedPosts } from "@/data/blog";
 import { formatDate } from "@/lib/utils";
@@ -18,17 +19,17 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="Blog"
-            title="AI Insights & Thought Leadership"
-            description="Stay ahead with expert perspectives on enterprise AI strategy, implementation, and industry trends."
-          />
-        </div>
-      </section>
+      <MarketingPageHero
+        badge="Blog"
+        title="AI Insights &"
+        titleHighlight="Thought Leadership"
+        description="Stay ahead with expert perspectives on enterprise AI strategy, implementation, and industry trends."
+        primaryCta={{ href: "#articles", label: "Browse Articles" }}
+        secondaryCta={{ href: "/contact", label: "Contact Us" }}
+        visual={<BlogInsightsVisual />}
+      />
 
-      <section className="py-20">
+      <section id="articles" className="scroll-mt-24 py-20">
         <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <article key={post.slug} className="glass-card p-6 flex flex-col group">

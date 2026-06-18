@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
+import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
+import { ContactConnectVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ContactForm } from "@/components/forms/contact-form";
 import { generateSEO } from "@/lib/seo";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -14,17 +15,17 @@ export const metadata = generateSEO({
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="Contact"
-            title="Let's Start a Conversation"
-            description="Whether you have a question about our services or want to discuss a potential engagement, our team is ready to help."
-          />
-        </div>
-      </section>
+      <MarketingPageHero
+        badge="Contact"
+        title="Let's Start a"
+        titleHighlight="Conversation"
+        description="Whether you have a question about our services or want to discuss a potential engagement, our team is ready to help."
+        primaryCta={{ href: "#contact-form", label: "Send a Message" }}
+        secondaryCta={{ href: "/book-consultation", label: "Book Consultation" }}
+        visual={<ContactConnectVisual />}
+      />
 
-      <section className="py-20">
+      <section id="contact-form" className="scroll-mt-24 py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2 space-y-8">

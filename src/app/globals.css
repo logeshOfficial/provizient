@@ -129,6 +129,72 @@ body {
   background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.55), transparent);
 }
 
+.hero-visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 21rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .hero-visual-wrap {
+    max-width: 23rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-visual-wrap {
+    max-width: 24rem;
+  }
+}
+
+.hero-visual-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 272px;
+  perspective: 1100px;
+  perspective-origin: 50% 52%;
+}
+
+.hero-visual-scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-7deg);
+}
+
+.hero-visual-platform {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  width: 84%;
+  height: 4.75rem;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 102, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 247, 255, 0.92) 100%);
+  box-shadow: 0 14px 36px rgba(0, 102, 255, 0.1);
+}
+
+.services-3d-stage {
+  perspective: 1100px;
+  perspective-origin: 50% 52%;
+}
+
+.services-3d-scene {
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-7deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual-scene,
+  .services-3d-scene {
+    transform: rotateX(2deg) rotateY(-4deg);
+  }
+}
+
 .chip-frame {
   clip-path: polygon(
     8% 0%,

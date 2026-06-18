@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/shared/section-heading";
+import { AboutHero } from "@/components/about/about-hero";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
 import { Target, Users, Award, Globe } from "lucide-react";
@@ -40,17 +41,9 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="About ProVizient"
-            title="Pioneering Enterprise AI Excellence"
-            description="Founded by AI researchers and industry veterans, ProVizient bridges the gap between cutting-edge artificial intelligence and real-world business impact."
-          />
-        </div>
-      </section>
+      <AboutHero />
 
-      <section className="py-20">
+      <section id="mission" className="py-20 scroll-mt-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

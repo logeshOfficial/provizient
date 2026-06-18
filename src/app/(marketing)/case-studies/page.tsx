@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
+import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
+import { CaseStudiesVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
 import { CASE_STUDIES } from "@/lib/constants";
@@ -16,17 +17,17 @@ export const metadata = generateSEO({
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            badge="Case Studies"
-            title="Proven Results Across Industries"
-            description="Real-world success stories demonstrating the transformative impact of our AI consulting engagements."
-          />
-        </div>
-      </section>
+      <MarketingPageHero
+        badge="Case Studies"
+        title="Proven Results"
+        titleHighlight="Across Industries"
+        description="Real-world success stories demonstrating the transformative impact of our AI consulting engagements."
+        primaryCta={{ href: "#case-studies", label: "View Case Studies" }}
+        secondaryCta={{ href: "/book-consultation", label: "Book Consultation" }}
+        visual={<CaseStudiesVisual />}
+      />
 
-      <section className="py-20">
+      <section id="case-studies" className="scroll-mt-24 py-20">
         <div className="container mx-auto px-4 lg:px-8 space-y-8">
           {CASE_STUDIES.map((study) => (
             <div key={study.slug} className="glass-card p-8 md:p-10 group">
