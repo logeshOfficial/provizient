@@ -30,7 +30,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="ProVizient home">
             <Image
               src={assetPath("/logo.png")}
               alt="ProVizient — AI Training | Software Development | Consulting"

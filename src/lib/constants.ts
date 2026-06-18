@@ -12,6 +12,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/workbench", label: "Courses" },
   { href: "/services", label: "For Business" },
   { href: "/about", label: "Why ProVizient" },

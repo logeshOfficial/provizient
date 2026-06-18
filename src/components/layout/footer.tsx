@@ -6,6 +6,7 @@ import { assetPath } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   company: [
+    { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "For Business" },
     { href: "/workbench", label: "Courses" },
