@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RobotChip } from "@/components/workbench/robot-chip";
 
 const PILLARS = [
   { label: "Train", color: "#facc15" },
@@ -29,17 +30,14 @@ export function HeroHubVisual() {
             </div>
           </div>
 
-          <div className="absolute inset-x-4 top-14 bottom-20 rounded-lg border border-primary/20 bg-gradient-to-b from-white to-primary/5 shadow-xl">
-            <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.25em] text-primary">
+          <div className="absolute inset-x-4 top-14 bottom-20 overflow-hidden rounded-lg border border-primary/20 bg-gradient-to-b from-sky-50/80 to-white shadow-xl">
+            <div className="flex h-full flex-col items-center px-3 pt-4 pb-2">
+              <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-primary sm:text-xs">
                 Data + Agentic AI
               </p>
-              <p className="mt-1 font-display text-2xl font-bold text-foreground">
-                Innovation Hub
-              </p>
-              <p className="mt-3 text-sm text-muted">
-                Training · Software · Consulting
-              </p>
+              <div className="flex flex-1 items-center justify-center">
+                <RobotChip compact animate={false} className="w-full" />
+              </div>
             </div>
           </div>
 
