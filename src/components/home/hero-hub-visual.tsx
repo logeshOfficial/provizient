@@ -12,14 +12,26 @@ const PILLARS = [
 
 export function HeroHubVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-lg">
+    <div className="relative mx-auto w-full max-w-xl">
       <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
+
+      {/* Extended horizontal circuit lines behind the hub */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-[42%] z-0 hidden w-[130%] -translate-x-1/2 -translate-y-1/2 sm:block"
+        aria-hidden="true"
+      >
+        <div className="relative flex items-center">
+          <div className="hero-circuit-beam hero-circuit-beam-left flex-1" />
+          <div className="w-[42%] shrink-0" />
+          <div className="hero-circuit-beam hero-circuit-beam-right flex-1" />
+        </div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="relative"
+        className="relative z-10"
       >
         <div className="relative mx-auto aspect-[4/5] max-w-sm">
           <div className="absolute inset-x-6 top-0 h-16 rounded-t-2xl bg-gradient-to-b from-primary to-primary/80 shadow-lg">
@@ -30,13 +42,13 @@ export function HeroHubVisual() {
             </div>
           </div>
 
-          <div className="absolute inset-x-4 top-14 bottom-20 overflow-hidden rounded-lg border border-primary/20 bg-gradient-to-b from-sky-50/80 to-white shadow-xl">
-            <div className="flex h-full flex-col items-center px-3 pt-4 pb-2">
+          <div className="absolute inset-x-4 top-14 bottom-20 overflow-visible rounded-lg border border-primary/20 bg-gradient-to-b from-sky-50/80 to-white shadow-xl">
+            <div className="flex h-full flex-col items-center px-1 pt-4 pb-1 sm:px-2">
               <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
                 Innovation Hub
               </p>
-              <div className="flex flex-1 items-center justify-center">
-                <RobotChip compact animate={false} className="w-full" />
+              <div className="relative flex w-full flex-1 items-center justify-center">
+                <RobotChip variant="hero" animate={false} className="w-full" />
               </div>
             </div>
           </div>

@@ -6,15 +6,22 @@ import { cn } from "@/lib/utils";
 
 type RobotChipProps = {
   compact?: boolean;
+  /** Homepage hub: chip + robot + side circuit lines + label */
+  variant?: "default" | "compact" | "hero";
   className?: string;
   animate?: boolean;
 };
 
 export function RobotChip({
   compact = false,
+  variant,
   className,
   animate = true,
 }: RobotChipProps) {
+  const mode = variant ?? (compact ? "compact" : "default");
+  const showCircuits = mode !== "compact";
+  const showLabel = mode !== "compact";
+  const showGlow = mode !== "compact";
   const uid = useId().replace(/:/g, "");
   const chipFill = `chipFill-${uid}`;
   const chipStroke = `chipStroke-${uid}`;
@@ -22,15 +29,15 @@ export function RobotChip({
 
   const content = (
     <>
-      {!compact && <div className="agent-visual-glow" aria-hidden="true" />}
+      {showGlow && <div className="agent-visual-glow" aria-hidden="true" />}
 
       <svg
-        viewBox={compact ? "78 52 264 238" : "0 0 420 300"}
+        viewBox={mode === "compact" ? "78 52 264 238" : "0 0 420 300"}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={cn(
           "relative z-10 w-full",
-          compact ? "drop-shadow-md" : "drop-shadow-2xl"
+          mode === "default" ? "drop-shadow-2xl" : "drop-shadow-md"
         )}
         role="img"
         aria-label="AI agent illustration"
@@ -49,18 +56,18 @@ export function RobotChip({
           </filter>
         </defs>
 
-        {!compact && (
+        {showCircuits && (
           <>
             <path d="M0 150 H72" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
             <path d="M72 150 H92" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-            <circle cx="18" cy="150" r="4" fill="#22c55e" />
-            <circle cx="36" cy="150" r="4" fill="#ef4444" />
-            <circle cx="54" cy="150" r="4" fill="#0066ff" />
+            <circle cx="18" cy="150" r="4" fill="#22c55e" className="circuit-dot" />
+            <circle cx="36" cy="150" r="4" fill="#ef4444" className="circuit-dot circuit-dot-delay-1" />
+            <circle cx="54" cy="150" r="4" fill="#0066ff" className="circuit-dot circuit-dot-delay-2" />
             <path d="M348 150 H420" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
             <path d="M328 150 H348" stroke="#0066ff" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-            <circle cx="366" cy="150" r="4" fill="#eab308" />
-            <circle cx="384" cy="150" r="4" fill="#0066ff" />
-            <circle cx="402" cy="150" r="4" fill="#22c55e" />
+            <circle cx="366" cy="150" r="4" fill="#eab308" className="circuit-dot circuit-dot-delay-1" />
+            <circle cx="384" cy="150" r="4" fill="#0066ff" className="circuit-dot circuit-dot-delay-2" />
+            <circle cx="402" cy="150" r="4" fill="#22c55e" className="circuit-dot circuit-dot-delay-3" />
           </>
         )}
 
@@ -115,7 +122,7 @@ export function RobotChip({
           <circle cx="210" cy="238" r="6" fill="#0066ff" className="agent-pulse-dot" />
         </g>
 
-        {!compact && (
+        {showLabel && (
           <text
             x="210"
             y="285"
@@ -132,7 +139,9 @@ export function RobotChip({
 
   const wrapperClass = cn(
     "relative mx-auto w-full",
-    compact ? "max-w-[260px]" : "agent-visual max-w-[420px]",
+    mode === "default" && "agent-visual max-w-[420px]",
+    mode === "hero" && "agent-visual max-w-[min(100%,360px)]",
+    mode === "compact" && "max-w-[260px]",
     className
   );
 

@@ -172,6 +172,64 @@ body {
   animation: float 5s ease-in-out infinite;
 }
 
+@keyframes circuit-dot-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.circuit-dot {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: circuit-dot-pulse 2.2s ease-in-out infinite;
+}
+
+.circuit-dot-delay-1 { animation-delay: 0.3s; }
+.circuit-dot-delay-2 { animation-delay: 0.6s; }
+.circuit-dot-delay-3 { animation-delay: 0.9s; }
+
+.hero-circuit-beam {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1e293b 12%, #1e293b 88%, transparent);
+  opacity: 0.35;
+}
+
+.hero-circuit-beam-left::before,
+.hero-circuit-beam-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-circuit-beam-left::before {
+  left: 8%;
+  background: #22c55e;
+  box-shadow: 18px 0 0 #ef4444, 36px 0 0 #0066ff;
+  animation: circuit-dot-pulse 2.2s ease-in-out infinite;
+}
+
+.hero-circuit-beam-right::after {
+  right: 8%;
+  background: #eab308;
+  box-shadow: -18px 0 0 #0066ff, -36px 0 0 #22c55e;
+  animation: circuit-dot-pulse 2.2s ease-in-out infinite 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circuit-dot,
+  .circuit-dot-delay-1,
+  .circuit-dot-delay-2,
+  .circuit-dot-delay-3,
+  .hero-circuit-beam-left::before,
+  .hero-circuit-beam-right::after {
+    animation: none;
+  }
+}
+
 .agent-visual-glow {
   position: absolute;
   left: 50%;
