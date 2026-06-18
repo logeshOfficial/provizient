@@ -11,6 +11,7 @@ export function FloatingActions() {
       <div className="fixed bottom-6 left-1/2 z-40 hidden -translate-x-1/2 md:block">
         <Link
           href="/workbench"
+          aria-label="Explore ProVizient training and consulting solutions"
           className={cn(
             "group flex items-center gap-3 rounded-full border border-primary/20 bg-white/95 px-6 py-3",
             "shadow-[0_8px_32px_rgba(0,102,255,0.18)] backdrop-blur-md",
@@ -25,7 +26,7 @@ export function FloatingActions() {
               ProVizient
             </span>
             <span className="mt-0.5 text-sm font-bold text-foreground">
-              AI Training Hub
+              Training &amp; Consulting
             </span>
           </span>
           <ArrowRight
@@ -37,13 +38,14 @@ export function FloatingActions() {
 
       <Link
         href="/workbench"
+        aria-label="Explore ProVizient training and consulting solutions"
         className={cn(
           "fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-2 border-t border-primary/15",
           "bg-gradient-to-r from-primary to-secondary px-4 py-3 text-sm font-bold text-white shadow-lg md:hidden"
         )}
       >
         <Sparkles size={16} />
-        AI Training Hub
+        Training &amp; Consulting
         <ArrowRight size={16} />
       </Link>
 
