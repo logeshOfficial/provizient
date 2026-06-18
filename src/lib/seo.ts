@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_CONFIG } from "./constants";
+import { assetPath } from "./utils";
 
 type SEOProps = {
   title?: string;
@@ -12,7 +13,7 @@ type SEOProps = {
 export function generateSEO({
   title,
   description = SITE_CONFIG.description,
-  image = "/og-image.png",
+  image = assetPath("/og-image.png"),
   noIndex = false,
   path = "",
 }: SEOProps = {}): Metadata {

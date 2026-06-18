@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { assetPath } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   company: [
@@ -30,7 +31,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/logo.png"
+                src={assetPath("/logo.png")}
                 alt="ProVizient"
                 width={180}
                 height={54}

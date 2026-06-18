@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { assetPath, cn } from "@/lib/utils";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +32,7 @@ export function Header() {
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/logo.png"
+              src={assetPath("/logo.png")}
               alt="ProVizient"
               width={160}
               height={48}
