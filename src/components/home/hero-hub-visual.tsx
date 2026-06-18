@@ -24,16 +24,16 @@ export function HeroHubVisual() {
         <div className="relative mx-auto aspect-[4/5] max-w-sm">
           <div className="absolute inset-x-6 top-0 h-16 rounded-t-2xl bg-gradient-to-b from-primary to-primary/80 shadow-lg">
             <div className="flex h-full items-center justify-center">
-              <span className="font-display text-lg font-bold tracking-widest text-white">
-                GCC
+              <span className="font-display text-base font-bold tracking-wide text-white sm:text-lg">
+                ProVizient
               </span>
             </div>
           </div>
 
           <div className="absolute inset-x-4 top-14 bottom-20 overflow-hidden rounded-lg border border-primary/20 bg-gradient-to-b from-sky-50/80 to-white shadow-xl">
             <div className="flex h-full flex-col items-center px-3 pt-4 pb-2">
-              <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-primary sm:text-xs">
-                Data + Agentic AI
+              <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+                Innovation Hub
               </p>
               <div className="flex flex-1 items-center justify-center">
                 <RobotChip compact animate={false} className="w-full" />
