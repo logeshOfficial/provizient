@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Mail, MessageCircle, Sparkles } from "lucide-react";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -50,6 +51,7 @@ export function FloatingActions() {
       </Link>
 
       <div className="fixed bottom-20 right-4 z-40 flex flex-col gap-3 md:bottom-6 md:right-6">
+        <ScrollToTop />
         <a
           href={`mailto:${SITE_CONFIG.email}`}
           className={cn(

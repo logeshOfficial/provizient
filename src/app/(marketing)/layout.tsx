@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/shared/google-analytics";
 import { DemoBanner } from "@/components/shared/demo-banner";
 import { FloatingActions } from "@/components/shared/floating-actions";
-import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 export default function MarketingLayout({
   children,
@@ -18,7 +17,6 @@ export default function MarketingLayout({
       <main className="flex-1 pb-16 md:pb-24">{children}</main>
       <Footer />
       <FloatingActions />
-      <ScrollToTop />
     </>
   );
 }

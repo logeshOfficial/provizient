@@ -30,6 +30,10 @@ export function ScrollToTop() {
     });
   }, []);
 
+  if (!visible) {
+    return null;
+  }
+
   return (
     <button
       type="button"
@@ -37,16 +41,16 @@ export function ScrollToTop() {
       aria-label="Scroll to top"
       title="Back to top"
       className={cn(
-        "fixed bottom-20 left-4 z-40 flex h-12 w-12 items-center justify-center rounded-full",
+        "group flex h-12 w-12 items-center justify-center rounded-full",
         "border border-primary/20 bg-white/95 text-primary shadow-lg backdrop-blur-md",
-        "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:shadow-xl",
-        "md:bottom-6 md:left-6",
-        visible
-          ? "pointer-events-auto translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-4 opacity-0"
+        "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:shadow-xl"
       )}
     >
-      <ChevronUp size={22} strokeWidth={2.5} />
+      <ChevronUp
+        size={22}
+        strokeWidth={2.5}
+        className="transition-transform group-hover:-translate-y-0.5"
+      />
     </button>
   );
 }
