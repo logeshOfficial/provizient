@@ -6,8 +6,8 @@ export const SITE_CONFIG = {
     "ProVizient delivers industry-aligned AI training, custom software development, and enterprise consulting to help you learn, build, and grow.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://provizient.com",
   email: "info@ProVizient.com",
-  phone: "+91-9724390452",
-  phoneTel: "+91-9724390452",
+  phone: "972 439 0452",
+  phoneTel: "972 439 0452",
   address: "12205 Settlers Drive, Frisco, TX 75035",
 } as const;
 
