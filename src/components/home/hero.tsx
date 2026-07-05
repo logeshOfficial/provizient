@@ -4,30 +4,21 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
-import {
-  AgenticAIIcon,
-  GenerativeAIIcon,
-  CloudAIIcon,
-  AITrainingIcon,
-  ArrowRightIcon,
-  CheckCircleIcon,
-  Building2Icon,
-  GraduationCapIcon,
-} from "@/components/icons/provizient-icons";
+import { ArrowRightIcon, CheckCircleIcon, Building2Icon, GraduationCapIcon } from "@/components/icons/provizient-icons";
 
 const FLOATING_BADGES = [
   {
-    id: "agents",
-    label: "Agentic AI",
-    sub: "Multi-Agent Systems",
+    id: "rag",
+    label: "RAG & Search",
+    sub: "Knowledge Systems",
     color: "from-primary/90 to-primary",
     position: "top-4 left-3 sm:top-6 sm:left-4",
     delay: 0.6,
   },
   {
-    id: "genai",
-    label: "Generative AI",
-    sub: "LLMs · RAG · Chatbots",
+    id: "llm",
+    label: "LLM Apps",
+    sub: "GPT · Claude · Gemini",
     color: "from-accent/90 to-accent",
     position: "top-4 right-3 sm:top-6 sm:right-4",
     delay: 0.75,
@@ -41,9 +32,9 @@ const FLOATING_BADGES = [
     delay: 0.9,
   },
   {
-    id: "training",
-    label: "AI Training",
-    sub: "Hands-on Programs",
+    id: "mlops",
+    label: "MLOps & Cloud",
+    sub: "AWS · Azure · GCP",
     color: "from-slate-700/90 to-slate-800",
     position: "bottom-4 right-3 sm:bottom-6 sm:right-4",
     delay: 1.05,
@@ -146,25 +137,6 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Capability highlights */}
-            <div className="mt-7 pt-6 border-t border-card-border grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { Icon: AgenticAIIcon,    label: "Agentic AI",    sub: "Multi-Agent Systems" },
-                { Icon: GenerativeAIIcon, label: "Generative AI", sub: "LLMs · RAG · Chatbots" },
-                { Icon: CloudAIIcon,      label: "Cloud AI",      sub: "AWS · Azure · GCP" },
-                { Icon: AITrainingIcon,   label: "AI Training",   sub: "Hands-on Programs" },
-              ].map(({ Icon, label, sub }) => (
-                <div key={label} className="flex items-start gap-2.5">
-                  <div className="shrink-0">
-                    <Icon size={36} />
-                  </div>
-                  <div className="mt-0.5">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">{label}</p>
-                    <p className="text-[10px] text-muted mt-0.5 leading-tight">{sub}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* ── Visual Column — second on mobile, right on desktop ── */}
@@ -174,7 +146,7 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.1 }}
             className="relative flex justify-center items-center order-2"
           >
-            <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-none mx-auto">
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[420px] xl:max-w-[440px] mx-auto">
 
               {/* Glow ring */}
               <div className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-primary/15 via-accent/8 to-secondary/15 blur-2xl opacity-60 animate-pulse-glow pointer-events-none" />
@@ -203,16 +175,16 @@ export function Hero() {
                 {/* Image */}
                 <div className="relative">
                   <motion.div
-                    animate={{ y: [0, -6, 0] }}
+                    animate={{ y: [0, -4, 0] }}
                     transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <Image
                       src={assetPath("/hero-ai-brain.jpg")}
                       alt="AI-powered digital brain circuit — ProVizient Solutions"
-                      width={640}
-                      height={640}
+                      width={440}
+                      height={380}
                       priority
-                      className="w-full h-auto object-cover"
+                      className="w-full h-auto max-h-[280px] sm:max-h-[320px] object-cover object-top"
                     />
                   </motion.div>
                   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
@@ -253,8 +225,8 @@ export function Hero() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -right-5 top-1/3 z-20 hidden xl:flex flex-col items-center gap-1 bg-white rounded-2xl shadow-xl border border-card-border px-4 py-3"
               >
-                <span className="text-lg font-black text-primary leading-none">Gen AI</span>
-                <span className="text-[10px] text-muted font-semibold text-center">LLMs &amp;<br />RAG Systems</span>
+                <span className="text-lg font-black text-primary leading-none">Knowledge</span>
+                <span className="text-[10px] text-muted font-semibold text-center">RAG &amp;<br />Vector Search</span>
               </motion.div>
 
               <motion.div
@@ -262,8 +234,8 @@ export function Hero() {
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 className="absolute -left-5 bottom-1/3 z-20 hidden xl:flex flex-col items-center gap-1 bg-white rounded-2xl shadow-xl border border-card-border px-4 py-3"
               >
-                <span className="text-lg font-black text-secondary leading-none">Agentic</span>
-                <span className="text-[10px] text-muted font-semibold text-center">Multi-Agent<br />Systems</span>
+                <span className="text-lg font-black text-secondary leading-none">MLOps</span>
+                <span className="text-[10px] text-muted font-semibold text-center">Cloud AI<br />Deployment</span>
               </motion.div>
             </div>
           </motion.div>
