@@ -75,12 +75,12 @@ export function Header() {
           </div>
 
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden shrink-0 relative z-10 p-2 text-foreground"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileOpen}
           >
-            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </button>
         </div>
       </div>

@@ -57,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65 }}
-            className="flex flex-col justify-center order-2 lg:order-1"
+            className="flex flex-col justify-center order-1"
           >
             {/* Top Badge */}
             <motion.div
@@ -150,7 +150,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative flex justify-center items-center order-1 lg:order-2"
+            className="relative flex justify-center items-center order-2"
           >
             {/* Dark panel that frames the image — bridges the light/dark gap */}
             <div className="relative w-full max-w-lg lg:max-w-none">
