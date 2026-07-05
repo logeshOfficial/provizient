@@ -27,7 +27,7 @@ export function AISolutionsShowcase() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {AI_SOLUTIONS.map((solution, i) => {
-            const Icon = solutionIcons[i] || Brain;
+            const Icon = solutionIcons[i] || TrnAIMLFoundationsIcon;
             return (
               <motion.div
                 key={solution.title}

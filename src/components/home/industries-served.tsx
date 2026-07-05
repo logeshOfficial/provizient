@@ -47,7 +47,7 @@ export function IndustriesServed() {
         {/* Responsive grid — 5 columns on lg, 4 on md, 3 on sm, 2 on mobile */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {INDUSTRIES.map((industry, i) => {
-            const IconComponent = ICON_MAP[industry.icon as keyof typeof ICON_MAP] || Laptop;
+            const IconComponent = ICON_MAP[industry.icon as keyof typeof ICON_MAP] || IndTechnologyIcon;
             return (
               <motion.div
                 key={industry.title}

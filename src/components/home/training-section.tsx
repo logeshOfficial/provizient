@@ -75,7 +75,7 @@ export function TrainingSection() {
         {/* Training Programs Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {TRAINING_PROGRAMS.map((program, i) => {
-            const Icon = TRAINING_ICONS[program.icon] || Brain;
+            const Icon = TRAINING_ICONS[program.icon] || TrnAIMLFoundationsIcon;
             return (
               <motion.div
                 key={program.id}

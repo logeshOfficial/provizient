@@ -40,7 +40,7 @@ export function ServicesShowcase() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
-            const Icon = iconMap[service.icon] || Compass;
+            const Icon = iconMap[service.icon] || SvcAIMLIcon;
             return (
               <motion.div
                 key={service.id}
