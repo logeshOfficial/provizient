@@ -5,6 +5,10 @@ import {
   ShoppingCart,
   Zap,
   Building2,
+  ShieldCheck,
+  GraduationCap,
+  Truck,
+  Laptop,
 } from "lucide-react";
 import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
 import { IndustriesVisual } from "@/components/marketing/marketing-hero-visuals";
@@ -13,57 +17,85 @@ import { generateSEO } from "@/lib/seo";
 import { INDUSTRIES } from "@/lib/constants";
 
 export const metadata = generateSEO({
-  title: "Industries",
+  title: "Industries Served — Provizient Solutions",
   description:
-    "ProVizient serves financial services, healthcare, manufacturing, retail, energy, and government with tailored AI solutions.",
+    "Provizient Solutions serves manufacturing, healthcare, financial services, retail, insurance, education, logistics, energy, technology, and government with tailored AI solutions.",
   path: "/industries",
 });
 
 const iconMap = {
-  Landmark,
-  HeartPulse,
   Factory,
+  HeartPulse,
+  Landmark,
   ShoppingCart,
-  Zap,
+  ShieldCheck,
+  GraduationCap,
   Building2,
+  Zap,
+  Truck,
+  Laptop,
 };
 
 const INDUSTRY_DETAILS: Record<string, string[]> = {
-  "Financial Services": [
-    "Fraud detection & prevention",
-    "Algorithmic trading systems",
-    "Credit risk modeling",
-    "Regulatory compliance automation",
-  ],
-  "Healthcare & Life Sciences": [
-    "Clinical decision support",
-    "Drug discovery acceleration",
-    "Medical imaging analysis",
-    "Patient flow optimization",
-  ],
   Manufacturing: [
-    "Predictive maintenance",
-    "Quality control automation",
-    "Supply chain optimization",
-    "Digital twin development",
+    "Predictive maintenance & asset monitoring",
+    "Automated quality control & defect detection",
+    "Supply chain planning & route optimization",
+    "Digital twin modeling & workflow efficiency",
   ],
-  "Retail & E-Commerce": [
-    "Demand forecasting",
-    "Personalization engines",
-    "Inventory optimization",
-    "Visual search & recommendations",
+  Healthcare: [
+    "Clinical decision support systems",
+    "Medical imaging and diagnostic AI models",
+    "Healthcare administrative workflow automation",
+    "Patient flow and resource capacity optimization",
+  ],
+  "Financial Services": [
+    "Real-time ML fraud detection & prevention",
+    "Automated regulatory compliance (RegTech)",
+    "Credit scoring and risk modeling",
+    "Algorithmic trading and asset management systems",
+  ],
+  Retail: [
+    "Customer demand forecasting & inventory management",
+    "Personalized recommendation engines",
+    "Pricing optimization & discount analytics",
+    "Visual search & product matching engines",
+  ],
+  Insurance: [
+    "Automated claims processing and ingestion",
+    "AI-driven risk scoring & underwriting support",
+    "Customer churn prediction & policy matching",
+    "Claims leakage and anomalies detection",
+  ],
+  Education: [
+    "Adaptive and personalized learning platforms",
+    "Student performance tracking & analytics dashboards",
+    "AI tutoring assistants & conversational guides",
+    "Educational administrative workflow automations",
+  ],
+  Government: [
+    "Citizen service chatbots and portal automations",
+    "Public policy data impact and sentiment analysis",
+    "Optimal public resource allocation dashboards",
+    "Public safety analytics & structural monitoring",
   ],
   "Energy & Utilities": [
-    "Grid optimization",
-    "Asset performance management",
-    "Renewable energy forecasting",
-    "Outage prediction",
+    "Smart grid load and distribution optimization",
+    "Renewable energy generation forecasting",
+    "Utility infrastructure health & anomaly alerts",
+    "Sustainability reporting and emissions analytics",
   ],
-  "Government & Public Sector": [
-    "Citizen service automation",
-    "Policy impact analysis",
-    "Resource allocation optimization",
-    "Public safety analytics",
+  Logistics: [
+    "Dynamic routing and delivery schedule optimization",
+    "Fleet performance monitoring & predictive alerts",
+    "Warehouse inventory counts & robot coordination",
+    "Global freight capacity & demand forecasting",
+  ],
+  Technology: [
+    "AI code generation tools & IDE integrations",
+    "Scalable MLOps pipelines and serving infrastructures",
+    "Custom cloud-native web & enterprise application buildout",
+    "Multi-agent orchestrations & Model Context Protocol (MCP) tooling",
   ],
 };
 
@@ -71,7 +103,7 @@ export default function IndustriesPage() {
   return (
     <>
       <MarketingPageHero
-        badge="Industries"
+        badge="Industries We Serve"
         title="Industry-Specific"
         titleHighlight="AI Expertise"
         description="Deep domain knowledge across regulated and high-impact sectors, delivering AI solutions that meet industry-specific compliance and performance requirements."
@@ -80,27 +112,27 @@ export default function IndustriesPage() {
         visual={<IndustriesVisual />}
       />
 
-      <section id="industries" className="scroll-mt-24 py-20">
+      <section id="industries" className="scroll-mt-24 py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-8">
           {INDUSTRIES.map((industry) => {
             const Icon = iconMap[industry.icon as keyof typeof iconMap] || Building2;
             const details = INDUSTRY_DETAILS[industry.title] || [];
             return (
-              <div key={industry.title} className="glass-card p-8">
+              <div key={industry.title} className="glass-card p-8 hover:border-primary/20 transition-all">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
                     <Icon size={28} className="text-primary" />
                   </div>
                   <div>
-                    <h2 className="font-display text-xl font-bold">{industry.title}</h2>
+                    <h2 className="font-display text-xl font-bold text-foreground">{industry.title}</h2>
                     <p className="text-sm text-muted">{industry.description}</p>
                   </div>
                 </div>
-                <ul className="space-y-2 mt-6">
+                <ul className="space-y-2.5 mt-6 border-t border-slate-900/5 pt-4">
                   {details.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-muted">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      {item}
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>

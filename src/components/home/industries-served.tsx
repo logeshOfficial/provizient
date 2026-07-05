@@ -3,65 +3,73 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Landmark,
-  HeartPulse,
   Factory,
+  HeartPulse,
+  Landmark,
   ShoppingCart,
-  Zap,
+  ShieldCheck,
+  GraduationCap,
   Building2,
+  Zap,
+  Truck,
+  Laptop,
 } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { INDUSTRIES } from "@/lib/constants";
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Landmark,
-  HeartPulse,
+const ICON_MAP = {
   Factory,
+  HeartPulse,
+  Landmark,
   ShoppingCart,
-  Zap,
+  ShieldCheck,
+  GraduationCap,
   Building2,
+  Zap,
+  Truck,
+  Laptop,
 };
 
 export function IndustriesServed() {
   return (
-    <section className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none" />
-      <div className="container mx-auto px-4 lg:px-8 relative">
-        <SectionHeading
-          badge="Industries"
-          title="Industries We Serve"
-          description="Deep domain expertise across regulated and high-impact sectors, delivering AI solutions that meet industry-specific requirements."
-        />
+    <section className="py-16 bg-white border-t border-card-border">
+      <div className="container mx-auto px-4 lg:px-8">
+        
+        {/* Section Heading */}
+        <div className="text-center mb-10">
+          <h2 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-muted">
+            INDUSTRIES WE SERVE
+          </h2>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Horizontal Row of Industries */}
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           {INDUSTRIES.map((industry, i) => {
-            const Icon = iconMap[industry.icon] || Building2;
+            const IconComponent = ICON_MAP[industry.icon as keyof typeof ICON_MAP] || Laptop;
             return (
               <motion.div
                 key={industry.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.3, delay: i * 0.04 }}
+                className="flex flex-col items-center group"
               >
-                <Link href="/industries" className="block">
-                  <div className="glass-card p-6 text-center group cursor-pointer h-full">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/10 transition-colors">
-                      <Icon
-                        size={28}
-                        className="text-muted group-hover:text-primary transition-colors"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {industry.title}
-                    </h3>
-                    <p className="text-sm text-muted">{industry.description}</p>
+                <Link href="/industries" className="flex flex-col items-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-surface border border-card-border flex items-center justify-center mb-2 group-hover:bg-primary/5 group-hover:border-primary/20 transition-all">
+                    <IconComponent
+                      size={20}
+                      className="text-muted group-hover:text-primary transition-colors"
+                    />
                   </div>
+                  <span className="text-[10px] sm:text-xs font-bold text-muted group-hover:text-foreground transition-colors text-center max-w-[90px] leading-tight">
+                    {industry.title}
+                  </span>
                 </Link>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

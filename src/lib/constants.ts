@@ -1,124 +1,262 @@
 export const SITE_CONFIG = {
-  name: "ProVizient",
-  tagline: "Empowering Careers. Elevating Futures.",
-  subtitle: "AI Training | Software Development | Consulting",
+  name: "Provizient Solutions",
+  tagline: "Empowering Innovation Through Artificial Intelligence",
+  subtitle: "AI • ML • Generative AI • Agentic AI",
   description:
-    "ProVizient delivers industry-aligned AI training, custom software development, and enterprise consulting to help you learn, build, and grow.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://provizient.com",
-  email: "info@ProVizient.com",
-  phone: "972 439 0452",
-  phoneTel: "972 439 0452",
-  address: "12205 Settlers Drive, Frisco, TX 75035",
+    "Provizient Solutions is an AI-first technology consulting and training company specializing in Artificial Intelligence (AI), Machine Learning (ML), Generative AI, and Agentic AI. We help organizations modernize their businesses through intelligent software solutions while empowering professionals with industry-focused training programs.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.provizient.com",
+  email: "info@provizient.com",
+  phone: "+1 (469) 123-4567",
+  phoneTel: "+14691234567",
+  address: "Dallas–Fort Worth, Texas, USA",
 } as const;
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/workbench", label: "Courses" },
   { href: "/services", label: "For Business" },
-  { href: "/about", label: "Why ProVizient" },
+  { href: "/about", label: "Why Provizient" },
   { href: "/blog", label: "Resources" },
 ] as const;
 
+// 6 Core Services as shown in Screenshot 3
 export const DEV_SERVICES = [
   {
-    id: "custom-software",
-    title: "Custom Software Development",
-    description:
-      "End-to-end development of scalable, secure applications tailored to your business workflows and goals.",
-    icon: "Code2",
+    id: "ai-ml-solutions",
+    title: "AI & ML Solutions",
+    description: "Deploy intelligent models tailored to your business data.",
+    icon: "Brain",
     color: "blue",
+    subitems: [
+      "AI Strategy & Roadmap",
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "NLP Solutions"
+    ]
   },
   {
-    id: "product-engineering",
-    title: "Product Engineering",
-    description:
-      "From concept to launch — we engineer digital products that users love and businesses rely on.",
-    icon: "PieChart",
-    color: "purple",
-  },
-  {
-    id: "cloud",
-    title: "Cloud Solutions",
-    description:
-      "Migrate, modernize, and optimize your infrastructure on AWS, Azure, and Google Cloud.",
-    icon: "Cloud",
-    color: "green",
-  },
-  {
-    id: "devops",
-    title: "DevOps & Automation",
-    description:
-      "CI/CD pipelines, infrastructure as code, and automation that accelerates delivery.",
-    icon: "Settings",
-    color: "orange",
-  },
-  {
-    id: "qa",
-    title: "Quality Assurance",
-    description:
-      "Comprehensive testing strategies ensuring reliability, performance, and security.",
-    icon: "ShieldCheck",
-    color: "slate",
-  },
-  {
-    id: "consulting",
-    title: "IT Consulting",
-    description:
-      "Strategic technology guidance to align IT investments with business outcomes.",
-    icon: "Users",
-    color: "blue",
-  },
-] as const;
-
-export const TRAINING_PROGRAMS = [
-  {
-    id: "genai",
-    title: "GenAI",
-    description:
-      "Learn Generative AI concepts and build real-world applications using leading LLMs and tools.",
+    id: "generative-ai",
+    title: "Generative AI",
+    description: "Harness LLMs to automate content creation and intelligence.",
     icon: "Sparkles",
     color: "purple",
+    subitems: [
+      "LLMs & Chatbots",
+      "RAG & Knowledge AI",
+      "Prompt Engineering",
+      "AI Assistants",
+      "Document Intelligence"
+    ]
   },
   {
     id: "agentic-ai",
     title: "Agentic AI",
-    description:
-      "Build intelligent AI agents that plan, reason, and act autonomously to solve complex problems.",
+    description: "Build autonomous agents that plan, reason, and execute.",
     icon: "Bot",
     color: "blue",
+    subitems: [
+      "AI Agents",
+      "Multi-Agent Systems",
+      "Agent Orchestration",
+      "MCP & A2A Integration",
+      "Autonomous Workflows"
+    ]
   },
   {
-    id: "rag",
-    title: "RAG",
-    description:
-      "Master Retrieval Augmented Generation to build smarter, context-aware AI applications.",
-    icon: "Search",
-    color: "green",
-  },
-  {
-    id: "ai-ml",
-    title: "AI/ML",
-    description:
-      "Learn machine learning basics to advanced models and build solutions that make an impact.",
-    icon: "Brain",
-    color: "yellow",
-  },
-  {
-    id: "python",
-    title: "Python",
-    description:
-      "From fundamentals to advanced programming — build strong coding skills for any career.",
-    icon: "Terminal",
-    color: "blue",
-  },
-  {
-    id: "data-analyst",
-    title: "Data Analyst",
-    description:
-      "Analyze data, uncover insights, and create impactful dashboards to drive better decisions.",
+    id: "data-analytics",
+    title: "Data & Analytics",
+    description: "Power your AI applications with robust data pipelines.",
     icon: "BarChart3",
     color: "orange",
+    subitems: [
+      "Data Engineering",
+      "Data Pipelines",
+      "Analytics & BI",
+      "Data Warehousing",
+      "Predictive Analytics"
+    ]
   },
+  {
+    id: "software-development",
+    title: "Software Development",
+    description: "Custom full-stack software built for scale and performance.",
+    icon: "Code2",
+    color: "green",
+    subitems: [
+      "Custom Applications",
+      "Web & Mobile Apps",
+      "API Development",
+      "Cloud-Native Apps",
+      "System Integration"
+    ]
+  },
+  {
+    id: "cloud-ai",
+    title: "Cloud AI",
+    description: "Scalable, secure cloud infrastructure for model deployment.",
+    icon: "Cloud",
+    color: "slate",
+    subitems: [
+      "AWS AI Services",
+      "Azure AI Services",
+      "Google Cloud AI",
+      "Bedrock & OpenAI",
+      "Cloud Architecture"
+    ]
+  }
+] as const;
+
+// 9 Training tracks requested by the user
+export const TRAINING_PROGRAMS = [
+  {
+    id: "ai-foundations",
+    title: "Artificial Intelligence Foundations",
+    description: "Build a strong foundation in classical AI, Machine Learning, and Deep Learning.",
+    icon: "Brain",
+    color: "yellow",
+    topics: [
+      "Introduction to AI",
+      "Machine Learning Fundamentals",
+      "Deep Learning",
+      "Neural Networks",
+      "Computer Vision",
+      "Natural Language Processing"
+    ]
+  },
+  {
+    id: "generative-ai-training",
+    title: "Generative AI",
+    description: "Master Large Language Models (LLMs), prompt engineering, and fine-tuning techniques.",
+    icon: "Sparkles",
+    color: "purple",
+    topics: [
+      "Large Language Models (LLMs)",
+      "Transformers",
+      "Prompt Engineering",
+      "Fine-Tuning",
+      "AI Safety",
+      "Model Evaluation"
+    ]
+  },
+  {
+    id: "agentic-ai-training",
+    title: "Agentic AI",
+    description: "Design and build autonomous AI agents, multi-agent orchestrations, and planning frameworks.",
+    icon: "Bot",
+    color: "blue",
+    topics: [
+      "AI Agents",
+      "ReAct Framework",
+      "Agent Design Patterns",
+      "Multi-Agent Systems",
+      "Agent Memory",
+      "Planning & Reasoning",
+      "Autonomous AI Applications"
+    ]
+  },
+  {
+    id: "rag-training",
+    title: "Retrieval-Augmented Generation (RAG)",
+    description: "Learn RAG architectures, GraphRAG, embedding models, and vector database optimization.",
+    icon: "Search",
+    color: "green",
+    topics: [
+      "RAG Architecture",
+      "GraphRAG",
+      "Knowledge Graphs",
+      "Embedding Models",
+      "Vector Databases",
+      "Semantic Search",
+      "Hybrid Search"
+    ]
+  },
+  {
+    id: "ai-frameworks",
+    title: "AI Development Frameworks",
+    description: "Build applications using modern orchestration tools like LangChain, CrewAI, and AutoGen.",
+    icon: "Code2",
+    color: "blue",
+    topics: [
+      "LangChain",
+      "LangGraph",
+      "Microsoft Agent Framework",
+      "Semantic Kernel",
+      "CrewAI",
+      "AutoGen",
+      "PydanticAI"
+    ]
+  },
+  {
+    id: "ai-protocols",
+    title: "AI Communication Protocols",
+    description: "Master the Model Context Protocol (MCP) and agent-to-agent (A2A) orchestration protocols.",
+    icon: "Terminal",
+    color: "slate",
+    topics: [
+      "Model Context Protocol (MCP)",
+      "Agent-to-Agent (A2A)",
+      "AgentSkills",
+      "AI Tool Integration",
+      "AI Workflow Orchestration"
+    ]
+  },
+  {
+    id: "cloud-ai-platforms",
+    title: "Cloud AI Platforms",
+    description: "Deploy production models on Bedrock, Vertex AI, and Azure OpenAI.",
+    icon: "Cloud",
+    color: "orange",
+    topics: [
+      "Amazon Bedrock",
+      "Azure AI Foundry",
+      "Azure OpenAI",
+      "Google Vertex AI",
+      "OpenAI APIs"
+    ]
+  },
+  {
+    id: "programming-ai",
+    title: "Programming",
+    description: "Master the core programming languages and toolchains required to develop AI applications.",
+    icon: "Terminal",
+    color: "blue",
+    topics: [
+      "Python for AI",
+      "FastAPI",
+      "REST APIs",
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "SQL",
+      "NoSQL"
+    ]
+  },
+  {
+    id: "data-engineering-ai",
+    title: "Data Engineering",
+    description: "Design and implement reliable, scalable data pipelines to power enterprise AI models.",
+    icon: "BarChart3",
+    color: "orange",
+    topics: [
+      "ETL Pipelines",
+      "Apache Spark",
+      "Data Warehousing",
+      "Data Modeling",
+      "Data Governance"
+    ]
+  }
+] as const;
+
+export const HANDS_ON_PROJECTS = [
+  { title: "Enterprise AI Chatbot", description: "Secure, context-aware chatbot integrated with corporate directories." },
+  { title: "RAG Applications", description: "Document search and Q&A engine powered by vector indexing & semantic search." },
+  { title: "Multi-Agent Systems", description: "Collaborative agent clusters solving complex software engineering tasks." },
+  { title: "AI Document Assistant", description: "Automated parsing, verification, and summary of complex PDF reports." },
+  { title: "AI Coding Assistant", description: "Tailored code generator and refactor engine for specific codebases." },
+  { title: "Voice AI", description: "Low-latency conversational voice agent for customer service operations." },
+  { title: "AI Automation Platform", description: "Autonomous workflow system triggered by webhooks or natural language." },
+  { title: "Production AI Deployment", description: "Containerized, autoscaling model serving on AWS/Azure Kubernetes." }
 ] as const;
 
 export const DEV_TRUST_ITEMS = [
@@ -140,35 +278,50 @@ export const WORKBENCH_COURSE_META: Record<
   string,
   { duration: string; level: string; topics: string[] }
 > = {
-  genai: {
+  "ai-foundations": {
     duration: "6–8 weeks",
-    level: "Intermediate",
-    topics: ["LLM fundamentals", "Prompt engineering", "Real-world apps"],
+    level: "Beginner",
+    topics: ["Introduction to AI", "Machine Learning", "Neural Networks"],
   },
-  "agentic-ai": {
-    duration: "8 weeks",
-    level: "Advanced",
-    topics: ["Agent architecture", "Tool use & planning", "Autonomous workflows"],
-  },
-  rag: {
+  "generative-ai-training": {
     duration: "6 weeks",
     level: "Intermediate",
-    topics: ["Vector databases", "Embeddings", "Context-aware AI"],
+    topics: ["LLMs & Transformers", "Prompt Engineering", "Fine-Tuning"],
   },
-  "ai-ml": {
-    duration: "10 weeks",
-    level: "Beginner → Advanced",
-    topics: ["Supervised learning", "Deep learning", "Model deployment"],
-  },
-  python: {
+  "agentic-ai-training": {
     duration: "8 weeks",
-    level: "All levels",
-    topics: ["Core syntax", "APIs & automation", "Data scripting"],
+    level: "Advanced",
+    topics: ["Agent design patterns", "Multi-Agent systems", "Autonomous workflows"],
   },
-  "data-analyst": {
+  "rag-training": {
+    duration: "6 weeks",
+    level: "Intermediate",
+    topics: ["Vector databases", "GraphRAG", "Hybrid Search"],
+  },
+  "ai-frameworks": {
+    duration: "6 weeks",
+    level: "Intermediate",
+    topics: ["LangChain & LangGraph", "CrewAI & AutoGen", "PydanticAI"],
+  },
+  "ai-protocols": {
+    duration: "4 weeks",
+    level: "Advanced",
+    topics: ["Model Context Protocol", "A2A Protocol", "Tool Integration"],
+  },
+  "cloud-ai-platforms": {
+    duration: "6 weeks",
+    level: "Intermediate",
+    topics: ["Amazon Bedrock", "Azure OpenAI", "Vertex AI"],
+  },
+  "programming-ai": {
     duration: "8 weeks",
-    level: "Beginner",
-    topics: ["SQL & analytics", "Dashboards", "Business insights"],
+    level: "Beginner → Intermediate",
+    topics: ["Python for AI", "FastAPI & REST APIs", "Docker & Kubernetes"],
+  },
+  "data-engineering-ai": {
+    duration: "8 weeks",
+    level: "Intermediate",
+    topics: ["ETL Pipelines", "Apache Spark", "Data Modeling"],
   },
 };
 
@@ -176,35 +329,35 @@ export const WORKBENCH_CONSULTING_META: Record<
   string,
   { delivery: string; outcome: string; highlights: string[] }
 > = {
-  "custom-software": {
-    delivery: "Agile sprints",
-    outcome: "Scalable apps",
-    highlights: ["Full-stack delivery", "Cloud-native", "Security-first"],
+  "ai-ml-solutions": {
+    delivery: "Consulting & Delivery",
+    outcome: "Custom Models",
+    highlights: ["AI Strategy", "MLOps Pipelines", "Vision & NLP Models"],
   },
-  "product-engineering": {
-    delivery: "End-to-end",
-    outcome: "Market-ready products",
-    highlights: ["MVP to scale", "UX-focused", "Continuous iteration"],
+  "generative-ai": {
+    delivery: "Advisory & Build",
+    outcome: "Production GenAI",
+    highlights: ["LLM Orchestration", "Secure RAG Systems", "AI Assistants"],
   },
-  cloud: {
-    delivery: "Migration & ops",
-    outcome: "Modern infrastructure",
-    highlights: ["AWS · Azure · GCP", "Cost optimization", "High availability"],
+  "agentic-ai": {
+    delivery: "Architecture & POC",
+    outcome: "Autonomous Agents",
+    highlights: ["Multi-Agent Systems", "MCP Tool Harness", "Autonomous Workflows"],
   },
-  devops: {
-    delivery: "CI/CD pipelines",
-    outcome: "Faster releases",
-    highlights: ["IaC automation", "Monitoring", "Zero-downtime deploys"],
+  "data-analytics": {
+    delivery: "Engineering",
+    outcome: "Clean Data Warehouse",
+    highlights: ["ETL/ELT Pipelines", "Modern Data Lakes", "Predictive Analytics"],
   },
-  qa: {
-    delivery: "Test automation",
-    outcome: "Reliable software",
-    highlights: ["Performance testing", "Security audits", "Regression suites"],
+  "software-development": {
+    delivery: "Full-Stack Dev",
+    outcome: "Scalable Application",
+    highlights: ["Custom Web/Mobile Apps", "Microservices Architecture", "API Delivery"],
   },
-  consulting: {
-    delivery: "Strategic advisory",
-    outcome: "Aligned IT roadmap",
-    highlights: ["Architecture review", "Tech stack planning", "Team enablement"],
+  "cloud-ai": {
+    delivery: "Ops & Migration",
+    outcome: "Optimized Cloud Ops",
+    highlights: ["AWS, Azure & GCP", "Security-first Cloud", "Cost Optimization"],
   },
 };
 
@@ -252,36 +405,57 @@ export const HERO_SERVICES_ORBIT = [
 export const SERVICES = DEV_SERVICES;
 export const AI_SOLUTIONS = TRAINING_PROGRAMS;
 
+// 10 Industries We Serve requested by the user
 export const INDUSTRIES = [
   {
-    title: "Financial Services",
-    description: "Risk modeling, fraud detection, and digital transformation.",
-    icon: "Landmark",
-  },
-  {
-    title: "Healthcare & Life Sciences",
-    description: "Clinical AI, diagnostics, and patient care optimization.",
-    icon: "HeartPulse",
-  },
-  {
     title: "Manufacturing",
-    description: "Predictive maintenance, quality control, and supply chain.",
+    description: "Predictive maintenance, quality control automation, and supply chain optimizations.",
     icon: "Factory",
   },
   {
-    title: "Retail & E-Commerce",
-    description: "Personalization, demand forecasting, and inventory.",
+    title: "Healthcare",
+    description: "Clinical AI decision support, medical imaging analysis, and care delivery operations.",
+    icon: "HeartPulse",
+  },
+  {
+    title: "Financial Services",
+    description: "Risk modeling, automated compliance, and real-time fraud detection systems.",
+    icon: "Landmark",
+  },
+  {
+    title: "Retail",
+    description: "Demand forecasting, personalization engines, and inventory optimization.",
     icon: "ShoppingCart",
   },
   {
+    title: "Insurance",
+    description: "Automated underwriting, claims processing AI, and risk assessment systems.",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Education",
+    description: "Personalized learning platforms, student analytics, and admin workflow automations.",
+    icon: "GraduationCap",
+  },
+  {
+    title: "Government",
+    description: "Citizen service automation, secure policy analysis, and resource optimization.",
+    icon: "Building2",
+  },
+  {
     title: "Energy & Utilities",
-    description: "Grid optimization and sustainability analytics.",
+    description: "Smart grid analytics, asset performance tracking, and load forecasting.",
     icon: "Zap",
   },
   {
-    title: "Government & Public Sector",
-    description: "Citizen services automation and policy analysis.",
-    icon: "Building2",
+    title: "Logistics",
+    description: "Route optimization, fleet management AI, and autonomous warehouse coordination.",
+    icon: "Truck",
+  },
+  {
+    title: "Technology",
+    description: "Enterprise software modernization, AI agent integrations, and scalable cloud MLOps.",
+    icon: "Laptop",
   },
 ] as const;
 

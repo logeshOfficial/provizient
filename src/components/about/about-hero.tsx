@@ -22,24 +22,22 @@ export function AboutHero() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center text-center lg:text-left"
           >
-            <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-primary">
-              About ProVizient
+            <span className="mb-4 inline-block self-center lg:self-start rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-primary">
+              About Us
             </span>
             <h1 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Pioneering
-              <span className="block gradient-text">Enterprise AI Excellence</span>
+              About
+              <span className="block gradient-text">Provizient Solutions</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted lg:mx-0">
-              Founded by AI researchers and industry veterans, ProVizient bridges
-              the gap between cutting-edge artificial intelligence and real-world
-              business impact.
+              Provizient Solutions is a technology consulting and education company dedicated to helping businesses and professionals succeed in the era of Artificial Intelligence.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <Link
-                href="#mission"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-foreground/90"
+                href="#mission-vision"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/95"
               >
-                Our Mission
+                Our Mission &amp; Vision
                 <ArrowRight size={18} />
               </Link>
               <Link

@@ -21,6 +21,7 @@ import { ArrowRight } from "lucide-react";
 import {
   TRAINING_PROGRAMS,
   DEV_SERVICES,
+  HANDS_ON_PROJECTS,
   WORKBENCH_COURSE_META,
   WORKBENCH_CONSULTING_META,
 } from "@/lib/constants";
@@ -78,7 +79,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
           <p className="mx-auto mt-4 max-w-2xl text-muted">
             {activeTab === "training"
               ? "Hands-on courses in GenAI, Agentic AI, RAG, Python, and more — built for real-world impact."
-              : "End-to-end software development and consulting to design, build, and scale your digital products."}
+              : "End-to-End software development and consulting to design, build, and scale your digital products."}
           </p>
 
           <div className="mt-8 inline-flex rounded-xl border border-card-border bg-surface p-1">
@@ -117,63 +118,88 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.3 }}
-              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+              className="space-y-16"
             >
-              {TRAINING_PROGRAMS.map((program, i) => {
-                const Icon = TRAINING_ICONS[program.icon] || Brain;
-                const meta = WORKBENCH_COURSE_META[program.id];
-                return (
-                  <motion.article
-                    key={program.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.06 }}
-                    className={cn(
-                      "group flex flex-col rounded-2xl border border-card-border p-6 transition-all hover:-translate-y-1 hover:shadow-lg",
-                      COLOR_MAP[program.color]
-                    )}
-                  >
-                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm">
-                      <Icon size={28} className="text-primary" />
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-foreground">
-                      {program.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                      {program.description}
-                    </p>
-                    {meta && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
-                          {meta.duration}
-                        </span>
-                        <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
-                          {meta.level}
-                        </span>
-                      </div>
-                    )}
-                    {meta?.topics && (
-                      <ul className="mt-4 space-y-1.5 border-t border-foreground/5 pt-4">
-                        {meta.topics.map((topic) => (
-                          <li
-                            key={topic}
-                            className="flex items-center gap-2 text-xs text-muted"
-                          >
-                            <span className="h-1 w-1 rounded-full bg-primary" />
-                            {topic}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    <Link
-                      href="/contact"
-                      className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100"
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {TRAINING_PROGRAMS.map((program, i) => {
+                  const Icon = TRAINING_ICONS[program.icon] || Brain;
+                  const meta = WORKBENCH_COURSE_META[program.id];
+                  return (
+                    <motion.article
+                      key={program.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.06 }}
+                      className={cn(
+                        "group flex flex-col rounded-2xl border border-card-border p-6 transition-all hover:-translate-y-1 hover:shadow-lg",
+                        COLOR_MAP[program.color]
+                      )}
                     >
-                      Enroll now <ArrowRight size={14} />
-                    </Link>
-                  </motion.article>
-                );
-              })}
+                      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm">
+                        <Icon size={28} className="text-primary" />
+                      </div>
+                      <h3 className="font-display text-xl font-bold text-foreground">
+                        {program.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                        {program.description}
+                      </p>
+                      {meta && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
+                            {meta.duration}
+                          </span>
+                          <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
+                            {meta.level}
+                          </span>
+                        </div>
+                      )}
+                      {program.topics && (
+                        <ul className="mt-4 space-y-1.5 border-t border-foreground/5 pt-4">
+                          {program.topics.map((topic) => (
+                            <li
+                              key={topic}
+                              className="flex items-center gap-2 text-xs text-muted"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                              {topic}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      <Link
+                        href="/contact"
+                        className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                      >
+                        Enroll now <ArrowRight size={14} />
+                      </Link>
+                    </motion.article>
+                  );
+                })}
+              </div>
+
+              {/* Capstone Projects Section */}
+              <div className="border-t border-card-border pt-16">
+                <div className="text-center mb-10">
+                  <h3 className="font-display text-2xl font-bold text-foreground">
+                    Hands-on Capstone Projects
+                  </h3>
+                  <p className="text-sm text-muted mt-2 max-w-2xl mx-auto">
+                    Every training program includes real-world projects to build a robust portfolio.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {HANDS_ON_PROJECTS.map((project) => (
+                    <div
+                      key={project.title}
+                      className="p-5 rounded-2xl border border-card-border bg-surface text-center hover:border-primary/20 transition-all shadow-sm hover:shadow"
+                    >
+                      <h4 className="font-bold text-foreground text-sm mb-2">{project.title}</h4>
+                      <p className="text-xs text-muted leading-relaxed">{project.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ) : (
             <motion.div
