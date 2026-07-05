@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
     "Provizient Solutions is an AI-first technology consulting and training company specializing in Artificial Intelligence (AI), Machine Learning (ML), Generative AI, and Agentic AI. We help organizations modernize their businesses through intelligent software solutions while empowering professionals with industry-focused training programs.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.provizient.com",
   email: "info@provizient.com",
-  phone: "+1 (469) 123-4567",
+  phone: "+1 (214) 907-0925",
   phoneTel: "+14691234567",
   address: "Dallas–Fort Worth, Texas, USA",
 } as const;

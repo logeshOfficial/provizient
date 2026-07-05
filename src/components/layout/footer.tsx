@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
-import { assetPath } from "@/lib/utils";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -37,14 +35,13 @@ export function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-200 border-t border-slate-900" role="contentinfo">
       <div className="container mx-auto px-4 lg:px-8 py-16">
-        
+
         {/* Main Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          
+
           {/* Logo & Description Column */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-block">
-              {/* Fallback to text logo if image is not loaded, but keep image element */}
               <div className="flex flex-col">
                 <span className="font-display text-lg sm:text-xl font-black tracking-[0.1em] text-white">
                   PROVIZIENT
@@ -57,51 +54,51 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               AI, ML, Generative and Agentic AI solutions and training to help businesses innovate and professionals grow.
             </p>
-            
-            {/* Social Media Links */}
+
+            {/* Social Media Links — all inline SVGs to avoid lucide-react version gaps */}
             <div className="flex gap-4">
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://linkedin.com/company/provizient"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
 
               {/* Twitter / X */}
               <a
-                href="#"
+                href="https://twitter.com/provizient"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
-                aria-label="Twitter"
+                aria-label="Twitter / X"
               >
                 <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
 
               {/* YouTube */}
               <a
-                href="#"
+                href="https://youtube.com/@provizient"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>
 
               {/* GitHub */}
               <a
-                href="#"
+                href="https://github.com/logeshOfficial/provizient"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -120,10 +117,7 @@ export function Footer() {
             <ul className="space-y-2">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-primary transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -137,10 +131,7 @@ export function Footer() {
             <ul className="space-y-2">
               {SERVICES_LINKS.map((link) => (
                 <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-primary transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -154,10 +145,7 @@ export function Footer() {
             <ul className="space-y-2">
               {TRAINING_LINKS.map((link) => (
                 <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-primary transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -193,11 +181,10 @@ export function Footer() {
               </li>
             </ul>
 
-            {/* Solid button (primary theme color instead of yellow) */}
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-white shadow transition-all hover:bg-primary/95 hover:translate-y-[-1px]"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-white shadow transition-all hover:bg-primary/90 hover:translate-y-[-1px]"
               >
                 Get in Touch
                 <ArrowRight size={12} />
@@ -209,9 +196,7 @@ export function Footer() {
 
         {/* Bottom copyright bar */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>
-            &copy; 2026 {SITE_CONFIG.name}. All Rights Reserved.
-          </p>
+          <p>&copy; 2026 {SITE_CONFIG.name}. All Rights Reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">
               Privacy Policy

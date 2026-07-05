@@ -86,7 +86,7 @@ export default function ContactPage() {
                       </li>
                       <li className="flex items-center gap-2">
                         <Phone size={16} className="text-primary shrink-0" />
-                        <span>+1 (469) 123-4567</span>
+                        <span>+1 (214) 907-0925</span>
                       </li>
                       <li>
                         <a href="https://www.provizient.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
@@ -115,7 +115,7 @@ export default function ContactPage() {
                       </li>
                       <li className="flex items-center gap-2">
                         <Phone size={16} className="text-primary shrink-0" />
-                        <span>+1 (469) 123-4567</span>
+                        <span>+1 (214) 907-0925</span>
                       </li>
                       <li>
                         <a href="https://www.provizient.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
