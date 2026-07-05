@@ -43,7 +43,7 @@ const FLOATING_BADGES = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24 hex-grid-bg">
+    <section className="relative overflow-hidden pt-24 pb-12 lg:pt-36 lg:pb-24 hex-grid-bg">
       {/* Background ambient glows */}
       <div className="absolute top-24 right-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
@@ -57,14 +57,14 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65 }}
-            className="flex flex-col justify-center order-1"
+            className="flex flex-col justify-center order-2 lg:order-1"
           >
             {/* Top Badge */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-6 inline-flex self-start items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-4 py-1.5 shadow-sm backdrop-blur-sm"
+              className="mb-4 sm:mb-6 inline-flex self-start items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-4 py-1.5 shadow-sm backdrop-blur-sm"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -85,7 +85,7 @@ export function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="mt-6 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
+            <p className="mt-4 sm:mt-6 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
               An AI-first technology consulting and training company specializing in{" "}
               <span className="font-semibold text-foreground">AI, ML, Generative AI,</span> and{" "}
               <span className="font-semibold text-foreground">Agentic AI</span> — helping organizations modernize
@@ -93,7 +93,7 @@ export function Hero() {
             </p>
 
             {/* Key Points */}
-            <div className="mt-6 grid grid-cols-2 gap-2">
+            <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2">
               {[
                 "Enterprise AI Solutions",
                 "Workforce AI Training",
@@ -107,11 +107,11 @@ export function Hero() {
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap gap-4 items-center">
+            {/* CTA Buttons — full-width stacked pills on mobile, inline row from sm up */}
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5"
               >
                 Explore Services
                 <ArrowRight size={18} />
@@ -119,15 +119,23 @@ export function Hero() {
 
               <Link
                 href="/workbench"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-primary/25 bg-white px-7 py-3.5 text-base font-semibold text-primary transition-all hover:bg-primary/5 hover:border-primary/50 hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/25 bg-white px-7 py-3.5 text-base font-semibold text-primary transition-all hover:bg-primary/5 hover:border-primary/50 hover:-translate-y-0.5"
               >
                 Explore Training
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-card-border bg-white px-7 py-3.5 text-base font-semibold text-foreground transition-all hover:bg-surface hover:border-foreground/30 hover:-translate-y-0.5"
+              >
+                Contact Us
                 <ArrowRight size={18} />
               </Link>
             </div>
 
             {/* 4-Feature Icon Row */}
-            <div className="mt-10 pt-8 border-t border-card-border grid grid-cols-2 gap-5 sm:grid-cols-4">
+            <div className="mt-8 pt-6 sm:mt-10 sm:pt-8 border-t border-card-border grid grid-cols-2 gap-5 sm:grid-cols-4">
               {[
                 { icon: Network, label: "AI & ML", sub: "Expertise" },
                 { icon: Sparkles, label: "Generative &", sub: "Agentic AI" },
@@ -150,7 +158,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative flex justify-center items-center order-2"
+            className="relative flex justify-center items-center order-1 lg:order-2"
           >
             {/* Dark panel that frames the image — bridges the light/dark gap */}
             <div className="relative w-full max-w-lg lg:max-w-none">
@@ -201,20 +209,21 @@ export function Hero() {
                   {/* Bottom fade so image blends into card footer */}
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
 
-                  {FLOATING_BADGES.map((badge, i) => (
+                  {/* Floating Stat Badges ON the image */}
+                  {FLOATING_BADGES.map((badge) => (
                     <motion.div
-                        key={badge.id}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4, delay: badge.delay }}
-                        className={`absolute ${badge.position} z-10 ${i >= 2 ? "hidden sm:block" : ""}`}
+                      key={badge.id}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: badge.delay }}
+                      className={`absolute ${badge.position} z-10`}
                     >
-                        <div className={`bg-gradient-to-br ${badge.color} rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 shadow-lg backdrop-blur-sm border border-white/10 max-w-[130px] sm:max-w-none`}>
-                        <p className="text-[10px] sm:text-[11px] font-bold text-white leading-tight">{badge.label}</p>
-                        <p className="text-[9px] sm:text-[10px] text-white/70 font-medium">{badge.sub}</p>
-                        </div>
+                      <div className={`bg-gradient-to-br ${badge.color} rounded-xl px-3 py-2 shadow-lg backdrop-blur-sm border border-white/10`}>
+                        <p className="text-[11px] font-bold text-white leading-tight">{badge.label}</p>
+                        <p className="text-[10px] text-white/70 font-medium">{badge.sub}</p>
+                      </div>
                     </motion.div>
-                    ))}
+                  ))}
                 </div>
 
                 {/* Card footer bar */}

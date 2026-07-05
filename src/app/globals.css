@@ -46,6 +46,13 @@
   border-color: var(--card-border);
 }
 
+/* Tailwind v4's `container` utility has no max-width by default —
+   without this, content stretches edge-to-edge on wide monitors,
+   making the whole layout look oversized/"zoomed in". */
+.container {
+  max-width: 1440px;
+}
+
 html {
   scroll-behavior: smooth;
 }
