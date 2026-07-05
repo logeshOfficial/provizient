@@ -61,7 +61,7 @@ export function Footer() {
             {/* Social Media Links */}
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com/company/provizient"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -70,7 +70,7 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
               <a
-                href="https://twitter.com/provizient"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -79,7 +79,7 @@ export function Footer() {
                 <Twitter size={18} />
               </a>
               <a
-                href="https://youtube.com/provizient"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -88,7 +88,7 @@ export function Footer() {
                 <Youtube size={18} />
               </a>
               <a
-                href="https://github.com/logeshOfficial/provizient"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
