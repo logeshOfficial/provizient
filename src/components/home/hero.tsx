@@ -201,21 +201,20 @@ export function Hero() {
                   {/* Bottom fade so image blends into card footer */}
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
 
-                  {/* Floating Stat Badges ON the image */}
-                  {FLOATING_BADGES.map((badge) => (
+                  {FLOATING_BADGES.map((badge, i) => (
                     <motion.div
-                      key={badge.id}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: badge.delay }}
-                      className={`absolute ${badge.position} z-10`}
+                        key={badge.id}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: badge.delay }}
+                        className={`absolute ${badge.position} z-10 ${i >= 2 ? "hidden sm:block" : ""}`}
                     >
-                      <div className={`bg-gradient-to-br ${badge.color} rounded-xl px-3 py-2 shadow-lg backdrop-blur-sm border border-white/10`}>
-                        <p className="text-[11px] font-bold text-white leading-tight">{badge.label}</p>
-                        <p className="text-[10px] text-white/70 font-medium">{badge.sub}</p>
-                      </div>
+                        <div className={`bg-gradient-to-br ${badge.color} rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 shadow-lg backdrop-blur-sm border border-white/10 max-w-[130px] sm:max-w-none`}>
+                        <p className="text-[10px] sm:text-[11px] font-bold text-white leading-tight">{badge.label}</p>
+                        <p className="text-[9px] sm:text-[10px] text-white/70 font-medium">{badge.sub}</p>
+                        </div>
                     </motion.div>
-                  ))}
+                    ))}
                 </div>
 
                 {/* Card footer bar */}

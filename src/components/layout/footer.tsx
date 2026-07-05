@@ -33,7 +33,7 @@ const TRAINING_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-200 border-t border-slate-900" role="contentinfo">
+    <footer className="bg-slate-950 text-slate-200 border-t border-slate-900 pb-16 md:pb-0" role="contentinfo">
       <div className="container mx-auto px-4 lg:px-8 py-16">
 
         {/* Main Columns Grid */}
