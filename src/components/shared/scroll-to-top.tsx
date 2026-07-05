@@ -48,7 +48,6 @@ export function ScrollToTop() {
     >
       <ChevronUpIcon
         size={22}
-        strokeWidth={2.5}
         className="transition-transform group-hover:-translate-y-0.5"
       />
     </button>

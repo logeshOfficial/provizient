@@ -92,7 +92,7 @@ export function Header() {
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileOpen}
           >
-            {isMobileOpen ? <XIcon size={24} strokeWidth={2.5} /> : <MenuIcon size={24} strokeWidth={2.5} />}
+            {isMobileOpen ? <XIcon size={24} /> : <MenuIcon size={24} />}
           </button>
         </div>
       </div>
