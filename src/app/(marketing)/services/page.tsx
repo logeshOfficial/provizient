@@ -1,16 +1,17 @@
 import {
-  Brain,
-  Sparkles,
-  Bot,
-  Search,
-  Cloud,
-  Code2,
-  BarChart3,
-  Users,
-  CheckCircle,
-} from "lucide-react";
+  SvcAIMLIcon,
+  SvcGenAIIcon,
+  SvcAgenticAIIcon,
+  TrnRAGKnowledgeIcon,
+  SvcCloudAIIcon,
+  SvcSoftwareDevIcon,
+  SvcDataAnalyticsIcon,
+  UsersIcon,
+  CheckCircleIcon,
+} from "@/components/icons/provizient-icons";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { ServicesHero } from "@/components/services/services-hero";
+import { IndustriesServed } from "@/components/home/industries-served";
 import { generateSEO } from "@/lib/seo";
 
 export const metadata = generateSEO({
@@ -25,7 +26,7 @@ const DETAILED_SERVICES = [
     id: "ai-solutions",
     title: "Artificial Intelligence Solutions",
     description: "Establish a robust foundation and roadmap for deploying enterprise-grade artificial intelligence.",
-    icon: Brain,
+    icon: SvcAIMLIcon,
     color: "blue",
     subitems: [
       "Enterprise AI Strategy",
@@ -39,7 +40,7 @@ const DETAILED_SERVICES = [
     id: "generative-ai",
     title: "Generative AI",
     description: "Leverage advanced language models to drive conversational intelligence and semantic search.",
-    icon: Sparkles,
+    icon: SvcGenAIIcon,
     color: "purple",
     subitems: [
       "Enterprise Chatbots",
@@ -55,7 +56,7 @@ const DETAILED_SERVICES = [
     id: "agentic-ai",
     title: "Agentic AI",
     description: "Deploy autonomous systems that plan, collaborate, and execute complex workflows.",
-    icon: Bot,
+    icon: SvcAgenticAIIcon,
     color: "blue",
     subitems: [
       "AI Agents",
@@ -72,7 +73,7 @@ const DETAILED_SERVICES = [
     id: "rag-systems",
     title: "RAG & Knowledge Systems",
     description: "Connect generative models safely to proprietary enterprise knowledge bases and vector indexes.",
-    icon: Search,
+    icon: TrnRAGKnowledgeIcon,
     color: "green",
     subitems: [
       "Retrieval-Augmented Generation (RAG)",
@@ -87,7 +88,7 @@ const DETAILED_SERVICES = [
     id: "cloud-ai",
     title: "Cloud AI",
     description: "Scale, optimize, and host models securely on major cloud service providers.",
-    icon: Cloud,
+    icon: SvcCloudAIIcon,
     color: "slate",
     subitems: [
       "AWS AI Solutions",
@@ -102,7 +103,7 @@ const DETAILED_SERVICES = [
     id: "software-dev",
     title: "Software Development",
     description: "Build reliable, high-performance custom web, mobile, and system applications.",
-    icon: Code2,
+    icon: SvcSoftwareDevIcon,
     color: "green",
     subitems: [
       "Custom Software Development",
@@ -118,7 +119,7 @@ const DETAILED_SERVICES = [
     id: "data-analytics",
     title: "Data & Analytics",
     description: "Clean, engineer, and orchestrate datasets to fuel dashboards, analytics, and models.",
-    icon: BarChart3,
+    icon: SvcDataAnalyticsIcon,
     color: "orange",
     subitems: [
       "Data Engineering",
@@ -133,7 +134,7 @@ const DETAILED_SERVICES = [
     id: "ai-adoption",
     title: "AI Adoption Consulting",
     description: "Assess AI readiness, govern models responsibly, and review architecture standards.",
-    icon: Users,
+    icon: UsersIcon,
     color: "blue",
     subitems: [
       "AI Readiness Assessment",
@@ -159,47 +160,47 @@ export default function ServicesPage() {
     <>
       <ServicesHero />
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Page Section Heading */}
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <div className="text-center mb-10 sm:mb-14 max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
               AI &amp; Software Consulting
             </h2>
-            <p className="mt-4 text-lg text-muted">
+            <p className="mt-3 text-base sm:text-lg text-muted">
               We help organizations design, build, and deploy intelligent enterprise solutions.
             </p>
             <div className="section-title-line mt-4" />
           </div>
 
-          {/* Grid of 8 services cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Grid of 8 service cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
             {DETAILED_SERVICES.map((service) => {
               const Icon = service.icon;
               return (
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`rounded-2xl p-8 scroll-mt-24 border border-card-border ${COLOR_MAP[service.color] || "bg-white"}`}
+                  className={`rounded-2xl p-6 sm:p-8 scroll-mt-24 border border-card-border ${COLOR_MAP[service.color] || "bg-white"}`}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-5 border border-card-border">
-                    <Icon size={28} className="text-primary" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-4 sm:mb-5 shrink-0">
+                    <Icon size={28} />
                   </div>
                   
-                  <h3 className="font-display text-xl font-bold mb-3 text-foreground">
+                  <h3 className="font-display text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">
                     {service.title}
                   </h3>
                   
-                  <p className="text-muted leading-relaxed text-sm mb-6">
+                  <p className="text-muted leading-relaxed text-sm mb-4 sm:mb-6">
                     {service.description}
                   </p>
                   
                   {/* Detailed Offerings Grid */}
-                  <div className="grid sm:grid-cols-2 gap-3 border-t border-slate-900/5 pt-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 border-t border-slate-900/5 pt-4">
                     {service.subitems.map((subitem) => (
                       <div key={subitem} className="flex items-start gap-2 text-xs font-semibold text-foreground/80">
-                        <CheckCircle size={14} className="text-primary mt-0.5 shrink-0" />
+                        <CheckCircleIcon size={13} className="text-primary mt-0.5 shrink-0" />
                         <span>{subitem}</span>
                       </div>
                     ))}
@@ -212,6 +213,8 @@ export default function ServicesPage() {
 
         </div>
       </section>
+
+      <IndustriesServed />
 
       <ConsultationCTA />
     </>

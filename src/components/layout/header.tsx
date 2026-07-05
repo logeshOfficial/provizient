@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { MenuIcon, XIcon } from "@/components/icons/provizient-icons";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/lib/constants";
 import { assetPath, cn } from "@/lib/utils";
@@ -45,15 +45,27 @@ export function Header() {
             className="hidden lg:flex items-center gap-1"
             aria-label="Main navigation"
           >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.external ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -80,7 +92,7 @@ export function Header() {
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileOpen}
           >
-            {isMobileOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
+            {isMobileOpen ? <XIcon size={24} strokeWidth={2.5} /> : <MenuIcon size={24} strokeWidth={2.5} />}
           </button>
         </div>
       </div>
@@ -97,16 +109,29 @@ export function Header() {
               className="container mx-auto px-4 py-4 flex flex-col gap-1"
               aria-label="Mobile navigation"
             >
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <Button className="mt-4 rounded-full" asChild>
                 <Link href="/contact" onClick={() => setIsMobileOpen(false)}>
                   Contact Us

@@ -2,25 +2,34 @@
 
 import { motion } from "framer-motion";
 import {
-  Brain,
-  Bot,
-  Sparkles,
-  BarChart3,
-  Terminal,
-  Search,
-  Award,
-  GraduationCap,
-} from "lucide-react";
+  TrnAIMLFoundationsIcon,
+  TrnGenAILLMsIcon,
+  TrnAgenticAIIcon,
+  TrnRAGKnowledgeIcon,
+  TrnAIDevFrameworksIcon,
+  TrnCloudAIPlatformsIcon,
+  TrnProgrammingDataIcon,
+  AwardIcon,
+  GraduationCapIcon,
+  BotIcon,
+  SparklesIcon,
+  SearchIcon,
+  BrainIcon,
+  TerminalIcon,
+  BarChart3Icon,
+} from "@/components/icons/provizient-icons";
 import { TRAINING_PROGRAMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const PROGRAM_ICONS = {
-  Sparkles,
-  Bot,
-  Search,
-  Brain,
-  Terminal,
-  BarChart3,
+  Sparkles: TrnGenAILLMsIcon,
+  Bot:      TrnAgenticAIIcon,
+  Search:   TrnRAGKnowledgeIcon,
+  Brain:    TrnAIMLFoundationsIcon,
+  Terminal: TrnProgrammingDataIcon,
+  BarChart3: TrnProgrammingDataIcon,
+  Code2:    TrnAIDevFrameworksIcon,
+  Cloud:    TrnCloudAIPlatformsIcon,
 } as const;
 
 const PROGRAM_COLORS: Record<string, string> = {
@@ -65,7 +74,7 @@ function SkillsHubVisual() {
               <p className="text-[11px] text-white/80">Future-Ready Skills Hub</p>
             </div>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20">
-              <GraduationCap size={22} className="text-white" />
+              <GraduationCapIcon size={22} className="text-white" />
             </div>
           </div>
         </div>
@@ -98,7 +107,7 @@ function SkillsHubVisual() {
 
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
             {TRAINING_PROGRAMS.map((program, i) => {
-              const Icon = PROGRAM_ICONS[program.icon as keyof typeof PROGRAM_ICONS] || Brain;
+              const Icon = PROGRAM_ICONS[program.icon as keyof typeof PROGRAM_ICONS] || TrnAIMLFoundationsIcon;
               const accent = PROGRAM_COLORS[program.color] || "#0066ff";
               return (
                 <motion.div
@@ -137,10 +146,10 @@ function SkillsHubVisual() {
       </motion.div>
 
       {[
-        { icon: Award, label: "Expert Trainers", position: "left-1 top-0 sm:left-2", delay: 0 },
-        { icon: Bot, label: "Agentic AI", position: "left-0 top-[36%] sm:left-1", delay: 0.6 },
+        { icon: AwardIcon,    label: "Expert Trainers", position: "left-1 top-0 sm:left-2", delay: 0 },
+        { icon: BotIcon,      label: "Agentic AI", position: "left-0 top-[36%] sm:left-1", delay: 0.6 },
         {
-          icon: Sparkles,
+          icon: SparklesIcon,
           label: "Hands-on Labs",
           position: "right-1 bottom-0 sm:right-2",
           delay: 0.4,
@@ -215,13 +224,13 @@ function LearningPathVisual() {
         </p>
         <div className="mt-3 flex justify-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-lg">
-            <Brain size={28} className="text-white" />
+            <BrainIcon size={28} className="text-white" />
           </div>
         </div>
       </motion.div>
 
       {nodes.map((node, i) => {
-        const Icon = PROGRAM_ICONS[node.icon as keyof typeof PROGRAM_ICONS] || Brain;
+        const Icon = PROGRAM_ICONS[node.icon as keyof typeof PROGRAM_ICONS] || TrnAIMLFoundationsIcon;
         const accent = PROGRAM_COLORS[node.color] || "#0066ff";
         return (
           <motion.div
@@ -336,10 +345,10 @@ function LabBenchVisual() {
       </motion.div>
 
       {[
-        { icon: Terminal, label: "Python", position: "left-1 top-0 sm:left-2" },
-        { icon: Brain, label: "AI/ML", position: "right-1 top-0 sm:right-2" },
-        { icon: Search, label: "RAG", position: "left-0 bottom-0 sm:left-1" },
-        { icon: BarChart3, label: "Analytics", position: "right-1 bottom-0 sm:right-2" },
+        { icon: TerminalIcon, label: "Python", position: "left-1 top-0 sm:left-2" },
+        { icon: BrainIcon, label: "AI/ML", position: "right-1 top-0 sm:right-2" },
+        { icon: SearchIcon, label: "RAG", position: "left-0 bottom-0 sm:left-1" },
+        { icon: BarChart3Icon, label: "Analytics", position: "right-1 bottom-0 sm:right-2" },
       ].map((chip, i) => (
         <motion.div
           key={chip.label}

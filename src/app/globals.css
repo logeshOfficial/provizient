@@ -51,6 +51,23 @@
    making the whole layout look oversized/"zoomed in". */
 .container {
   max-width: 1440px;
+  /* Sensible default horizontal padding for all viewports */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 html {

@@ -1,15 +1,15 @@
 import {
-  Landmark,
-  HeartPulse,
-  Factory,
-  ShoppingCart,
-  Zap,
-  Building2,
-  ShieldCheck,
-  GraduationCap,
-  Truck,
-  Laptop,
-} from "lucide-react";
+  IndManufacturingIcon,
+  IndHealthcareIcon,
+  IndFinancialIcon,
+  IndRetailIcon,
+  IndInsuranceIcon,
+  IndEducationIcon,
+  IndGovernmentIcon,
+  IndEnergyIcon,
+  IndLogisticsIcon,
+  IndTechnologyIcon,
+} from "@/components/icons/provizient-icons";
 import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
 import { IndustriesVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
@@ -24,16 +24,16 @@ export const metadata = generateSEO({
 });
 
 const iconMap = {
-  Factory,
-  HeartPulse,
-  Landmark,
-  ShoppingCart,
-  ShieldCheck,
-  GraduationCap,
-  Building2,
-  Zap,
-  Truck,
-  Laptop,
+  Factory:       IndManufacturingIcon,
+  HeartPulse:    IndHealthcareIcon,
+  Landmark:      IndFinancialIcon,
+  ShoppingCart:  IndRetailIcon,
+  ShieldCheck:   IndInsuranceIcon,
+  GraduationCap: IndEducationIcon,
+  Building2:     IndGovernmentIcon,
+  Zap:           IndEnergyIcon,
+  Truck:         IndLogisticsIcon,
+  Laptop:        IndTechnologyIcon,
 };
 
 const INDUSTRY_DETAILS: Record<string, string[]> = {
@@ -119,9 +119,9 @@ export default function IndustriesPage() {
             const details = INDUSTRY_DETAILS[industry.title] || [];
             return (
               <div key={industry.title} className="glass-card p-8 hover:border-primary/20 transition-all">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon size={28} className="text-primary" />
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/8 border border-primary/15 flex items-center justify-center shrink-0">
+                    <Icon size={32} />
                   </div>
                   <div>
                     <h2 className="font-display text-xl font-bold text-foreground">{industry.title}</h2>

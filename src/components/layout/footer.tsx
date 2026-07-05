@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { MailIcon, MapPinIcon, PhoneIcon, ArrowRightIcon } from "@/components/icons/provizient-icons";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const QUICK_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/workbench", label: "Training" },
-  { href: "/industries", label: "Industries" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", external: false },
+  { href: "/about", label: "About Us", external: false },
+  { href: "/services", label: "Services", external: false },
+  { href: "/workbench", label: "Training", external: false },
+  { href: "/industries", label: "Industries", external: false },
+  { href: "/testimonials", label: "Testimonials", external: false },
+  { href: "/blog", label: "Blog", external: false },
+  { href: "/contact", label: "Contact", external: false },
 ];
 
 const SERVICES_LINKS = [
@@ -117,9 +119,20 @@ export function Footer() {
             <ul className="space-y-2">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href + link.label}>
-                  <Link href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-slate-400 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -162,7 +175,7 @@ export function Footer() {
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors"
                 >
-                  <Mail size={15} className="shrink-0 text-primary" />
+                  <MailIcon size={15} className="shrink-0 text-primary" />
                   {SITE_CONFIG.email}
                 </a>
               </li>
@@ -171,12 +184,12 @@ export function Footer() {
                   href={`tel:${SITE_CONFIG.phoneTel}`}
                   className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors"
                 >
-                  <Phone size={15} className="shrink-0 text-primary" />
+                  <PhoneIcon size={15} className="shrink-0 text-primary" />
                   {SITE_CONFIG.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-slate-400">
-                <MapPin size={15} className="mt-0.5 shrink-0 text-primary" />
+                <MapPinIcon size={15} className="mt-0.5 shrink-0 text-primary" />
                 <span>{SITE_CONFIG.address}</span>
               </li>
             </ul>
@@ -187,7 +200,7 @@ export function Footer() {
                 className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-white shadow transition-all hover:bg-primary/90 hover:translate-y-[-1px]"
               >
                 Get in Touch
-                <ArrowRight size={12} />
+                <ArrowRightIcon size={12} />
               </Link>
             </div>
           </div>

@@ -3,25 +3,28 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Compass,
-  Code2,
-  Zap,
-  Bot,
-  Sparkles,
-  Plug,
-  ArrowRight,
-} from "lucide-react";
+  SvcAIMLIcon,
+  SvcGenAIIcon,
+  SvcAgenticAIIcon,
+  SvcDataAnalyticsIcon,
+  SvcSoftwareDevIcon,
+  SvcCloudAIIcon,
+  ArrowRightIcon,
+} from "@/components/icons/provizient-icons";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/constants";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Compass,
-  Code2,
-  Zap,
-  Bot,
-  Sparkles,
-  Plug,
+  Compass:  SvcAIMLIcon,
+  Code2:    SvcSoftwareDevIcon,
+  Zap:      SvcDataAnalyticsIcon,
+  Bot:      SvcAgenticAIIcon,
+  Sparkles: SvcGenAIIcon,
+  Plug:     SvcCloudAIIcon,
+  Brain:    SvcAIMLIcon,
+  Cloud:    SvcCloudAIIcon,
+  BarChart3: SvcDataAnalyticsIcon,
 };
 
 export function ServicesShowcase() {
@@ -48,8 +51,8 @@ export function ServicesShowcase() {
               >
                 <Link href={`/services#${service.id}`} className="block h-full">
                   <div className="glass-card p-6 h-full group cursor-pointer">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <Icon size={24} className="text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-4 shrink-0">
+                      <Icon size={28} />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {service.title}
@@ -58,7 +61,7 @@ export function ServicesShowcase() {
                       {service.description}
                     </p>
                     <span className="inline-flex items-center gap-1 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                      Learn more <ArrowRight size={14} />
+                      Learn more <ArrowRightIcon size={14} />
                     </span>
                   </div>
                 </Link>
@@ -70,7 +73,7 @@ export function ServicesShowcase() {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
             <Link href="/services">
-              View All Services <ArrowRight size={18} />
+              View All Services <ArrowRightIcon size={18} />
             </Link>
           </Button>
         </div>

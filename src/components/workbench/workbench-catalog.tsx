@@ -1,23 +1,24 @@
 "use client";
 
-import * as LucideIcons from "lucide-react";
 import {
-  Brain,
-  Bot,
-  Sparkles,
-  BarChart3,
-  Terminal,
-  Search,
-  Code2,
-  Cloud,
-  Settings,
-  ShieldCheck,
-  Users,
-  PieChart,
-} from "lucide-react";
+  TrnAIMLFoundationsIcon,
+  TrnGenAILLMsIcon,
+  TrnAgenticAIIcon,
+  TrnRAGKnowledgeIcon,
+  TrnAIDevFrameworksIcon,
+  TrnCloudAIPlatformsIcon,
+  TrnProgrammingDataIcon,
+  SvcAIMLIcon,
+  SvcGenAIIcon,
+  SvcAgenticAIIcon,
+  SvcDataAnalyticsIcon,
+  SvcSoftwareDevIcon,
+  SvcCloudAIIcon,
+  UsersIcon,
+  ArrowRightIcon,
+} from "@/components/icons/provizient-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import {
   TRAINING_PROGRAMS,
   DEV_SERVICES,
@@ -38,21 +39,28 @@ const COLOR_MAP: Record<string, string> = {
 };
 
 const TRAINING_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Sparkles,
-  Bot,
-  Search,
-  Brain,
-  Terminal,
-  BarChart3,
+  Sparkles: TrnGenAILLMsIcon,
+  Bot:      TrnAgenticAIIcon,
+  Search:   TrnRAGKnowledgeIcon,
+  Brain:    TrnAIMLFoundationsIcon,
+  Terminal: TrnProgrammingDataIcon,
+  BarChart3: TrnProgrammingDataIcon,
+  Code2:    TrnAIDevFrameworksIcon,
+  Cloud:    TrnCloudAIPlatformsIcon,
 };
 
 const CONSULTING_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Code2,
-  PieChart,
-  Cloud,
-  Settings,
-  ShieldCheck,
-  Users,
+  Brain:    SvcAIMLIcon,
+  Sparkles: SvcGenAIIcon,
+  Bot:      SvcAgenticAIIcon,
+  BarChart3: SvcDataAnalyticsIcon,
+  Code2:    SvcSoftwareDevIcon,
+  Cloud:    SvcCloudAIIcon,
+  Users:    UsersIcon,
+  Settings: SvcAIMLIcon,
+  ShieldCheck: SvcCloudAIIcon,
+  PieChart: SvcDataAnalyticsIcon,
+  Plug:     SvcCloudAIIcon,
 };
 
 type WorkbenchCatalogProps = {
@@ -122,7 +130,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
             >
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {TRAINING_PROGRAMS.map((program, i) => {
-                  const Icon = TRAINING_ICONS[program.icon] || Brain;
+                  const Icon = TRAINING_ICONS[program.icon] || TrnAIMLFoundationsIcon;
                   const meta = WORKBENCH_COURSE_META[program.id];
                   return (
                     <motion.article
@@ -135,8 +143,8 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
                         COLOR_MAP[program.color]
                       )}
                     >
-                      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm">
-                        <Icon size={28} className="text-primary" />
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-5 shrink-0">
+                        <Icon size={28} />
                       </div>
                       <h3 className="font-display text-xl font-bold text-foreground">
                         {program.title}
@@ -171,7 +179,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
                         href="/contact"
                         className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100"
                       >
-                        Enroll now <ArrowRight size={14} />
+                        Enroll now <ArrowRightIcon size={14} />
                       </Link>
                     </motion.article>
                   );
@@ -212,11 +220,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
             >
               {DEV_SERVICES.map((service, i) => {
                 const Icon =
-                  CONSULTING_ICONS[service.icon] ||
-                  (LucideIcons[service.icon as keyof typeof LucideIcons] as React.ComponentType<{
-                    size?: number;
-                    className?: string;
-                  }>);
+                  CONSULTING_ICONS[service.icon] || SvcAIMLIcon;
                 const meta = WORKBENCH_CONSULTING_META[service.id];
                 return (
                   <motion.article
@@ -229,8 +233,8 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
                       COLOR_MAP[service.color]
                     )}
                   >
-                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm">
-                      {Icon && <Icon size={28} className="text-primary" />}
+                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-5 shrink-0">
+                      {Icon && <Icon size={28} />}
                     </div>
                     <h3 className="font-display text-xl font-bold text-foreground">
                       {service.title}
@@ -265,7 +269,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
                       href="/book-consultation"
                       className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100"
                     >
-                      Request consultation <ArrowRight size={14} />
+                      Request consultation <ArrowRightIcon size={14} />
                     </Link>
                   </motion.article>
                 );

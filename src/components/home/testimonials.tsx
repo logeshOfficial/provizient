@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
-import { SectionHeading } from "@/components/shared/section-heading";
+import { StarIcon, QuoteIcon } from "@/components/icons/provizient-icons";
 
 const DEFAULT_TESTIMONIALS = [
   {
@@ -45,42 +44,50 @@ type TestimonialsProps = {
 
 export function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: TestimonialsProps) {
   return (
-    <section className="py-24 md:py-32">
-      <div className="container mx-auto px-4 lg:px-8">
-        <SectionHeading
-          badge="Testimonials"
-          title="Trusted by Industry Leaders"
-          description="Hear from the executives and technology leaders who have partnered with ProVizient to drive AI transformation."
-        />
+    <section className="py-16 sm:py-20 lg:py-24 bg-surface border-t border-card-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10 sm:mb-12"
+        >
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-primary mb-3">
+            Testimonials
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="mt-3 text-muted max-w-lg mx-auto text-sm sm:text-base">
+            Hear from executives and technology leaders who have partnered with ProVizient to drive AI transformation.
+          </p>
+          <div className="section-title-line mt-4" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="glass-card p-6 flex flex-col"
             >
-              <Quote size={24} className="text-primary/40 mb-4" />
-              <p className="text-muted leading-relaxed mb-6 flex-1">
+              <QuoteIcon size={22} className="text-primary/30 mb-3 shrink-0" />
+              <p className="text-sm sm:text-base text-muted leading-relaxed mb-5 flex-1">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
-              <div className="flex items-center gap-1 mb-3">
+              <div className="flex items-center gap-0.5 mb-3">
                 {Array.from({ length: testimonial.rating }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={14}
-                    className="fill-yellow-400 text-yellow-400"
-                  />
+                  <StarIcon key={j} size={13} className="fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               <div>
-                <p className="font-semibold text-foreground">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-muted">
+                <p className="font-semibold text-sm text-foreground">{testimonial.name}</p>
+                <p className="text-xs text-muted mt-0.5">
                   {testimonial.role}, {testimonial.company}
                 </p>
               </div>

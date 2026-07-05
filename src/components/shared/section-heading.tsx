@@ -25,7 +25,7 @@ export function SectionHeading({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "mb-12 md:mb-16",
+        "mb-10 sm:mb-12",
         align === "center" && "text-center mx-auto max-w-3xl",
         className
       )}
@@ -35,11 +35,11 @@ export function SectionHeading({
           {badge}
         </span>
       )}
-      <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+      <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3 sm:mb-4">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted leading-relaxed">{description}</p>
+        <p className="text-sm sm:text-base lg:text-lg text-muted leading-relaxed">{description}</p>
       )}
     </motion.div>
   );

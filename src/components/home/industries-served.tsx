@@ -2,66 +2,68 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Factory,
-  HeartPulse,
-  Landmark,
-  ShoppingCart,
-  ShieldCheck,
-  GraduationCap,
-  Building2,
-  Zap,
-  Truck,
-  Laptop,
-} from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
+import {
+  IndManufacturingIcon,
+  IndHealthcareIcon,
+  IndFinancialIcon,
+  IndRetailIcon,
+  IndEducationIcon,
+  IndEnergyIcon,
+  IndLogisticsIcon,
+  IndGovernmentIcon,
+  IndTechnologyIcon,
+  IndInsuranceIcon,
+} from "@/components/icons/provizient-icons";
 
-const ICON_MAP = {
-  Factory,
-  HeartPulse,
-  Landmark,
-  ShoppingCart,
-  ShieldCheck,
-  GraduationCap,
-  Building2,
-  Zap,
-  Truck,
-  Laptop,
+const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  Factory:       IndManufacturingIcon,
+  HeartPulse:    IndHealthcareIcon,
+  Landmark:      IndFinancialIcon,
+  ShoppingCart:  IndRetailIcon,
+  ShieldCheck:   IndInsuranceIcon,
+  GraduationCap: IndEducationIcon,
+  Building2:     IndGovernmentIcon,
+  Zap:           IndEnergyIcon,
+  Truck:         IndLogisticsIcon,
+  Laptop:        IndTechnologyIcon,
 };
 
 export function IndustriesServed() {
   return (
-    <section className="py-16 bg-white border-t border-card-border">
-      <div className="container mx-auto px-4 lg:px-8">
-        
-        {/* Section Heading */}
-        <div className="text-center mb-10">
-          <h2 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-muted">
-            INDUSTRIES WE SERVE
+    <section className="py-14 sm:py-16 bg-white border-t border-card-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Heading */}
+        <div className="text-center mb-8 sm:mb-10">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-muted mb-1">
+            Industries We Serve
+          </span>
+          <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground">
+            AI Solutions Across Every Sector
           </h2>
         </div>
 
-        {/* Horizontal Row of Industries */}
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        {/* Responsive grid — 5 columns on lg, 4 on md, 3 on sm, 2 on mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {INDUSTRIES.map((industry, i) => {
             const IconComponent = ICON_MAP[industry.icon as keyof typeof ICON_MAP] || Laptop;
             return (
               <motion.div
                 key={industry.title}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
-                className="flex flex-col items-center group"
               >
-                <Link href="/industries" className="flex flex-col items-center">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-surface border border-card-border flex items-center justify-center mb-2 group-hover:bg-primary/5 group-hover:border-primary/20 transition-all">
-                    <IconComponent
-                      size={20}
-                      className="text-muted group-hover:text-primary transition-colors"
-                    />
+                <Link
+                  href="/industries"
+                  className="flex flex-col items-center gap-2.5 p-4 rounded-2xl border border-card-border bg-surface hover:bg-white hover:border-primary/20 hover:shadow-md transition-all group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-white border border-card-border flex items-center justify-center group-hover:bg-primary/8 group-hover:border-primary/20 transition-all shadow-sm">
+                    <IconComponent size={24} />
                   </div>
-                  <span className="text-[10px] sm:text-xs font-bold text-muted group-hover:text-foreground transition-colors text-center max-w-[90px] leading-tight">
+                  <span className="text-[11px] sm:text-xs font-semibold text-muted group-hover:text-foreground transition-colors text-center leading-tight">
                     {industry.title}
                   </span>
                 </Link>

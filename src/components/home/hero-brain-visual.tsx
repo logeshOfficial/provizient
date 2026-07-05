@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, BarChart3, Settings, FileText, Cpu } from "lucide-react";
+import { MessageSquareIcon, BarChart3Icon, SettingsIcon, FileTextIcon, CpuIcon } from "@/components/icons/provizient-icons";
 
 export function HeroBrainVisual() {
   return (
@@ -24,7 +24,7 @@ export function HeroBrainVisual() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-1/4 right-[10%] z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-card-border shadow-md"
           >
-            <MessageSquare className="h-5 w-5 text-accent" />
+            <MessageSquareIcon className="h-5 w-5 text-accent" />
           </motion.div>
 
           {/* Settings Icon - Middle Right */}
@@ -33,7 +33,7 @@ export function HeroBrainVisual() {
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             className="absolute top-1/2 right-[5%] z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-card-border shadow-md"
           >
-            <Settings className="h-5 w-5 text-primary" />
+            <SettingsIcon className="h-5 w-5 text-primary" />
           </motion.div>
 
           {/* Stats Icon - Bottom Left */}
@@ -42,7 +42,7 @@ export function HeroBrainVisual() {
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
             className="absolute bottom-1/4 left-[8%] z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-card-border shadow-md"
           >
-            <BarChart3 className="h-5 w-5 text-secondary" />
+            <BarChart3Icon className="h-5 w-5 text-secondary" />
           </motion.div>
 
           {/* File Icon - Bottom Right */}
@@ -51,7 +51,7 @@ export function HeroBrainVisual() {
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
             className="absolute bottom-1/4 right-[12%] z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-card-border shadow-md"
           >
-            <FileText className="h-5 w-5 text-muted" />
+            <FileTextIcon className="h-5 w-5 text-muted" />
           </motion.div>
 
           {/* Chip/Cpu Icon - Top Left */}
@@ -60,7 +60,7 @@ export function HeroBrainVisual() {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
             className="absolute top-1/3 left-[5%] z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-card-border shadow-md"
           >
-            <Cpu className="h-5 w-5 text-primary" />
+            <CpuIcon className="h-5 w-5 text-primary" />
           </motion.div>
 
           {/* Glowing Digital Brain (SVG Layout) */}

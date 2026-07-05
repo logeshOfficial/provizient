@@ -2,12 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Brain, BarChart3, FileSearch, Users, ArrowRight } from "lucide-react";
+import {
+  TrnAIMLFoundationsIcon,
+  SvcDataAnalyticsIcon,
+  TrnRAGKnowledgeIcon,
+  UsersIcon,
+  ArrowRightIcon,
+} from "@/components/icons/provizient-icons";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { AI_SOLUTIONS } from "@/lib/constants";
 
-const solutionIcons = [Brain, BarChart3, FileSearch, Users];
+const solutionIcons = [TrnAIMLFoundationsIcon, SvcDataAnalyticsIcon, TrnRAGKnowledgeIcon, UsersIcon];
 
 export function AISolutionsShowcase() {
   return (
@@ -32,8 +38,8 @@ export function AISolutionsShowcase() {
                 className="glass-card p-8 group"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shrink-0">
-                    <Icon size={28} className="text-primary" />
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-card-border flex items-center justify-center shrink-0">
+                    <Icon size={32} />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -52,7 +58,7 @@ export function AISolutionsShowcase() {
         <div className="text-center mt-12">
           <Button variant="gradient" size="lg" asChild>
             <Link href="/ai-solutions">
-              Explore AI Solutions <ArrowRight size={18} />
+              Explore AI Solutions <ArrowRightIcon size={18} />
             </Link>
           </Button>
         </div>

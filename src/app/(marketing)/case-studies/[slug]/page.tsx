@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeftIcon } from "@/components/icons/provizient-icons";
 import { Badge } from "@/components/ui/badge";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
@@ -82,7 +82,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             href="/case-studies"
             className="inline-flex items-center gap-2 text-muted hover:text-foreground mb-8 transition-colors"
           >
-            <ArrowLeft size={16} /> Back to Case Studies
+            <ArrowLeftIcon size={16} /> Back to Case Studies
           </Link>
           <div className="flex items-center gap-3 mb-4">
             <Badge variant="secondary">{study.industry}</Badge>

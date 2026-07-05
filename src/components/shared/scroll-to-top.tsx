@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
+import { ChevronUpIcon } from "@/components/icons/provizient-icons";
 import { cn } from "@/lib/utils";
 
 const SCROLL_THRESHOLD = 300;
@@ -46,7 +46,7 @@ export function ScrollToTop() {
         "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:shadow-xl"
       )}
     >
-      <ChevronUp
+      <ChevronUpIcon
         size={22}
         strokeWidth={2.5}
         className="transition-transform group-hover:-translate-y-0.5"

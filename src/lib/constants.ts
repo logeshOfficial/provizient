@@ -12,11 +12,12 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/workbench", label: "Courses" },
-  { href: "/services", label: "For Business" },
-  { href: "/about", label: "Why Provizient" },
-  { href: "/blog", label: "Resources" },
+  { href: "/", label: "Home", external: false },
+  { href: "/workbench", label: "Courses", external: false },
+  { href: "/services", label: "For Business", external: false },
+  { href: "/about", label: "Why Provizient", external: false },
+  { href: "/testimonials", label: "Testimonials", external: false },
+  { href: "/blog", label: "Blogs", external: false },
 ] as const;
 
 // 6 Core Services as shown in Screenshot 3
@@ -487,10 +488,10 @@ export const PROCESS_STEPS = [
 ] as const;
 
 export const STATS = [
-  { value: 37, suffix: "+", label: "Enterprise Clients" },
-  { value: 72, suffix: "+", label: "AI Use Cases Delivered" },
-  { value: 50, suffix: "+", label: "Active Projects" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 20, suffix: "+", label: "AI Technologies Mastered" },
+  { value: 9, suffix: "+", label: "Specialized Training Tracks" },
+  { value: 10, suffix: "+", label: "Industries We Serve" },
+  { value: 100, suffix: "%", label: "Post-Training Support" },
 ] as const;
 
 export const CASE_STUDIES = [

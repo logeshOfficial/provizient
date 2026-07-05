@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
-import { Loader2, Calendar } from "lucide-react";
+import { Loader2Icon, CalendarIcon } from "@/components/icons/provizient-icons";
 import { SERVICES } from "@/lib/constants";
 
 const consultationSchema = z.object({
@@ -236,12 +236,12 @@ export function ConsultationForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="animate-spin" size={18} />
+            <Loader2Icon className="animate-spin" size={18} />
             Submitting...
           </>
         ) : (
           <>
-            <Calendar size={18} />
+            <CalendarIcon size={18} />
             Request Consultation
           </>
         )}

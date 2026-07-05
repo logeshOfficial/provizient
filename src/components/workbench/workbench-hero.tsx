@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/provizient-icons";
 import { PerspectiveDeck } from "@/components/workbench/perspective-deck";
 import { RobotChip } from "@/components/workbench/robot-chip";
 import { cn } from "@/lib/utils";
@@ -76,7 +76,7 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
           >
             Talk with our experts
-            <ArrowRight size={16} />
+            <ArrowRightIcon size={16} />
           </Link>
         </div>
       </div>

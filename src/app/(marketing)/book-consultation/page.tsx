@@ -1,4 +1,4 @@
-import { Calendar, CheckCircle } from "lucide-react";
+import { CalendarIcon, CheckCircleIcon } from "@/components/icons/provizient-icons";
 import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
 import { ConsultationVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationForm } from "@/components/forms/consultation-form";
@@ -36,17 +36,14 @@ export default function BookConsultationPage() {
           <div className="grid lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2">
               <div className="glass-card p-8 sticky top-28">
-                <Calendar size={32} className="text-primary mb-4" />
+                <CalendarIcon size={32} className="text-primary mb-4" />
                 <h2 className="font-display text-2xl font-bold mb-4">
                   What to Expect
                 </h2>
                 <ul className="space-y-4">
                   {BENEFITS.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-3">
-                      <CheckCircle
-                        size={18}
-                        className="text-primary mt-0.5 shrink-0"
-                      />
+                      <CheckCircleIcon size={18} className="text-primary mt-0.5 shrink-0" />
                       <span className="text-sm text-muted">{benefit}</span>
                     </li>
                   ))}

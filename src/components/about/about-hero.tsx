@@ -2,63 +2,68 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/provizient-icons";
 import { PerspectiveDeck } from "@/components/workbench/perspective-deck";
 import { AboutEnterpriseVisual } from "@/components/about/about-enterprise-visual";
 
 export function AboutHero() {
   return (
-    <section className="relative overflow-x-hidden pt-28 pb-16 lg:min-h-[540px] lg:pt-32 lg:pb-24 hex-grid-bg">
+    <section className="relative overflow-x-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 lg:min-h-[520px] lg:pt-32 lg:pb-20 hex-grid-bg">
       <PerspectiveDeck />
 
       <div className="pointer-events-none absolute top-16 left-0 h-72 w-72 rounded-full bg-accent/5 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
 
-      <div className="container relative z-10 mx-auto px-4 lg:px-8">
-        <div className="grid items-stretch gap-12 lg:grid-cols-2 lg:gap-6 xl:gap-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-10 xl:gap-14">
+
+          {/* Content — always first on mobile */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center text-center lg:text-left"
+            className="flex flex-col justify-center text-center lg:text-left order-1"
           >
-            <span className="mb-4 inline-block self-center lg:self-start rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-primary">
+            <span className="mb-3 inline-block self-center lg:self-start rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary">
               About Us
             </span>
-            <h1 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="font-display text-[2rem] sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
               About
               <span className="block gradient-text">Provizient Solutions</span>
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted lg:mx-0">
-              Provizient Solutions is a technology consulting and education company dedicated to helping businesses and professionals succeed in the era of Artificial Intelligence.
+            <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-muted lg:mx-0">
+              A technology consulting and education company dedicated to helping businesses and professionals succeed in the era of Artificial Intelligence.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+            <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
               <Link
                 href="#mission-vision"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/95"
               >
                 Our Mission &amp; Vision
-                <ArrowRight size={18} />
+                <ArrowRightIcon size={16} />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-card-border bg-white px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary/30 hover:shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-card-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/30 hover:shadow-md"
               >
                 Work With Us
               </Link>
             </div>
           </motion.div>
 
+          {/* Visual — second on mobile, right on desktop */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.12 }}
-            className="flex min-h-[380px] w-full items-stretch overflow-visible py-8 sm:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px]"
+            className="order-2 flex w-full items-center justify-center overflow-visible
+                       min-h-[240px] sm:min-h-[300px] lg:min-h-[420px] xl:min-h-[460px]"
           >
             <div className="flex w-full flex-1 items-stretch overflow-visible">
               <AboutEnterpriseVisual />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/provizient-icons";
 import { Badge } from "@/components/ui/badge";
 import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
 import { CaseStudiesVisual } from "@/components/marketing/marketing-hero-visuals";
@@ -46,7 +46,7 @@ export default function CaseStudiesPage() {
                   href={`/case-studies/${study.slug}`}
                   className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all shrink-0"
                 >
-                  Read Case Study <ArrowRight size={18} />
+                  Read Case Study <ArrowRightIcon size={18} />
                 </Link>
               </div>
             </div>

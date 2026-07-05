@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
-import { Loader2, Send } from "lucide-react";
+import { Loader2Icon, SendIcon } from "@/components/icons/provizient-icons";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -155,12 +155,12 @@ export function ContactForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="animate-spin" size={18} />
+            <Loader2Icon className="animate-spin" size={18} />
             Sending...
           </>
         ) : (
           <>
-            <Send size={18} />
+            <SendIcon size={18} />
             Send Message
           </>
         )}
