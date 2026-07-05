@@ -115,7 +115,7 @@ export default function IndustriesPage() {
       <section id="industries" className="scroll-mt-24 py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-8">
           {INDUSTRIES.map((industry) => {
-            const Icon = iconMap[industry.icon as keyof typeof iconMap] || Building2;
+            const Icon = iconMap[industry.icon as keyof typeof iconMap] || IndGovernmentIcon;
             const details = INDUSTRY_DETAILS[industry.title] || [];
             return (
               <div key={industry.title} className="glass-card p-8 hover:border-primary/20 transition-all">
