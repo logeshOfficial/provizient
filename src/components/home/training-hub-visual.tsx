@@ -122,7 +122,7 @@ function SkillsHubVisual() {
                     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
                     style={{ backgroundColor: `${accent}18` }}
                   >
-                    <Icon size={18} style={{ color: accent }} />
+                    <Icon size={18} className="shrink-0" />
                   </div>
                   <div className="min-w-0">
                     <p className="truncate font-display text-xs font-bold text-foreground">
@@ -250,7 +250,7 @@ function LearningPathVisual() {
                 className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-white shadow-lg"
                 style={{ boxShadow: `0 8px 24px ${accent}33` }}
               >
-                <Icon size={20} style={{ color: accent }} />
+                <Icon size={20} className="shrink-0" />
               </div>
               <span className="rounded-full bg-white/95 px-2 py-0.5 text-[9px] font-bold text-foreground shadow-sm">
                 {node.title}
