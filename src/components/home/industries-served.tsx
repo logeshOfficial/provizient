@@ -4,34 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { INDUSTRIES } from "@/lib/constants";
 import {
-  IndManufacturingIcon,
-  IndHealthcareIcon,
-  IndFinancialIcon,
-  IndRetailIcon,
-  IndEducationIcon,
-  IndEnergyIcon,
-  IndLogisticsIcon,
-  IndGovernmentIcon,
   IndTechnologyIcon,
-  IndInsuranceIcon,
 } from "@/components/icons/provizient-icons";
-
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Factory:       IndManufacturingIcon,
-  HeartPulse:    IndHealthcareIcon,
-  Landmark:      IndFinancialIcon,
-  ShoppingCart:  IndRetailIcon,
-  ShieldCheck:   IndInsuranceIcon,
-  GraduationCap: IndEducationIcon,
-  Building2:     IndGovernmentIcon,
-  Zap:           IndEnergyIcon,
-  Truck:         IndLogisticsIcon,
-  Laptop:        IndTechnologyIcon,
-};
+import { INDUSTRY_ICON_MAP } from "@/lib/icon-maps";
 
 export function IndustriesServed() {
   return (
-    <section className="py-14 sm:py-16 bg-white border-t border-card-border">
+    <section className="py-12 sm:py-16 bg-white border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -47,7 +26,7 @@ export function IndustriesServed() {
         {/* Responsive grid — 5 columns on lg, 4 on md, 3 on sm, 2 on mobile */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {INDUSTRIES.map((industry, i) => {
-            const IconComponent = ICON_MAP[industry.icon as keyof typeof ICON_MAP] || IndTechnologyIcon;
+            const IconComponent = INDUSTRY_ICON_MAP[industry.icon as keyof typeof INDUSTRY_ICON_MAP] || IndTechnologyIcon;
             return (
               <motion.div
                 key={industry.title}

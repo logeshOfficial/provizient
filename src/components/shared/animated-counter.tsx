@@ -6,14 +6,12 @@ import { cn } from "@/lib/utils";
 type AnimatedCounterProps = {
   value: number;
   suffix?: string;
-  duration?: number;
   className?: string;
 };
 
 export function AnimatedCounter({
   value,
   suffix = "",
-  duration = 2,
   className,
 }: AnimatedCounterProps) {
   return (

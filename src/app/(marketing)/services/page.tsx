@@ -9,6 +9,7 @@ import {
   UsersIcon,
   CheckCircleIcon,
 } from "@/components/icons/provizient-icons";
+import { CARD_COLOR_MAP } from "@/lib/card-colors";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { ServicesHero } from "@/components/services/services-hero";
 import { IndustriesServed } from "@/components/home/industries-served";
@@ -147,13 +148,7 @@ const DETAILED_SERVICES = [
   },
 ];
 
-const COLOR_MAP: Record<string, string> = {
-  purple: "service-card-purple",
-  blue: "service-card-blue",
-  green: "service-card-green",
-  orange: "service-card-orange",
-  slate: "service-card-slate",
-};
+
 
 export default function ServicesPage() {
   return (
@@ -182,7 +177,7 @@ export default function ServicesPage() {
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`rounded-2xl p-6 sm:p-8 scroll-mt-24 border border-card-border ${COLOR_MAP[service.color] || "bg-white"}`}
+                  className={`rounded-2xl p-6 sm:p-8 scroll-mt-24 border border-card-border ${CARD_COLOR_MAP[service.color] || "bg-white"}`}
                 >
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-4 sm:mb-5 shrink-0">
                     <Icon size={28} />

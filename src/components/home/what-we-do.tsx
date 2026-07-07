@@ -7,26 +7,12 @@ import { DEV_SERVICES, DEV_TRUST_ITEMS } from "@/lib/constants";
 import { TrustBar } from "@/components/shared/trust-bar";
 import {
   SvcAIMLIcon,
-  SvcGenAIIcon,
-  SvcAgenticAIIcon,
-  SvcDataAnalyticsIcon,
-  SvcSoftwareDevIcon,
-  SvcCloudAIIcon,
 } from "@/components/icons/provizient-icons";
-
-// Maps the icon string from constants → custom colorful SVG icon
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Brain:    SvcAIMLIcon,
-  Sparkles: SvcGenAIIcon,
-  Bot:      SvcAgenticAIIcon,
-  BarChart3: SvcDataAnalyticsIcon,
-  Code2:    SvcSoftwareDevIcon,
-  Cloud:    SvcCloudAIIcon,
-};
+import { SERVICE_ICON_MAP } from "@/lib/icon-maps";
 
 export function WhatWeDo() {
   return (
-    <section id="services" className="scroll-mt-24 py-16 sm:py-20 lg:py-24 bg-surface border-t border-card-border">
+    <section id="services" className="scroll-mt-24 py-12 sm:py-16 lg:py-24 bg-surface border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -51,7 +37,7 @@ export function WhatWeDo() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {DEV_SERVICES.map((service, i) => {
-            const IconComponent = ICON_MAP[service.icon as keyof typeof ICON_MAP] || SvcAIMLIcon;
+            const IconComponent = SERVICE_ICON_MAP[service.icon as keyof typeof SERVICE_ICON_MAP] || SvcAIMLIcon;
             return (
               <motion.div
                 key={service.id}

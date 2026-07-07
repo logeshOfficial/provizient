@@ -6,7 +6,7 @@
  * file is preserved so the build never fails.
  */
 
-import { writeFileSync, readFileSync, existsSync } from "fs";
+import { writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 

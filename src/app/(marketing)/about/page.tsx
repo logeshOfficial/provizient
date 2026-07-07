@@ -11,6 +11,8 @@ import {
   ShieldCheckIcon,
   CheckIcon,
 } from "@/components/icons/provizient-icons";
+import { ABOUT_VALUES } from "@/lib/constants";
+import type { IconComponent } from "@/lib/icon-maps";
 
 export const metadata = generateSEO({
   title: "Why Provizient Solutions",
@@ -19,38 +21,14 @@ export const metadata = generateSEO({
   path: "/about",
 });
 
-const VALUES = [
-  {
-    icon: SparklesIcon,
-    title: "Innovation First",
-    description: "We embrace emerging technologies and cutting-edge paradigms like Agentic AI to create impactful solutions.",
-  },
-  {
-    icon: TargetIcon,
-    title: "Customer Success",
-    description: "We are committed to delivering measurable business value and accelerating your digital transformation journey.",
-  },
-  {
-    icon: BookOpenIcon,
-    title: "Practical Learning",
-    description: "Our hands-on training is designed to transfer production-ready skills that apply directly to real-world projects.",
-  },
-  {
-    icon: CpuIcon,
-    title: "Engineering Excellence",
-    description: "We design robust, scalable, and secure software architectures using industry best practices and cloud-native standards.",
-  },
-  {
-    icon: TrendingUpIcon,
-    title: "Continuous Improvement",
-    description: "We continuously evolve our methodologies, training curricula, and code assets to stay at the forefront of AI evolution.",
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: "Integrity & Trust",
-    description: "Responsible AI innovation, clear expectations, and honest partnership guide every consulting engagement.",
-  },
-];
+const VALUE_ICONS: Record<string, IconComponent> = {
+  InnovationFirst:       SparklesIcon,
+  CustomerSuccess:       TargetIcon,
+  PracticalLearning:     BookOpenIcon,
+  EngineeringExcellence: CpuIcon,
+  ContinuousImprovement: TrendingUpIcon,
+  IntegrityTrust:        ShieldCheckIcon,
+};
 
 const WHY_CHOOSE_US = [
   "Industry-Experienced Instructors",
@@ -122,7 +100,7 @@ export default function AboutPage() {
             description="We bridge the gap between theory and execution, helping you build production-grade solutions and skills."
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {WHY_CHOOSE_US.map((item) => (
               <div
                 key={item}
@@ -149,15 +127,18 @@ export default function AboutPage() {
             description="Our core values shape every client engagement and define who we are as a company."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {VALUES.map((value) => (
-              <div key={value.title} className="glass-card p-5 sm:p-6 text-center group hover:border-primary/20 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-white border border-card-border shadow-sm flex items-center justify-center mx-auto mb-4">
-                  <value.icon size={26} />
+            {ABOUT_VALUES.map((value) => {
+              const ValueIcon = VALUE_ICONS[value.key];
+              return (
+                <div key={value.title} className="glass-card p-5 sm:p-6 text-center group hover:border-primary/20 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-white border border-card-border shadow-sm flex items-center justify-center mx-auto mb-4">
+                    {ValueIcon && <ValueIcon size={26} />}
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2 text-base">{value.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">{value.description}</p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2 text-base">{value.title}</h3>
-                <p className="text-xs sm:text-sm text-muted leading-relaxed">{value.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

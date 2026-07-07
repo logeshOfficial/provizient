@@ -2,54 +2,17 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRightIcon } from "@/components/icons/provizient-icons";
+import { ArrowRightIcon, TrnAIMLFoundationsIcon } from "@/components/icons/provizient-icons";
 import { Button } from "@/components/ui/button";
 import { TRAINING_PROGRAMS, TRAINING_TRUST_ITEMS } from "@/lib/constants";
 import { TrustBar } from "@/components/shared/trust-bar";
 import { cn } from "@/lib/utils";
-import {
-  TrnAIMLFoundationsIcon,
-  TrnGenAILLMsIcon,
-  TrnAgenticAIIcon,
-  TrnRAGKnowledgeIcon,
-  TrnAIDevFrameworksIcon,
-  TrnCloudAIPlatformsIcon,
-  TrnProgrammingDataIcon,
-} from "@/components/icons/provizient-icons";
-
-const COLOR_MAP: Record<string, string> = {
-  purple: "service-card-purple",
-  blue: "service-card-blue",
-  green: "service-card-green",
-  orange: "service-card-orange",
-  yellow: "service-card-yellow",
-  slate: "service-card-slate",
-};
-
-// Maps icon string from constants → custom colorful SVG icon
-// ai-foundations → Brain → TrnAIMLFoundationsIcon
-// generative-ai-training → Sparkles → TrnGenAILLMsIcon
-// agentic-ai-training → Bot → TrnAgenticAIIcon
-// rag-training → Search → TrnRAGKnowledgeIcon
-// ai-frameworks → Code2 → TrnAIDevFrameworksIcon
-// ai-protocols → Terminal → TrnAIDevFrameworksIcon (shared)
-// cloud-ai-platforms → Cloud → TrnCloudAIPlatformsIcon
-// programming-ai → Terminal → TrnProgrammingDataIcon
-// data-engineering-ai → BarChart3 → TrnProgrammingDataIcon (shared)
-const TRAINING_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Brain:    TrnAIMLFoundationsIcon,
-  Sparkles: TrnGenAILLMsIcon,
-  Bot:      TrnAgenticAIIcon,
-  Search:   TrnRAGKnowledgeIcon,
-  Code2:    TrnAIDevFrameworksIcon,
-  Terminal: TrnProgrammingDataIcon,
-  Cloud:    TrnCloudAIPlatformsIcon,
-  BarChart3: TrnProgrammingDataIcon,
-};
+import { CARD_COLOR_MAP } from "@/lib/card-colors";
+import { TRAINING_ICON_MAP } from "@/lib/icon-maps";
 
 export function TrainingSection() {
   return (
-    <section id="courses" className="scroll-mt-24 py-16 sm:py-20 lg:py-24 bg-white border-t border-card-border">
+    <section id="courses" className="scroll-mt-24 py-12 sm:py-16 lg:py-24 bg-white border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -75,7 +38,7 @@ export function TrainingSection() {
         {/* Training Programs Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {TRAINING_PROGRAMS.map((program, i) => {
-            const Icon = TRAINING_ICONS[program.icon] || TrnAIMLFoundationsIcon;
+            const Icon = TRAINING_ICON_MAP[program.icon] || TrnAIMLFoundationsIcon;
             return (
               <motion.div
                 key={program.id}
@@ -84,9 +47,8 @@ export function TrainingSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
                 className={cn(
-                  "rounded-2xl p-5 sm:p-6 border border-transparent hover:border-primary/20 hover:shadow-md transition-all",
-                  COLOR_MAP[program.color] ?? "bg-surface"
-                )}
+                  "rounded-2xl p-4 sm:p-5 lg:p-6 border border-transparent hover:border-primary/20 hover:shadow-md transition-all",
+                  CARD_COLOR_MAP[program.color] ?? "bg-surface")}
               >
                 <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-4 shrink-0">
                   <Icon size={28} />

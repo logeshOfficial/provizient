@@ -7,7 +7,6 @@ import {
   TrainingProgramsIcon,
   ServiceDomainsIcon,
   IndustriesIcon,
-  CloudPlatformsIcon,
   ExcellenceIcon,
 } from "@/components/icons/provizient-icons";
 
@@ -21,7 +20,7 @@ const STAT_ICONS = [
 
 export function ImpactStats() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-surface border-y border-card-border">
+    <section className="py-12 sm:py-16 lg:py-24 bg-surface border-y border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -33,7 +32,7 @@ export function ImpactStats() {
             Deep Expertise. Broad Scope.
           </h2>
           <p className="text-muted max-w-lg mx-auto text-sm sm:text-base">
-            From cutting-edge AI technologies to industry-specific solutions — here's the scope of what we bring to every engagement.
+            From cutting-edge AI technologies to industry-specific solutions — here&apos;s the scope of what we bring to every engagement.
           </p>
         </motion.div>
 

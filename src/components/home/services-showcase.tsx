@@ -4,28 +4,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   SvcAIMLIcon,
-  SvcGenAIIcon,
-  SvcAgenticAIIcon,
-  SvcDataAnalyticsIcon,
-  SvcSoftwareDevIcon,
-  SvcCloudAIIcon,
   ArrowRightIcon,
 } from "@/components/icons/provizient-icons";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/constants";
-
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Compass:  SvcAIMLIcon,
-  Code2:    SvcSoftwareDevIcon,
-  Zap:      SvcDataAnalyticsIcon,
-  Bot:      SvcAgenticAIIcon,
-  Sparkles: SvcGenAIIcon,
-  Plug:     SvcCloudAIIcon,
-  Brain:    SvcAIMLIcon,
-  Cloud:    SvcCloudAIIcon,
-  BarChart3: SvcDataAnalyticsIcon,
-};
+import { SERVICE_ICON_MAP } from "@/lib/icon-maps";
 
 export function ServicesShowcase() {
   return (
@@ -40,7 +24,7 @@ export function ServicesShowcase() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
-            const Icon = iconMap[service.icon] || SvcAIMLIcon;
+            const Icon = SERVICE_ICON_MAP[service.icon as keyof typeof SERVICE_ICON_MAP] || SvcAIMLIcon;
             return (
               <motion.div
                 key={service.id}

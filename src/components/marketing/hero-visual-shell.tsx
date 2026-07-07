@@ -59,7 +59,7 @@ export function HeroVisualShell({
               <rect width="400" height="120" fill="url(#hero-platform-grid)" />
             </svg>
           </div>
-          <div className="hero-visual-content relative z-10 h-full w-full px-10 py-8 sm:px-12 sm:py-10">
+          <div className="hero-visual-content relative z-10 w-full px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
             {children}
           </div>
         </motion.div>

@@ -1,4 +1,4 @@
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 export function JsonLd() {
   const schema = {
@@ -19,8 +19,8 @@ export function JsonLd() {
       streetAddress: SITE_CONFIG.address,
     },
     sameAs: [
-      "https://linkedin.com/company/provizient",
-      "https://twitter.com/provizient",
+      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.twitter,
     ],
   };
 

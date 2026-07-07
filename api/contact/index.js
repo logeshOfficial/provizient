@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { sendEmail } = require("../shared/email");
 
 const corsHeaders = {

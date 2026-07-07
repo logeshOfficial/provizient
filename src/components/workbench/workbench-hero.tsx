@@ -23,33 +23,33 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
   };
 
   return (
-    <section className="relative min-h-[90vh] overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24">
+    <section className="relative overflow-hidden pt-24 pb-8 sm:pt-24 sm:pb-10 lg:pt-24 lg:pb-12">
       <PerspectiveDeck />
 
-      <div className="container relative z-10 mx-auto px-4 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-8 flex justify-center sm:mb-10">
+          <div className="mb-6 sm:mb-8 flex justify-center">
             <RobotChip variant="default" animate={false} />
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-foreground break-words">
             Discover{" "}
             <span className="gradient-text">AI Training</span>
-            <br />
-            That Turn Ideas Into Action
+            <br className="hidden sm:block" />
+            {" "}That Turn Ideas Into Action
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
+          <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base lg:text-lg text-muted leading-relaxed">
             Production-ready learning paths and software consulting designed to
             accelerate real career growth and business outcomes.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <button
               type="button"
               onClick={() => scrollToCatalog("training")}
               className={cn(
-                "inline-flex min-w-[220px] items-center justify-center rounded-lg px-8 py-4 text-base font-semibold transition-all",
+                "inline-flex w-full sm:w-auto sm:min-w-[200px] items-center justify-center rounded-lg px-8 py-4 text-base font-semibold transition-all min-h-[44px]",
                 activeTab === "training"
                   ? "bg-foreground text-white shadow-lg"
                   : "bg-foreground text-white shadow-lg hover:bg-foreground/90"
@@ -61,7 +61,7 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
               type="button"
               onClick={() => scrollToCatalog("consulting")}
               className={cn(
-                "inline-flex min-w-[220px] items-center justify-center rounded-lg border-2 px-8 py-4 text-base font-semibold transition-all",
+                "inline-flex w-full sm:w-auto sm:min-w-[200px] items-center justify-center rounded-lg border-2 px-8 py-4 text-base font-semibold transition-all min-h-[44px]",
                 activeTab === "consulting"
                   ? "border-foreground bg-white text-foreground shadow-md"
                   : "border-foreground/30 bg-white text-foreground hover:border-foreground hover:shadow-md"
@@ -73,7 +73,7 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
 
           <Link
             href="/book-consultation"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
           >
             Talk with our experts
             <ArrowRightIcon size={16} />

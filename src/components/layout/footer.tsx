@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { MailIcon, MapPinIcon, PhoneIcon, ArrowRightIcon } from "@/components/icons/provizient-icons";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, DEV_SERVICES, TRAINING_PROGRAMS, SOCIAL_LINKS } from "@/lib/constants";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home", external: false },
@@ -15,34 +15,26 @@ const QUICK_LINKS = [
   { href: "/contact", label: "Contact", external: false },
 ];
 
-const SERVICES_LINKS = [
-  { href: "/services#ai-ml-solutions", label: "AI & ML Solutions" },
-  { href: "/services#generative-ai", label: "Generative AI" },
-  { href: "/services#agentic-ai", label: "Agentic AI" },
-  { href: "/services#data-analytics", label: "Data & Analytics" },
-  { href: "/services#software-development", label: "Software Development" },
-  { href: "/services#cloud-ai", label: "Cloud AI" },
-];
+const SERVICES_LINKS = DEV_SERVICES.map((s) => ({
+  href: `/services#${s.id}`,
+  label: s.title,
+}));
 
-const TRAINING_LINKS = [
-  { href: "/workbench#ai-foundations", label: "AI & ML" },
-  { href: "/workbench#generative-ai-training", label: "Generative AI" },
-  { href: "/workbench#agentic-ai-training", label: "Agentic AI" },
-  { href: "/workbench#rag-training", label: "RAG & Knowledge Systems" },
-  { href: "/workbench#ai-frameworks", label: "AI Frameworks" },
-  { href: "/workbench#cloud-ai-platforms", label: "Cloud AI Platforms" },
-];
+const TRAINING_LINKS = TRAINING_PROGRAMS.slice(0, 6).map((p) => ({
+  href: `/workbench#${p.id}`,
+  label: p.title,
+}));
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-200 border-t border-slate-900 pb-16 md:pb-0" role="contentinfo">
+    <footer className="bg-slate-950 text-slate-200 border-t border-slate-900 pb-20 sm:pb-0" role="contentinfo">
       <div className="container mx-auto px-4 lg:px-8 py-16">
 
         {/* Main Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10">
 
           {/* Logo & Description Column */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 sm:col-span-2 space-y-6">
             <Link href="/" className="inline-block">
               <div className="flex flex-col">
                 <span className="font-display text-lg sm:text-xl font-black tracking-[0.1em] text-white">
@@ -61,7 +53,7 @@ export function Footer() {
             <div className="flex gap-4">
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com/company/provizient"
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -74,7 +66,7 @@ export function Footer() {
 
               {/* Twitter / X */}
               <a
-                href="https://twitter.com/provizient"
+                href={SOCIAL_LINKS.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -87,7 +79,7 @@ export function Footer() {
 
               {/* YouTube */}
               <a
-                href="https://youtube.com/@provizient"
+                href={SOCIAL_LINKS.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -100,7 +92,7 @@ export function Footer() {
 
               {/* GitHub */}
               <a
-                href="https://github.com/logeshOfficial/provizient"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-800 transition-colors"
@@ -167,16 +159,16 @@ export function Footer() {
           </div>
 
           {/* Contact Column */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-4 min-w-0">
             <h3 className="font-semibold text-white text-sm tracking-wider uppercase">Contact Us</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors min-w-0"
                 >
                   <MailIcon size={15} className="shrink-0 text-primary" />
-                  {SITE_CONFIG.email}
+                  <span className="truncate">{SITE_CONFIG.email}</span>
                 </a>
               </li>
               <li>
@@ -208,7 +200,7 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>&copy; 2026 {SITE_CONFIG.name}. All Rights Reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">

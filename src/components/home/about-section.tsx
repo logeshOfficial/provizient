@@ -9,33 +9,18 @@ import {
   PracticalLearningIcon,
   ExcellenceIcon,
 } from "@/components/icons/provizient-icons";
+import { ABOUT_VALUES } from "@/lib/constants";
+import type { IconComponent } from "@/lib/icon-maps";
 
-const VALUES = [
-  {
-    Icon: InnovationIcon,
-    title: "Innovation First",
-    description: "We embrace emerging AI technologies to create impactful, future-ready solutions.",
-  },
-  {
-    Icon: OutcomeDrivenIcon,
-    title: "Outcome Driven",
-    description: "Every engagement is measured against clear business KPIs — we focus on ROI.",
-  },
-  {
-    Icon: PracticalLearningIcon,
-    title: "Practical Learning",
-    description: "Our training is hands-on, industry-focused, and career-oriented.",
-  },
-  {
-    Icon: ExcellenceIcon,
-    title: "Excellence & Integrity",
-    description: "We deliver with quality, transparency, and professional integrity.",
-  },
-];
+const SECTION_ICONS: Record<string, IconComponent> = {
+  InnovationFirst:       InnovationIcon,
+  CustomerSuccess:       OutcomeDrivenIcon,
+  PracticalLearning:     PracticalLearningIcon,
+  EngineeringExcellence: ExcellenceIcon,
+};
 
 export function AboutSection() {
-  return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-t border-card-border">
+  return (    <section className="py-12 sm:py-16 lg:py-24 bg-white border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -79,20 +64,22 @@ export function AboutSection() {
             transition={{ delay: 0.12 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            {VALUES.map((item) => (
+            {ABOUT_VALUES.slice(0, 4).map((item) => {
+              const Icon = SECTION_ICONS[item.key];
+              return (
               <div
                 key={item.title}
                 className="flex items-start gap-4 p-5 rounded-2xl border border-card-border bg-surface hover:shadow-md hover:border-primary/15 transition-all"
               >
                 <div className="w-11 h-11 rounded-xl bg-white border border-card-border shadow-sm flex items-center justify-center shrink-0">
-                  <item.Icon size={26} />
+                  {Icon && <Icon size={26} />}
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground text-sm mb-1">{item.title}</h3>
                   <p className="text-muted text-xs leading-relaxed">{item.description}</p>
                 </div>
               </div>
-            ))}
+            )})}
           </motion.div>
 
         </div>

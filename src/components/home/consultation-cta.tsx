@@ -6,7 +6,7 @@ import { ArrowRightIcon, BriefcaseIcon, GraduationCapIcon } from "@/components/i
 
 export function ConsultationCTA() {
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div
@@ -32,7 +32,7 @@ export function ConsultationCTA() {
             </div>
 
             {/* Action cards column */}
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 lg:border-l lg:border-white/20 lg:pl-8">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:border-l lg:border-white/20 lg:pl-8">
 
               {/* For Businesses */}
               <div className="bg-white/10 border border-white/15 rounded-2xl p-5 space-y-3 backdrop-blur-sm">

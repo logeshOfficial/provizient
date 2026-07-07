@@ -78,6 +78,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 .gradient-text {
@@ -164,12 +165,20 @@ body {
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
-  padding: 2rem 2.5rem;
+  padding: 1rem 1.25rem;
 }
 
 @media (min-width: 640px) {
   .hero-visual-wrap {
     min-height: 420px;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-visual-wrap {
+    min-height: 440px;
+    padding: 1.5rem 1.75rem;
   }
 }
 
@@ -178,12 +187,14 @@ body {
     min-height: 460px;
     margin-left: 0;
     margin-right: 0;
+    padding: 1.75rem 2rem;
   }
 }
 
 @media (min-width: 1280px) {
   .hero-visual-wrap {
     min-height: 500px;
+    padding: 2rem 2.5rem;
   }
 }
 
@@ -191,7 +202,7 @@ body {
   position: relative;
   flex: 1 1 auto;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   min-height: 380px;
   perspective: 1400px;
   perspective-origin: 50% 42%;
@@ -200,7 +211,15 @@ body {
 
 @media (min-width: 640px) {
   .hero-visual-stage {
+    aspect-ratio: 4 / 3;
     min-height: 420px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-visual-stage {
+    aspect-ratio: 5 / 4;
+    min-height: 440px;
   }
 }
 

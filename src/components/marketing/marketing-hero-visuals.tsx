@@ -49,7 +49,7 @@ export function BlogInsightsVisual() {
             </p>
           </div>
           <div className="space-y-2.5 p-3 sm:space-y-3 sm:p-4">
-            {ARTICLES.map((card, i) => (
+            {ARTICLES.map((card) => (
               <div
                 key={card.title}
                 className="rounded-xl border border-card-border bg-surface px-3 py-2.5 sm:px-4 sm:py-3"

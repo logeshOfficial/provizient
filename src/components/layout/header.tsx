@@ -24,25 +24,25 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "glass border-b border-card-border py-3 shadow-sm"
-          : "bg-white/80 backdrop-blur-sm py-4"
+          ? "glass border-b border-card-border py-2 shadow-sm"
+          : "bg-white/80 backdrop-blur-sm py-2"
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="ProVizient home">
+        <div className="flex items-center justify-between gap-2 xl:gap-4">
+          <Link href="/" className="flex items-center shrink-0" aria-label="ProVizient home">
             <Image
               src={assetPath("/logo.png")}
               alt="ProVizient — AI Training | Software Development | Consulting"
-              width={320}
-              height={96}
-              className="h-14 w-auto max-w-[min(100%,320px)] object-contain sm:h-16 lg:h-[72px]"
+              width={240}
+              height={72}
+              className="h-10 w-auto sm:h-12 lg:h-14 object-contain"
               priority
             />
           </Link>
 
           <nav
-            className="hidden lg:flex items-center gap-1"
+            className="hidden lg:flex items-center gap-0.5 xl:gap-1"
             aria-label="Main navigation"
           >
             {NAV_LINKS.map((link) =>
@@ -52,7 +52,7 @@ export function Header() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                  className="px-2.5 xl:px-3.5 py-2 text-[13px] xl:text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5 whitespace-nowrap"
                 >
                   {link.label}
                 </a>
@@ -60,7 +60,7 @@ export function Header() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                  className="px-2.5 xl:px-3.5 py-2 text-[13px] xl:text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/5 whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
@@ -68,10 +68,10 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             <Button
               size="default"
-              className="rounded-full bg-foreground px-6 hover:bg-foreground/90"
+              className="rounded-full bg-foreground px-4 xl:px-6 text-[13px] xl:text-sm hover:bg-foreground/90 min-h-[40px] xl:min-h-[44px]"
               asChild
             >
               <Link href="/book-consultation">Get Started</Link>
@@ -79,7 +79,7 @@ export function Header() {
             <Button
               size="default"
               variant="outline"
-              className="rounded-full border-foreground px-6 text-foreground hover:bg-foreground/5"
+              className="rounded-full border-foreground px-4 xl:px-6 text-[13px] xl:text-sm text-foreground hover:bg-foreground/5 min-h-[40px] xl:min-h-[44px]"
               asChild
             >
               <Link href="/contact">Contact Us</Link>
@@ -87,7 +87,7 @@ export function Header() {
           </div>
 
           <button
-            className="lg:hidden shrink-0 relative z-10 p-2 text-foreground"
+            className="lg:hidden shrink-0 relative z-10 p-2.5 text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileOpen}

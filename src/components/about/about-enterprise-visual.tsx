@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { HeroVisualShell } from "@/components/marketing/hero-visual-shell";
+import { COMPANY_STATS } from "@/lib/constants";
 
 const STATS = [
-  { value: "2018", label: "Founded" },
-  { value: "200+", label: "AI Experts" },
-  { value: "30+", label: "Countries" },
-  { value: "$2B+", label: "Value Created" },
+  { value: COMPANY_STATS.foundedYear, label: "Founded" },
+  { value: COMPANY_STATS.aiExperts,   label: "AI Experts" },
+  { value: COMPANY_STATS.countries,   label: "Countries" },
+  { value: COMPANY_STATS.valueCreated, label: "Value Created" },
 ];
 
 const NODES = [
