@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MenuIcon, XIcon } from "@/components/icons/provizient-icons";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { NAV_LINKS } from "@/lib/constants";
 import { assetPath, cn } from "@/lib/utils";
 
@@ -36,7 +37,7 @@ export function Header() {
               alt="ProVizient — AI Training | Software Development | Consulting"
               width={1428}
               height={405}
-              className="h-14 w-auto sm:h-16 lg:h-20 object-contain"
+              className="h-14 w-auto sm:h-16 lg:h-20 object-contain logo-adaptive"
               priority
               unoptimized
             />
@@ -70,6 +71,7 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+            <ThemeToggle />
             <Button
               size="default"
               className="rounded-full bg-primary px-4 xl:px-6 text-[13px] xl:text-sm text-white hover:bg-primary/90 min-h-[40px] xl:min-h-[44px]"
@@ -87,14 +89,17 @@ export function Header() {
             </Button>
           </div>
 
-          <button
-            className="lg:hidden shrink-0 relative z-10 p-2.5 text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label={isMobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileOpen}
-          >
-            {isMobileOpen ? <XIcon size={24} /> : <MenuIcon size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2 shrink-0">
+            <ThemeToggle />
+            <button
+              className="relative z-10 p-2.5 text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileOpen}
+            >
+              {isMobileOpen ? <XIcon size={24} /> : <MenuIcon size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 

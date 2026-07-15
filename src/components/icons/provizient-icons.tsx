@@ -18,7 +18,7 @@ import {
   ArrowRight, ArrowLeft, CheckCircle2, Check, Menu, X, ChevronUp,
   Globe, Star, Quote, ExternalLink, Clock, Briefcase, Calendar, Loader2,
   Send, MessageCircle, MessageSquare, Settings, Search, Terminal,
-  TrendingUp, PieChart,
+  TrendingUp, PieChart, Sun, Moon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -204,6 +204,8 @@ export const BotIcon = plainIcon(Bot);
 export const PieChartIcon = plainIcon(PieChart);
 export const FileSearchIcon = plainIcon(FileSearch);
 export const Code2Icon = plainIcon(Code2);
+export const SunIcon = plainIcon(Sun);
+export const MoonIcon = plainIcon(Moon);
 
 /* ═══════════════════════════════════════════════
    13. SOCIAL / MESSAGING ICONS
