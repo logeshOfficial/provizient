@@ -10,7 +10,7 @@ const Badge = React.forwardRef<
   const variants = {
     default: "bg-primary/20 text-primary border-primary/30",
     secondary: "bg-secondary/20 text-secondary border-secondary/30",
-    outline: "border-white/20 text-muted",
+    outline: "border-card-border text-muted",
     success: "bg-green-500/20 text-green-400 border-green-500/30",
   };
 

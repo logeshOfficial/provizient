@@ -22,9 +22,9 @@ export function LabBenchVisual() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-        className="relative mx-auto w-full rounded-2xl border border-primary/20 bg-white shadow-2xl"
+        className="relative mx-auto w-full rounded-2xl border border-primary/20 bg-slate-900 shadow-2xl"
       >
-        <div className="flex items-center gap-2 rounded-t-2xl border-b border-card-border bg-gradient-to-r from-slate-50 to-sky-50 px-4 py-2.5">
+        <div className="flex items-center gap-2 rounded-t-2xl border-b border-card-border bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-2.5">
           <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -101,7 +101,7 @@ export function LabBenchVisual() {
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 3.8 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
           className={cn(
-            "absolute z-20 flex items-center gap-1.5 rounded-full border border-card-border bg-white px-3 py-1.5 shadow-md",
+            "absolute z-20 flex items-center gap-1.5 rounded-full border border-card-border bg-card px-3 py-1.5 shadow-md",
             chip.position
           )}
         >
@@ -112,3 +112,5 @@ export function LabBenchVisual() {
     </div>
   );
 }
+
+

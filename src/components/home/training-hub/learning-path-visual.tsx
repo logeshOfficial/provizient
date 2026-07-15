@@ -53,7 +53,7 @@ export function LearningPathVisual() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-1/2 top-[18%] z-10 w-[52%] -translate-x-1/2 rounded-2xl border border-primary/25 bg-white p-4 shadow-xl"
+        className="absolute left-1/2 top-[18%] z-10 w-[52%] -translate-x-1/2 rounded-2xl border border-primary/25 bg-slate-900 p-4 shadow-xl"
       >
         <p className="text-center font-display text-xs font-bold uppercase tracking-wider text-primary">
           Learning Path
@@ -86,12 +86,12 @@ export function LearningPathVisual() {
           >
             <div className="flex flex-col items-center gap-1">
               <div
-                className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-white shadow-lg"
+                className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-card shadow-lg"
                 style={{ boxShadow: `0 8px 24px ${accent}33` }}
               >
                 <Icon size={20} className="shrink-0" />
               </div>
-              <span className="rounded-full bg-white/95 px-2 py-0.5 text-[9px] font-bold text-foreground shadow-sm">
+              <span className="rounded-full bg-card/95 px-2 py-0.5 text-[9px] font-bold text-foreground shadow-sm">
                 {node.title}
               </span>
             </div>
@@ -101,3 +101,4 @@ export function LearningPathVisual() {
     </div>
   );
 }
+

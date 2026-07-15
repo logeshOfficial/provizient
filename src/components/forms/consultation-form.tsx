@@ -65,14 +65,14 @@ export function ConsultationForm() {
         toast({
           title: "Demo: request received!",
           description:
-            "This is a POC demo — no email was sent. Production uses Azure + Resend.",
+            "Demo mode is on — no email was sent. Set NEXT_PUBLIC_DEMO_MODE=false to enable SMTP delivery.",
           variant: "success",
         });
         reset();
         return;
       }
 
-      const res = await fetch("/api/consultation", {
+      const res = await fetch("/api/consultation.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -150,7 +150,7 @@ export function ConsultationForm() {
           <Label htmlFor="industry">Industry *</Label>
           <select
             id="industry"
-            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-card px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("industry")}
             defaultValue=""
           >
@@ -173,7 +173,7 @@ export function ConsultationForm() {
           <Label htmlFor="service">Service of Interest *</Label>
           <select
             id="service"
-            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-card px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("service")}
             defaultValue=""
           >
@@ -199,7 +199,7 @@ export function ConsultationForm() {
           <Label htmlFor="budget">Estimated Budget</Label>
           <select
             id="budget"
-            className="flex h-11 w-full rounded-lg border border-card-border bg-white px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="flex h-11 w-full rounded-lg border border-card-border bg-card px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             {...register("budget")}
             defaultValue=""
           >

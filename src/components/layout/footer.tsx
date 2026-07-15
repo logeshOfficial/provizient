@@ -27,7 +27,7 @@ const TRAINING_LINKS = TRAINING_PROGRAMS.slice(0, 6).map((p) => ({
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-200 border-t border-slate-900 pb-20 sm:pb-0" role="contentinfo">
+    <footer className="bg-slate-950 text-slate-200 border-t border-slate-700 pb-20 sm:pb-0" role="contentinfo">
       <div className="container mx-auto px-4 lg:px-8 py-16">
 
         {/* Main Columns Grid */}
@@ -200,7 +200,7 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>&copy; 2026 {SITE_CONFIG.name}. All Rights Reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">

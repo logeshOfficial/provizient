@@ -24,8 +24,8 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "glass border-b border-card-border py-2 shadow-sm"
-          : "bg-white/80 backdrop-blur-sm py-2"
+          ? "glass border-b border-card-border py-2 shadow-lg shadow-black/20"
+          : "bg-background/80 backdrop-blur-sm py-2"
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -34,10 +34,11 @@ export function Header() {
             <Image
               src={assetPath("/logo.png")}
               alt="ProVizient — AI Training | Software Development | Consulting"
-              width={240}
-              height={72}
-              className="h-10 w-auto sm:h-12 lg:h-14 object-contain"
+              width={1428}
+              height={405}
+              className="h-14 w-auto sm:h-16 lg:h-20 object-contain"
               priority
+              unoptimized
             />
           </Link>
 
@@ -71,7 +72,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             <Button
               size="default"
-              className="rounded-full bg-foreground px-4 xl:px-6 text-[13px] xl:text-sm hover:bg-foreground/90 min-h-[40px] xl:min-h-[44px]"
+              className="rounded-full bg-primary px-4 xl:px-6 text-[13px] xl:text-sm text-white hover:bg-primary/90 min-h-[40px] xl:min-h-[44px]"
               asChild
             >
               <Link href="/book-consultation">Get Started</Link>
@@ -79,7 +80,7 @@ export function Header() {
             <Button
               size="default"
               variant="outline"
-              className="rounded-full border-foreground px-4 xl:px-6 text-[13px] xl:text-sm text-foreground hover:bg-foreground/5 min-h-[40px] xl:min-h-[44px]"
+              className="rounded-full border-primary/30 bg-card px-4 xl:px-6 text-[13px] xl:text-sm text-primary hover:bg-primary/10 hover:border-primary/50 min-h-[40px] xl:min-h-[44px]"
               asChild
             >
               <Link href="/contact">Contact Us</Link>
@@ -103,7 +104,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-card-border shadow-lg"
+            className="lg:hidden bg-surface border-t border-card-border shadow-lg"
           >
             <nav
               className="container mx-auto px-4 py-4 flex flex-col gap-1"

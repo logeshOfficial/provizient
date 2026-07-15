@@ -1,6 +1,4 @@
 import { CalendarIcon, CheckCircleIcon } from "@/components/icons/provizient-icons";
-import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
-import { ConsultationVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationForm } from "@/components/forms/consultation-form";
 import { generateSEO } from "@/lib/seo";
 
@@ -20,21 +18,10 @@ const BENEFITS = [
 
 export default function BookConsultationPage() {
   return (
-    <>
-      <MarketingPageHero
-        badge="Consultation"
-        title="Book Your Free"
-        titleHighlight="AI Strategy Consultation"
-        description="Meet with our senior AI consultants to explore how intelligent solutions can transform your business."
-        primaryCta={{ href: "#consultation-form", label: "Request Session" }}
-        secondaryCta={{ href: "/contact", label: "Contact Us" }}
-        visual={<ConsultationVisual />}
-      />
-
-      <section id="consultation-form" className="scroll-mt-24 py-20">
+    <section id="consultation-form" className="pt-28 pb-10 sm:pt-32 sm:pb-12 lg:pt-36 lg:pb-16 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 order-2 lg:order-1">
               <div className="glass-card p-8 sticky top-28">
                 <CalendarIcon size={32} className="text-primary mb-4" />
                 <h2 className="font-display text-2xl font-bold mb-4">
@@ -51,7 +38,7 @@ export default function BookConsultationPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-3 glass-card p-8">
+            <div className="lg:col-span-3 glass-card p-8 order-1 lg:order-2">
               <h2 className="font-display text-2xl font-bold mb-6">
                 Request Your Consultation
               </h2>
@@ -60,6 +47,6 @@ export default function BookConsultationPage() {
           </div>
         </div>
       </section>
-    </>
   );
 }
+

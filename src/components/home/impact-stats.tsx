@@ -46,10 +46,10 @@ export function ImpactStats() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-white border border-card-border shadow-sm hover:shadow-md hover:border-primary/15 transition-all"
+                className="flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-surface-alt border border-card-border shadow-sm hover:shadow-md hover:border-primary/15 transition-all"
               >
                 {/* Custom SVG icon */}
-                <div className="w-14 h-14 rounded-2xl bg-white border border-card-border shadow-sm flex items-center justify-center mb-3">
+                <div className="w-14 h-14 rounded-2xl bg-surface-alt border border-card-border shadow-sm flex items-center justify-center mb-3">
                   <Icon size={32} />
                 </div>
                 <div className="font-display text-3xl sm:text-4xl font-bold gradient-text mb-1">
@@ -64,3 +64,4 @@ export function ImpactStats() {
     </section>
   );
 }
+

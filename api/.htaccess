@@ -1,0 +1,23 @@
+# Protect sensitive files
+<Files ".env.php">
+    Require all denied
+</Files>
+
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Enable CORS for API endpoints
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# PHP error handling
+php_flag display_errors Off
+php_flag log_errors On
+
+# Secure PHP
+php_value session.cookie_httponly 1
+php_value session.cookie_secure 1

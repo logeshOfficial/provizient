@@ -44,14 +44,14 @@ export function ServicesDevVisual() {
           <motion.span
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="rounded-full border border-secondary/30 bg-white px-3 py-1.5 text-[10px] font-semibold text-secondary shadow-md sm:px-4 sm:py-2 sm:text-[11px]"
+            className="rounded-full border border-secondary/30 bg-card px-3 py-1.5 text-[10px] font-semibold text-secondary shadow-md sm:px-4 sm:py-2 sm:text-[11px]"
           >
             DevOps
           </motion.span>
           <motion.span
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-full border border-primary/20 bg-white px-3 py-1.5 text-[10px] font-semibold text-primary shadow-md sm:px-4 sm:py-2 sm:text-[11px]"
+            className="rounded-full border border-primary/20 bg-card px-3 py-1.5 text-[10px] font-semibold text-primary shadow-md sm:px-4 sm:py-2 sm:text-[11px]"
           >
             CI/CD
           </motion.span>
@@ -60,9 +60,9 @@ export function ServicesDevVisual() {
         <motion.div
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-          className="w-full rounded-2xl border border-primary/20 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.14)]"
+          className="w-full rounded-2xl border border-primary/20 bg-card shadow-[0_20px_50px_rgba(15,23,42,0.14)]"
         >
-          <div className="flex items-center gap-2 rounded-t-2xl border-b border-card-border bg-gradient-to-r from-slate-50 to-sky-50 px-4 py-2.5 sm:px-5 sm:py-3">
+          <div className="flex items-center gap-2 rounded-t-2xl border-b border-card-border bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-2.5 sm:px-5 sm:py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-red-400 sm:h-3 sm:w-3" />
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3" />
             <span className="h-2.5 w-2.5 rounded-full bg-green-400 sm:h-3 sm:w-3" />
@@ -95,7 +95,7 @@ export function ServicesDevVisual() {
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-xl border border-card-border bg-white/95 p-2.5 shadow-lg sm:p-3"
+            className="rounded-xl border border-card-border bg-card/95 p-2.5 shadow-lg sm:p-3"
           >
             <div className="mb-1 flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-secondary" />
@@ -115,7 +115,7 @@ export function ServicesDevVisual() {
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-            className="rounded-xl border border-card-border bg-white/95 p-2.5 shadow-lg sm:p-3"
+            className="rounded-xl border border-card-border bg-card/95 p-2.5 shadow-lg sm:p-3"
           >
             <div className="mb-1 flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-accent" />
@@ -134,3 +134,5 @@ export function ServicesDevVisual() {
     </HeroVisualShell>
   );
 }
+
+

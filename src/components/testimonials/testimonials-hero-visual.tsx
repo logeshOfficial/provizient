@@ -75,10 +75,10 @@ export function TestimonialsHeroVisual() {
         <motion.div
           animate={{ y: [0, -7, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-          className="w-full rounded-2xl border border-primary/20 bg-white shadow-[0_20px_50px_rgba(0,102,255,0.12)] overflow-hidden"
+          className="w-full rounded-2xl border border-primary/20 bg-card shadow-[0_20px_50px_rgba(0,102,255,0.12)] overflow-hidden"
         >
           {/* Card titlebar */}
-          <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-950 px-4 py-2.5 sm:px-5 sm:py-3">
+          <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-950 px-4 py-2.5 sm:px-5 sm:py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-red-500 sm:h-3 sm:w-3" />
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3" />
             <span className="h-2.5 w-2.5 rounded-full bg-green-500 sm:h-3 sm:w-3" />
@@ -92,7 +92,7 @@ export function TestimonialsHeroVisual() {
           </div>
 
           {/* Overall rating strip */}
-          <div className="flex items-center justify-between gap-3 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
+          <div className="flex items-center justify-between gap-3 border-b border-slate-700 bg-slate-800 px-4 py-2.5">
             <div className="flex items-center gap-2">
               <span className="font-display text-xl font-bold text-foreground">5.0</span>
               <div className="flex flex-col gap-0.5">
@@ -107,7 +107,7 @@ export function TestimonialsHeroVisual() {
           </div>
 
           {/* Review cards */}
-          <div className="flex flex-col divide-y divide-slate-100">
+          <div className="flex flex-col divide-y divide-slate-700">
             {REVIEWS.map((review, i) => (
               <motion.div
                 key={review.name}
@@ -145,7 +145,7 @@ export function TestimonialsHeroVisual() {
               key={chip.label}
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 4.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: 0.9 + i * 0.3 }}
-              className="rounded-xl border border-card-border bg-white/95 p-2.5 shadow-lg sm:p-3"
+              className="rounded-xl border border-card-border bg-card/95 p-2.5 shadow-lg sm:p-3"
             >
               <div className={`inline-block rounded-full bg-gradient-to-br ${chip.color} w-2 h-2 mb-1`} />
               <p className="font-display text-[10px] font-bold uppercase tracking-wider text-foreground sm:text-[11px]">
@@ -159,3 +159,5 @@ export function TestimonialsHeroVisual() {
     </HeroVisualShell>
   );
 }
+
+

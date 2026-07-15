@@ -116,7 +116,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/workbench"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/30 bg-white px-5 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary/5 hover:border-primary/50 hover:-translate-y-0.5 min-h-[44px] w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/30 bg-card px-5 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary/10 hover:border-primary/50 hover:-translate-y-0.5 min-h-[44px] w-full sm:w-auto"
               >
                 <GraduationCapIcon size={15} />
                 For Professionals

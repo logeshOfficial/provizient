@@ -1,15 +1,16 @@
 # ProVizient — Enterprise AI Consulting Website
 
-Static marketing website for ProVizient, hosted on **Azure Static Web Apps**. Contact and consultation forms send email via **Azure Functions** + Resend — no database required.
+Static marketing website for ProVizient, hosted on **Hostinger**. Contact and consultation forms send email via **PHP + Hostinger SMTP** — no database, no Azure dependency.
 
 **Tagline:** Transforming Businesses Through Intelligent AI Solutions.
 
 ## Tech Stack
 
 - **Framework:** Next.js 16 (static export)
-- **Hosting:** Azure Static Web Apps
-- **Forms:** Azure Functions + Resend email
+- **Hosting:** Hostinger Web Hosting
+- **Forms:** PHP backend + Hostinger SMTP
 - **Styling:** Tailwind CSS v4, shadcn/ui, Framer Motion
+- **Email:** Native Hostinger SMTP (info@provizient.com)
 
 ## Quick Start
 
@@ -21,16 +22,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-### Test forms locally
+## Deploy to Hostinger
 
-```powershell
-npm run build
-npx @azure/static-web-apps-cli start ./out --api-location ./api
-```
+See **[HOSTINGER-SETUP-GUIDE.md](./docs/HOSTINGER-SETUP-GUIDE.md)** for complete production hosting setup.
 
-## Deploy to Azure
+### Email Setup for Contact Forms
 
-See **[AZURE-DEPLOY.md](./AZURE-DEPLOY.md)** for production hosting with real email forms.
+📧 **Complete setup guides available:**
+
+- **[Hostinger Setup Guide](./docs/HOSTINGER-SETUP-GUIDE.md)** — Full hosting & email setup
+- **[Email Setup Guide](./docs/EMAIL-SETUP-GUIDE.md)** — SMTP configuration details  
+- **[Quick Setup Checklist](./docs/EMAIL-SETUP-CHECKLIST.md)** — Step-by-step checklist
+
+**Simple approach:** Use `info@provizient.com` for both sending and receiving emails via Hostinger SMTP.
 
 ## Share a POC demo (GitHub Pages — free)
 
@@ -40,6 +44,8 @@ See **[GITHUB-PAGES.md](./GITHUB-PAGES.md)** — live demo URL:
 
 Enable **Settings → Pages → Source: GitHub Actions**, then push to `main`.
 
+Note: Forms won't work on GitHub Pages (static hosting only). Use Hostinger for full functionality.
+
 ## Updating Content
 
 | Content | File |
@@ -48,7 +54,7 @@ Enable **Settings → Pages → Source: GitHub Actions**, then push to `main`.
 | Services, case studies | `src/lib/constants.ts` |
 | Testimonials | `src/components/home/testimonials.tsx` |
 
-Edit → `npm run build` → push to `main` → Azure redeploys.
+Edit → `npm run build` → upload to Hostinger.
 
 ## Scripts
 
@@ -57,6 +63,20 @@ npm run dev      # Development server
 npm run build    # Static export to out/
 npm run start    # Preview static site locally
 npm run lint     # ESLint
+```
+
+## Project Structure
+
+```
+provizient/
+├── api/                    # PHP backend (upload to Hostinger)
+│   ├── contact.php        # Contact form endpoint
+│   ├── consultation.php   # Consultation form endpoint
+│   ├── PHPMailer/        # Email library
+│   └── .env.php          # SMTP configuration (create on server)
+├── src/                   # Next.js source files
+├── out/                   # Built static site (npm run build)
+└── docs/                  # Documentation
 ```
 
 ## License

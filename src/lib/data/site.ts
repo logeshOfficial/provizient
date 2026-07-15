@@ -5,10 +5,21 @@ export const SITE_CONFIG = {
   description:
     "Provizient Solutions is an AI-first technology consulting and training company specializing in Artificial Intelligence (AI), Machine Learning (ML), Generative AI, and Agentic AI. We help organizations modernize their businesses through intelligent software solutions while empowering professionals with industry-focused training programs.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.provizient.com",
+  website: "www.provizient.com",
   email: "info@provizient.com",
   phone: "+1 (214) 907-0925",
   phoneTel: "+12149070925",
   address: "Dallas–Fort Worth, Texas, USA",
+  offices: [
+    {
+      label: "US Office",
+      address: "Dallas–Fort Worth, Texas, USA",
+    },
+    {
+      label: "India Office",
+      address: "India",
+    },
+  ],
 } as const;
 
 /**
@@ -112,4 +123,18 @@ export const ABOUT_VALUES = [
     description:
       "Responsible AI innovation, clear expectations, and honest partnership guide every consulting engagement.",
   },
+] as const;
+
+/**
+ * CONTACT_SERVICES — services offered on contact page
+ */
+export const CONTACT_SERVICES = [
+  "Corporate AI Training",
+  "Professional AI Certification Programs",
+  "Custom Software Development",
+  "AI Consulting",
+  "Enterprise AI Solutions",
+  "Cloud AI Architecture",
+  "AI Workshops",
+  "Technology Advisory",
 ] as const;

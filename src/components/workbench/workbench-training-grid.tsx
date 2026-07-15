@@ -26,7 +26,7 @@ export function WorkbenchTrainingGrid() {
                 CARD_COLOR_MAP[program.color]
               )}
             >
-              <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-5 shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-surface-alt shadow-sm border border-card-border flex items-center justify-center mb-5 shrink-0">
                 <Icon size={28} />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground">
@@ -37,10 +37,10 @@ export function WorkbenchTrainingGrid() {
               </p>
               {meta && (
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
+                  <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground">
                     {meta.duration}
                   </span>
-                  <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">
+                  <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground">
                     {meta.level}
                   </span>
                 </div>
@@ -94,3 +94,4 @@ export function WorkbenchTrainingGrid() {
     </div>
   );
 }
+

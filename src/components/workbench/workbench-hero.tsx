@@ -51,8 +51,8 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
               className={cn(
                 "inline-flex w-full sm:w-auto sm:min-w-[200px] items-center justify-center rounded-lg px-8 py-4 text-base font-semibold transition-all min-h-[44px]",
                 activeTab === "training"
-                  ? "bg-foreground text-white shadow-lg"
-                  : "bg-foreground text-white shadow-lg hover:bg-foreground/90"
+                  ? "bg-primary text-white shadow-lg shadow-primary/25"
+                  : "bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90"
               )}
             >
               AI Training Programs
@@ -63,8 +63,8 @@ export function WorkbenchHero({ activeTab, onTabChange }: WorkbenchHeroProps) {
               className={cn(
                 "inline-flex w-full sm:w-auto sm:min-w-[200px] items-center justify-center rounded-lg border-2 px-8 py-4 text-base font-semibold transition-all min-h-[44px]",
                 activeTab === "consulting"
-                  ? "border-foreground bg-white text-foreground shadow-md"
-                  : "border-foreground/30 bg-white text-foreground hover:border-foreground hover:shadow-md"
+                  ? "border-primary bg-card text-primary shadow-md"
+                  : "border-primary/30 bg-card text-primary hover:border-primary hover:bg-primary/10 hover:shadow-md"
               )}
             >
               Software Consulting

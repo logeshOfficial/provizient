@@ -6,7 +6,7 @@ import { ArrowRightIcon, BriefcaseIcon, GraduationCapIcon } from "@/components/i
 
 export function ConsultationCTA() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div
@@ -16,8 +16,8 @@ export function ConsultationCTA() {
           className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary via-primary to-secondary p-7 sm:p-10 md:p-12 text-white shadow-xl relative overflow-hidden"
         >
           {/* Ambient glow */}
-          <div className="absolute top-0 right-0 w-[280px] h-[280px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[280px] h-[280px] bg-background/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-background/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
 
@@ -35,9 +35,9 @@ export function ConsultationCTA() {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:border-l lg:border-white/20 lg:pl-8">
 
               {/* For Businesses */}
-              <div className="bg-white/10 border border-white/15 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
+              <div className="bg-background/10 border border-white/15 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-background/15 flex items-center justify-center shrink-0">
                     <BriefcaseIcon size={18} className="text-white" />
                   </div>
                   <div>
@@ -47,7 +47,7 @@ export function ConsultationCTA() {
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/95 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-white shadow-sm"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-background/95 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-background shadow-sm"
                 >
                   Talk to Our Experts
                   <ArrowRightIcon size={14} />
@@ -55,9 +55,9 @@ export function ConsultationCTA() {
               </div>
 
               {/* For Professionals */}
-              <div className="bg-white/10 border border-white/15 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
+              <div className="bg-background/10 border border-white/15 rounded-2xl p-5 space-y-3 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-background/15 flex items-center justify-center shrink-0">
                     <GraduationCapIcon size={18} className="text-white" />
                   </div>
                   <div>
@@ -67,7 +67,7 @@ export function ConsultationCTA() {
                 </div>
                 <Link
                   href="/workbench"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/95 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-white shadow-sm"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-background/95 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-background shadow-sm"
                 >
                   Explore Training
                   <ArrowRightIcon size={14} />
@@ -81,3 +81,5 @@ export function ConsultationCTA() {
     </section>
   );
 }
+
+

@@ -15,7 +15,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
   return (
     <section
       id="workbench-catalog"
-      className="relative scroll-mt-24 border-t border-card-border bg-white py-12 sm:py-16 lg:py-28"
+      className="relative scroll-mt-24 border-t border-card-border bg-background py-12 sm:py-16 lg:py-28"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-12 text-center">
@@ -40,7 +40,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
               className={cn(
                 "rounded-lg px-4 sm:px-6 py-2.5 text-sm font-semibold transition-all min-h-[44px]",
                 activeTab === "training"
-                  ? "bg-foreground text-white shadow"
+                  ? "bg-primary text-white shadow"
                   : "text-muted hover:text-foreground"
               )}
             >
@@ -52,7 +52,7 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
               className={cn(
                 "rounded-lg px-4 sm:px-6 py-2.5 text-sm font-semibold transition-all min-h-[44px]",
                 activeTab === "consulting"
-                  ? "bg-foreground text-white shadow"
+                  ? "bg-primary text-white shadow"
                   : "text-muted hover:text-foreground"
               )}
             >
@@ -88,3 +88,4 @@ export function WorkbenchCatalog({ activeTab, onTabChange }: WorkbenchCatalogPro
     </section>
   );
 }
+

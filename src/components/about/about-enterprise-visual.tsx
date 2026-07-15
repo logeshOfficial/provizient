@@ -26,7 +26,7 @@ const EDGES: [number, number][] = [
 
 function StatChip({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-xl border border-card-border bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm sm:px-4 sm:py-2.5">
+    <div className="rounded-xl border border-card-border bg-card/95 px-3 py-2 shadow-md backdrop-blur-sm sm:px-4 sm:py-2.5">
       <p className="font-display text-sm font-bold text-foreground sm:text-base">{value}</p>
       <p className="text-[9px] font-medium uppercase tracking-wide text-muted sm:text-[10px]">
         {label}
@@ -67,7 +67,7 @@ export function AboutEnterpriseVisual() {
         <motion.div
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-full rounded-2xl border border-primary/25 bg-white shadow-[0_20px_50px_rgba(0,102,255,0.15)]"
+          className="w-full rounded-2xl border border-primary/25 bg-card shadow-[0_20px_50px_rgba(0,102,255,0.15)]"
         >
           <div className="rounded-t-2xl bg-gradient-to-r from-primary to-secondary px-4 py-2.5 sm:px-5 sm:py-3">
             <p className="text-center font-display text-[10px] font-bold uppercase tracking-[0.16em] text-white sm:text-xs">
@@ -136,3 +136,4 @@ export function AboutEnterpriseVisual() {
     </HeroVisualShell>
   );
 }
+

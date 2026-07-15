@@ -2,7 +2,6 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,17 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { Loader2Icon, SendIcon } from "@/components/icons/provizient-icons";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email"),
-  company: z.string().optional(),
-  phone: z.string().optional(),
-  subject: z.string().min(3, "Subject must be at least 3 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,14 +31,14 @@ export function ContactForm() {
         toast({
           title: "Demo: message received!",
           description:
-            "This is a POC demo — no email was sent. Production uses Azure + Resend.",
+            "Demo mode is on — no email was sent. Set NEXT_PUBLIC_DEMO_MODE=false to enable SMTP delivery.",
           variant: "success",
         });
         reset();
         return;
       }
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

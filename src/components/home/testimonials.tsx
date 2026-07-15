@@ -40,11 +40,19 @@ type Testimonial = {
 
 type TestimonialsProps = {
   testimonials?: Testimonial[];
+  /** Pass true when used as the main page content to add nav-clearing top padding */
+  isPage?: boolean;
 };
 
-export function Testimonials({ testimonials = DEFAULT_TESTIMONIALS }: TestimonialsProps) {
+export function Testimonials({ testimonials = DEFAULT_TESTIMONIALS, isPage = false }: TestimonialsProps) {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-surface border-t border-card-border">
+    <section
+      className={`bg-surface ${
+        isPage
+          ? "pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24"
+          : "py-16 sm:py-20 lg:py-24 border-t border-card-border"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}

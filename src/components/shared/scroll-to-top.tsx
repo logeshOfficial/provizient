@@ -42,7 +42,7 @@ export function ScrollToTop() {
       title="Back to top"
       className={cn(
         "group flex h-12 w-12 items-center justify-center rounded-full",
-        "border border-primary/20 bg-white/95 text-primary shadow-lg backdrop-blur-md",
+        "border border-primary/20 bg-card/95 text-primary shadow-lg backdrop-blur-md",
         "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:shadow-xl"
       )}
     >
@@ -53,3 +53,4 @@ export function ScrollToTop() {
     </button>
   );
 }
+

@@ -28,6 +28,14 @@
 .env.production.local
 .env*.local
 
+# PHP environment (NEVER commit)
+/api/.env.php
+
+# Hostinger specific
+/api/PHPMailer/
+/api/vendor/
+/api/composer.lock
+
 # Vercel
 .vercel
 

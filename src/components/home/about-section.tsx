@@ -20,7 +20,7 @@ const SECTION_ICONS: Record<string, IconComponent> = {
 };
 
 export function AboutSection() {
-  return (    <section className="py-12 sm:py-16 lg:py-24 bg-white border-t border-card-border">
+  return (    <section className="py-12 sm:py-16 lg:py-24 bg-background border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -71,7 +71,7 @@ export function AboutSection() {
                 key={item.title}
                 className="flex items-start gap-4 p-5 rounded-2xl border border-card-border bg-surface hover:shadow-md hover:border-primary/15 transition-all"
               >
-                <div className="w-11 h-11 rounded-xl bg-white border border-card-border shadow-sm flex items-center justify-center shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-background border border-card-border shadow-sm flex items-center justify-center shrink-0">
                   {Icon && <Icon size={26} />}
                 </div>
                 <div>
@@ -87,3 +87,5 @@ export function AboutSection() {
     </section>
   );
 }
+
+

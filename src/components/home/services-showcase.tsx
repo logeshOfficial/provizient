@@ -35,7 +35,7 @@ export function ServicesShowcase() {
               >
                 <Link href={`/services#${service.id}`} className="block h-full">
                   <div className="glass-card p-6 h-full group cursor-pointer">
-                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-card-border flex items-center justify-center mb-4 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-surface-alt shadow-sm border border-card-border flex items-center justify-center mb-4 shrink-0">
                       <Icon size={28} />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -65,3 +65,4 @@ export function ServicesShowcase() {
     </section>
   );
 }
+

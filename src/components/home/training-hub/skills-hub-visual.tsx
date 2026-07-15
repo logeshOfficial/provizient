@@ -26,7 +26,7 @@ export function SkillsHubVisual() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="relative mx-auto w-full rounded-2xl border border-primary/20 bg-white shadow-2xl"
+        className="relative mx-auto w-full rounded-2xl border border-primary/20 bg-slate-900 shadow-2xl"
       >
         <div className="rounded-t-2xl bg-gradient-to-r from-primary via-primary to-secondary px-5 py-3.5">
           <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ export function SkillsHubVisual() {
               </p>
               <p className="text-[11px] text-white/80">Future-Ready Skills Hub</p>
             </div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-card/20">
               <GraduationCapIcon size={22} className="text-white" />
             </div>
           </div>
@@ -79,7 +79,7 @@ export function SkillsHubVisual() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="flex items-center gap-2.5 rounded-xl border border-card-border bg-white px-3 py-2.5 shadow-sm"
+                  className="flex items-center gap-2.5 rounded-xl border border-card-border bg-card px-3 py-2.5 shadow-sm"
                 >
                   <div
                     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
@@ -123,7 +123,7 @@ export function SkillsHubVisual() {
             delay: chip.delay,
           }}
           className={cn(
-            "absolute z-20 flex items-center gap-2 rounded-xl border border-card-border bg-white/95 px-3 py-2 shadow-lg",
+            "absolute z-20 flex items-center gap-2 rounded-xl border border-card-border bg-card/95 px-3 py-2 shadow-lg",
             chip.position
           )}
         >
@@ -134,3 +134,4 @@ export function SkillsHubVisual() {
     </div>
   );
 }
+

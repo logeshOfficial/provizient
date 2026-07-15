@@ -1,0 +1,54 @@
+<svg width="240" height="72" viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon Icon with AI Brain -->
+  <g transform="translate(4, 12)">
+    <!-- Outer Hexagon -->
+    <path d="M24 4L40 13V31L24 40L8 31V13L24 4Z" stroke="url(#gradient1)" stroke-width="2" fill="none"/>
+    
+    <!-- Inner Circuit Pattern -->
+    <circle cx="24" cy="22" r="8" stroke="url(#gradient2)" stroke-width="1.5" fill="none"/>
+    <circle cx="24" cy="22" r="4" fill="url(#gradient2)"/>
+    
+    <!-- Neural Network Nodes -->
+    <circle cx="16" cy="16" r="2" fill="#3b82f6"/>
+    <circle cx="32" cy="16" r="2" fill="#06b6d4"/>
+    <circle cx="16" cy="28" r="2" fill="#8b5cf6"/>
+    <circle cx="32" cy="28" r="2" fill="#3b82f6"/>
+    
+    <!-- Connection Lines -->
+    <line x1="18" y1="16" x2="22" y2="19" stroke="#3b82f6" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="16" x2="26" y2="19" stroke="#06b6d4" stroke-width="1" opacity="0.6"/>
+    <line x1="18" y1="28" x2="22" y2="25" stroke="#8b5cf6" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="28" x2="26" y2="25" stroke="#3b82f6" stroke-width="1" opacity="0.6"/>
+  </g>
+  
+  <!-- ProVizient Text -->
+  <g transform="translate(56, 20)">
+    <!-- "Pro" -->
+    <text x="0" y="16" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">Pro</text>
+    
+    <!-- "Vizient" with gradient -->
+    <text x="38" y="16" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="url(#textGradient)">Vizient</text>
+    
+    <!-- Tagline -->
+    <text x="0" y="34" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#94a3b8">AI TRAINING • SOFTWARE • CONSULTING</text>
+  </g>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -2,7 +2,6 @@ import {
   IndGovernmentIcon,
 } from "@/components/icons/provizient-icons";
 import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
-import { IndustriesVisual } from "@/components/marketing/marketing-hero-visuals";
 import { ConsultationCTA } from "@/components/home/consultation-cta";
 import { generateSEO } from "@/lib/seo";
 import { INDUSTRIES } from "@/lib/constants";
@@ -84,16 +83,14 @@ export default function IndustriesPage() {
   return (
     <>
       <MarketingPageHero
-        badge="Industries We Serve"
         title="Industry-Specific"
         titleHighlight="AI Expertise"
         description="Deep domain knowledge across regulated and high-impact sectors, delivering AI solutions that meet industry-specific compliance and performance requirements."
         primaryCta={{ href: "#industries", label: "Explore Industries" }}
         secondaryCta={{ href: "/contact", label: "Contact Us" }}
-        visual={<IndustriesVisual />}
       />
 
-      <section id="industries" className="scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-white">
+      <section id="industries" className="scroll-mt-24 py-10 sm:py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {INDUSTRIES.map((industry) => {
             const Icon = iconMap[industry.icon as keyof typeof iconMap] || IndGovernmentIcon;
@@ -127,3 +124,5 @@ export default function IndustriesPage() {
     </>
   );
 }
+
+

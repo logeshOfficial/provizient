@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRightIcon, ExternalLinkIcon, ClockIcon } from "@/components/icons/provizient-icons";
+import { SectionHeading } from "@/components/shared/section-heading";
 
 const DEVTO_PROFILE = "https://dev.to/sreeni5018";
 
@@ -30,29 +31,30 @@ const LATEST_POSTS = [
   },
 ] as const;
 
-export function DevToBlogSection() {
+type DevToBlogSectionProps = {
+  /** Pass true when used as the main page content (blog page) to add nav-clearing top padding) */
+  isPage?: boolean;
+};
+
+export function DevToBlogSection({ isPage = false }: DevToBlogSectionProps) {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white border-t border-card-border">
+    <section
+      className={`bg-background ${
+        isPage
+          ? "pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24"
+          : "py-12 sm:py-16 lg:py-24 border-t border-card-border"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10"
-        >
-          <div>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-primary mb-2">
-              From Our Blog
-            </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground leading-tight">
-              AI Insights &amp; Thought Leadership
-            </h2>
-            <p className="mt-2 text-sm text-muted max-w-md">
-              Expert perspectives on Agentic AI, LLMs, RAG, and enterprise architecture — published on dev.to.
-            </p>
-          </div>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <SectionHeading
+            badge="From Our Blog"
+            title="AI Insights & Thought Leadership"
+            description="Expert perspectives on Agentic AI, LLMs, RAG, and enterprise architecture — published on dev.to."
+            align={isPage ? "left" : "center"}
+          />
 
           {/* View all — links to dev.to profile */}
           <Link
@@ -64,7 +66,7 @@ export function DevToBlogSection() {
             View All Articles
             <ExternalLinkIcon size={14} />
           </Link>
-        </motion.div>
+        </div>
 
         {/* Blog post cards — title only, clean and minimal */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
@@ -80,7 +82,7 @@ export function DevToBlogSection() {
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col h-full rounded-2xl border border-card-border bg-surface p-5 sm:p-6 hover:border-primary/25 hover:shadow-md hover:bg-white transition-all"
+                className="group flex flex-col h-full rounded-2xl border border-card-border bg-surface p-5 sm:p-6 hover:border-primary/25 hover:shadow-md hover:bg-background transition-all"
               >
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -144,3 +146,4 @@ export function DevToBlogSection() {
     </section>
   );
 }
+

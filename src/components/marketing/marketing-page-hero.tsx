@@ -11,13 +11,13 @@ type CtaLink = {
 };
 
 type MarketingPageHeroProps = {
-  badge: string;
+  badge?: string;
   title: string;
   titleHighlight?: string;
   description: string;
   primaryCta?: CtaLink;
   secondaryCta?: CtaLink;
-  visual: React.ReactNode;
+  visual?: React.ReactNode;
 };
 
 export function MarketingPageHero({
@@ -37,33 +37,35 @@ export function MarketingPageHero({
       <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-secondary/5 blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
+        <div className={visual ? "grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14" : "flex justify-center"}>
 
-          {/* Content — always first, full width on mobile */}
+          {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center text-center lg:text-left order-1 w-full"
+            className={`flex flex-col justify-center ${visual ? "text-center lg:text-left order-1 w-full" : "text-center w-full max-w-3xl"}`}
           >
-            <span className="mb-3 inline-block self-center lg:self-start rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary">
-              {badge}
-            </span>
+            {badge && (
+              <span className="mb-3 inline-block self-center lg:self-start rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary">
+                {badge}
+              </span>
+            )}
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] break-words">
               {title}
               {titleHighlight && (
                 <span className="block gradient-text">{titleHighlight}</span>
               )}
             </h1>
-            <p className="mx-auto lg:mx-0 mt-4 max-w-xl text-sm sm:text-base lg:text-lg leading-relaxed text-muted">
+            <p className={`mt-4 text-sm sm:text-base lg:text-lg leading-relaxed text-muted ${visual ? "mx-auto lg:mx-0 max-w-xl" : "mx-auto max-w-2xl"}`}>
               {description}
             </p>
             {(primaryCta || secondaryCta) && (
-              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
+              <div className={`mt-6 flex flex-col items-center gap-3 sm:flex-row ${visual ? "lg:justify-start" : "justify-center"}`}>
                 {primaryCta && (
                   <Link
                     href={primaryCta.href}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-foreground/90 min-h-[44px]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-primary/40 min-h-[44px]"
                   >
                     {primaryCta.label}
                     <ArrowRightIcon size={16} />
@@ -72,7 +74,7 @@ export function MarketingPageHero({
                 {secondaryCta && (
                   <Link
                     href={secondaryCta.href}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-card-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/30 hover:shadow-md min-h-[44px]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary/10 hover:border-primary/50 hover:shadow-md min-h-[44px]"
                   >
                     {secondaryCta.label}
                   </Link>
@@ -81,17 +83,19 @@ export function MarketingPageHero({
             )}
           </motion.div>
 
-          {/* Visual — hidden on mobile, visible from lg */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="order-2 hidden lg:flex w-full items-center justify-center overflow-visible min-h-[360px] xl:min-h-[400px]"
-          >
-            <div className="flex w-full flex-1 items-stretch overflow-visible">
-              {visual}
-            </div>
-          </motion.div>
+          {/* Visual — only rendered if provided */}
+          {visual && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+              className="order-2 hidden sm:flex w-full items-center justify-center overflow-visible min-h-[360px] xl:min-h-[400px]"
+            >
+              <div className="flex w-full flex-1 items-stretch overflow-visible">
+                {visual}
+              </div>
+            </motion.div>
+          )}
 
         </div>
       </div>

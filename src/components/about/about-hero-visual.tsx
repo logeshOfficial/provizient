@@ -60,24 +60,24 @@ export function AboutHeroVisual() {
         <motion.div
           animate={{ y: [0, -7, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-          className="w-full rounded-2xl border border-primary/20 bg-white shadow-[0_20px_50px_rgba(0,102,255,0.12)] overflow-hidden"
+          className="w-full rounded-2xl border border-primary/20 bg-card shadow-[0_20px_50px_rgba(0,102,255,0.12)] overflow-hidden"
         >
           {/* Card header bar */}
-          <div className="flex items-center gap-2 border-b border-slate-100 bg-gradient-to-r from-primary to-accent px-4 py-2.5 sm:px-5 sm:py-3">
-            <span className="h-2.5 w-2.5 rounded-full bg-white/40 sm:h-3 sm:w-3" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/40 sm:h-3 sm:w-3" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/40 sm:h-3 sm:w-3" />
+          <div className="flex items-center gap-2 border-b border-slate-700 bg-gradient-to-r from-primary to-accent px-4 py-2.5 sm:px-5 sm:py-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-card/40 sm:h-3 sm:w-3" />
+            <span className="h-2.5 w-2.5 rounded-full bg-card/40 sm:h-3 sm:w-3" />
+            <span className="h-2.5 w-2.5 rounded-full bg-card/40 sm:h-3 sm:w-3" />
             <span className="ml-1 font-mono text-[10px] tracking-widest uppercase text-white/80 sm:text-[11px]">
               ProVizient · Company Profile
             </span>
             <div className="ml-auto flex items-center gap-1.5">
-              <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
+              <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-card" />
               <span className="text-[10px] font-bold text-white">EST. {COMPANY_STATS.foundedYear}</span>
             </div>
           </div>
 
           {/* Company stats row */}
-          <div className="grid grid-cols-3 divide-x divide-slate-100 border-b border-slate-100">
+          <div className="grid grid-cols-3 divide-x divide-slate-700 border-b border-slate-700">
             {[
               { value: COMPANY_STATS.valueCreated,       label: "Value Created" },
               { value: COMPANY_STATS.projectsDone,       label: "Projects Done" },
@@ -97,7 +97,7 @@ export function AboutHeroVisual() {
                 key={pillar.label}
                 animate={{ y: [0, -3, 0] }}
                 transition={{ duration: 3.5 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-                className={`flex flex-col items-center gap-1 rounded-xl border border-slate-100 ${pillar.bg} px-2 py-2.5`}
+                className={`flex flex-col items-center gap-1 rounded-xl border border-slate-700 ${pillar.bg} px-2 py-2.5`}
               >
                 <pillar.icon size={16} className={pillar.color} />
                 <span className="text-center text-[9px] font-semibold text-foreground leading-tight sm:text-[10px]">
@@ -118,7 +118,7 @@ export function AboutHeroVisual() {
               key={chip.label}
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 4.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 + i * 0.3 }}
-              className="rounded-xl border border-card-border bg-white/95 p-2.5 shadow-lg sm:p-3"
+              className="rounded-xl border border-card-border bg-card/95 p-2.5 shadow-lg sm:p-3"
             >
               <div className={`inline-block rounded-full bg-gradient-to-br ${chip.color} w-2 h-2 mb-1`} />
               <p className="font-display text-[10px] font-bold uppercase tracking-wider text-foreground sm:text-[11px]">
@@ -132,3 +132,5 @@ export function AboutHeroVisual() {
     </HeroVisualShell>
   );
 }
+
+

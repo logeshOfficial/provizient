@@ -207,5 +207,3 @@ export const WORKBENCH_COURSE_META: Record<
     topics: ["ETL Pipelines", "Apache Spark", "Data Modeling"],
   },
 };
-
-export const AI_SOLUTIONS = TRAINING_PROGRAMS;

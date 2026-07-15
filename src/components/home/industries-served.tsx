@@ -10,7 +10,7 @@ import { INDUSTRY_ICON_MAP } from "@/lib/icon-maps";
 
 export function IndustriesServed() {
   return (
-    <section className="py-12 sm:py-16 bg-white border-t border-card-border">
+    <section className="py-12 sm:py-16 bg-background border-t border-card-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -37,9 +37,9 @@ export function IndustriesServed() {
               >
                 <Link
                   href="/industries"
-                  className="flex flex-col items-center gap-2.5 p-4 rounded-2xl border border-card-border bg-surface hover:bg-white hover:border-primary/20 hover:shadow-md transition-all group"
+                  className="flex flex-col items-center gap-2.5 p-4 rounded-2xl border border-card-border bg-surface hover:bg-background hover:border-primary/20 hover:shadow-md transition-all group"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-white border border-card-border flex items-center justify-center group-hover:bg-primary/8 group-hover:border-primary/20 transition-all shadow-sm">
+                  <div className="w-11 h-11 rounded-xl bg-background border border-card-border flex items-center justify-center group-hover:bg-primary/8 group-hover:border-primary/20 transition-all shadow-sm">
                     <IconComponent size={24} />
                   </div>
                   <span className="text-[11px] sm:text-xs font-semibold text-muted group-hover:text-foreground transition-colors text-center leading-tight">
@@ -55,3 +55,5 @@ export function IndustriesServed() {
     </section>
   );
 }
+
+

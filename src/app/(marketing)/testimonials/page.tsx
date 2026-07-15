@@ -1,8 +1,5 @@
 import { generateSEO } from "@/lib/seo";
-import { MarketingPageHero } from "@/components/marketing/marketing-page-hero";
 import { Testimonials } from "@/components/home/testimonials";
-import { ConsultationCTA } from "@/components/home/consultation-cta";
-import { TestimonialsHeroVisual } from "@/components/testimonials/testimonials-hero-visual";
 
 export const metadata = generateSEO({
   title: "Testimonials — Trusted by Industry Leaders",
@@ -12,23 +9,6 @@ export const metadata = generateSEO({
 });
 
 export default function TestimonialsPage() {
-  return (
-    <>
-      <MarketingPageHero
-        badge="Testimonials"
-        title="Trusted by"
-        titleHighlight="Industry Leaders"
-        description="Hear from executives and technology leaders who have partnered with ProVizient to drive measurable AI transformation."
-        primaryCta={{ href: "#testimonials", label: "Read Stories" }}
-        secondaryCta={{ href: "/contact", label: "Work With Us" }}
-        visual={<TestimonialsHeroVisual />}
-      />
-
-      <div id="testimonials" className="scroll-mt-24">
-        <Testimonials />
-      </div>
-
-      <ConsultationCTA />
-    </>
-  );
+  return <Testimonials isPage />;
 }
+

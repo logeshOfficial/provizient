@@ -49,7 +49,7 @@ export default function AboutPage() {
       <AboutHero />
 
       {/* Overview, Mission and Vision */}
-      <section id="mission-vision" className="py-14 sm:py-16 lg:py-20 scroll-mt-24 bg-white">
+      <section id="mission-vision" className="py-14 sm:py-16 lg:py-20 scroll-mt-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
@@ -104,7 +104,7 @@ export default function AboutPage() {
             {WHY_CHOOSE_US.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 p-4 rounded-xl border border-card-border bg-white shadow-sm hover:shadow transition-shadow"
+                className="flex items-center gap-3 p-4 rounded-xl border border-card-border bg-background shadow-sm hover:shadow transition-shadow"
               >
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <CheckIcon size={15} className="text-primary" />
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-14 sm:py-16 lg:py-20 bg-white">
+      <section className="py-14 sm:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Values"
@@ -131,7 +131,7 @@ export default function AboutPage() {
               const ValueIcon = VALUE_ICONS[value.key];
               return (
                 <div key={value.title} className="glass-card p-5 sm:p-6 text-center group hover:border-primary/20 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-card-border shadow-sm flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-background border border-card-border shadow-sm flex items-center justify-center mx-auto mb-4">
                     {ValueIcon && <ValueIcon size={26} />}
                   </div>
                   <h3 className="font-semibold text-foreground mb-2 text-base">{value.title}</h3>
@@ -147,3 +147,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+

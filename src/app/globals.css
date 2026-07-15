@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-border: #e2e8f0;
-  --primary: #0066ff;
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --card: #1e293b;
+  --card-border: #334155;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
-  --secondary: #00a3e0;
-  --accent: #6366f1;
-  --muted: #64748b;
-  --muted-foreground: #94a3b8;
+  --secondary: #06b6d4;
+  --accent: #8b5cf6;
+  --muted: #94a3b8;
+  --muted-foreground: #cbd5e1;
   --destructive: #ef4444;
-  --ring: #0066ff;
+  --ring: #3b82f6;
   --radius: 0.75rem;
-  --surface: #f8fafc;
-  --surface-alt: #f1f5f9;
+  --surface: #1e293b;
+  --surface-alt: #334155;
 }
 
 @theme inline {
@@ -82,7 +82,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0066ff 0%, #00a3e0 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -111,7 +111,7 @@ body {
   height: 480px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.14) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
 }
 
 .perspective-deck-ceiling {
@@ -121,8 +121,8 @@ body {
   width: 220%;
   height: 55%;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.32) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.32) 1px, transparent 1px);
+    linear-gradient(rgba(100, 116, 139, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.5) 1px, transparent 1px);
   background-size: 56px 56px;
   transform: perspective(520px) rotateX(-68deg);
   transform-origin: center bottom;
@@ -136,8 +136,8 @@ body {
   width: 220%;
   height: 55%;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.32) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.32) 1px, transparent 1px);
+    linear-gradient(rgba(100, 116, 139, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.5) 1px, transparent 1px);
   background-size: 56px 56px;
   transform: perspective(520px) rotateX(68deg);
   transform-origin: center top;
@@ -151,7 +151,7 @@ body {
   right: 0;
   height: 1px;
   transform: translateY(-50%);
-  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(100, 116, 139, 0.7), transparent);
 }
 
 .hero-visual-wrap {
@@ -259,9 +259,9 @@ body {
   height: 8.5rem;
   transform: translateX(-50%) translateZ(-20px);
   border-radius: 1rem;
-  border: 1px solid rgba(0, 102, 255, 0.15);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 247, 255, 0.92) 100%);
-  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.25);
   overflow: hidden;
 }
 
@@ -272,7 +272,7 @@ body {
   right: 0;
   top: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
 }
 
 .hero-visual-layer-back {
@@ -377,8 +377,8 @@ body {
 .hero-circuit-beam {
   position: relative;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #1e293b 12%, #1e293b 88%, transparent);
-  opacity: 0.35;
+  background: linear-gradient(90deg, transparent, #475569 12%, #475569 88%, transparent);
+  opacity: 0.45;
 }
 
 .hero-circuit-beam-left::before,
@@ -395,14 +395,14 @@ body {
 .hero-circuit-beam-left::before {
   left: 8%;
   background: #22c55e;
-  box-shadow: 18px 0 0 #ef4444, 36px 0 0 #0066ff;
+  box-shadow: 18px 0 0 #ef4444, 36px 0 0 #3b82f6;
   animation: circuit-dot-pulse 2.2s ease-in-out infinite;
 }
 
 .hero-circuit-beam-right::after {
   right: 8%;
   background: #eab308;
-  box-shadow: -18px 0 0 #0066ff, -36px 0 0 #22c55e;
+  box-shadow: -18px 0 0 #3b82f6, -36px 0 0 #22c55e;
   animation: circuit-dot-pulse 2.2s ease-in-out infinite 0.4s;
 }
 
@@ -428,8 +428,8 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(0, 102, 255, 0.18) 0%,
-    rgba(0, 163, 224, 0.08) 45%,
+    rgba(59, 130, 246, 0.24) 0%,
+    rgba(6, 182, 212, 0.12) 45%,
     transparent 70%
   );
 }
@@ -448,8 +448,8 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(139, 92, 246, 0.14) 0%,
-    rgba(0, 102, 255, 0.08) 50%,
+    rgba(139, 92, 246, 0.18) 0%,
+    rgba(59, 130, 246, 0.12) 50%,
     transparent 72%
   );
 }
@@ -470,8 +470,7 @@ body {
 }
 
 .hex-grid-bg {
-  background-color: #f8fbff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-12l20-12V22L28 10 8 22v22l20 12z' fill='%230066ff' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
 }
 
 .marquee-mask {
@@ -526,13 +525,13 @@ body {
 }
 
 .gradient-hero {
-  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 60%);
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 60%);
 }
 
 .section-title-line {
   width: 48px;
   height: 4px;
-  background: linear-gradient(90deg, #0066ff, #00a3e0);
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   border-radius: 2px;
   margin: 0.75rem auto 0;
 }
@@ -541,19 +540,78 @@ body {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .glass-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 102, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
   transform: translateY(-2px);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(30, 41, 59, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Visual hero cards - lighter appearance for contrast */
+.visual-card {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.visual-card-light {
+  background: rgba(51, 65, 85, 0.95);
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.visual-chip {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: var(--card-border);
+}
+
+/* Override white backgrounds in hero visual cards for dark theme */
+.hero-visual-scene .bg-white,
+.hero-visual-content .bg-white {
+  background: rgba(30, 41, 59, 0.95) !important;
+}
+
+.hero-visual-scene .bg-white\/95,
+.hero-visual-content .bg-white\/95 {
+  background: rgba(30, 41, 59, 0.92) !important;
+}
+
+.hero-visual-scene .bg-white\/80,
+.hero-visual-content .bg-white\/80 {
+  background: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* Sections with white backgrounds - convert to dark surface */
+section.bg-white {
+  background: var(--background) !important;
+}
+
+/* Alternate between background and surface for depth */
+section.bg-white:nth-of-type(even) {
+  background: var(--surface) !important;
+}
+
+/* Buttons and CTAs with white background */
+a.bg-white,
+button.bg-white {
+  background: var(--card) !important;
+}
+
+/* Icon containers */
+.bg-white.shadow-sm {
+  background: var(--surface-alt) !important;
+}
+
+/* Cards with white backgrounds */
+.bg-white.rounded-2xl,
+.bg-white.rounded-xl {
+  background: var(--card) !important;
 }
 
 .trust-bar {
@@ -562,12 +620,95 @@ body {
   border-bottom: 1px solid var(--card-border);
 }
 
-.service-card-purple { background: #f5f3ff; }
-.service-card-blue { background: #eff6ff; }
-.service-card-green { background: #ecfdf5; }
-.service-card-orange { background: #fff7ed; }
-.service-card-yellow { background: #fefce8; }
-.service-card-slate { background: #f8fafc; }
+.service-card-purple { 
+  background: #2d2440; 
+  border: 1px solid #4c3a5e;
+}
+
+.service-card-purple *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #e9d5ff !important; /* Force light purple text for all children */
+}
+
+.service-card-purple h3,
+.service-card-purple h4,
+.service-card-purple .font-display {
+  color: #f3e8ff !important; /* Even lighter for headings */
+}
+
+.service-card-blue { 
+  background: #1e3a5f; 
+  border: 1px solid #2d5a8f;
+}
+
+.service-card-blue *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #dbeafe !important; /* Force light blue text */
+}
+
+.service-card-blue h3,
+.service-card-blue h4,
+.service-card-blue .font-display {
+  color: #eff6ff !important; /* Even lighter for headings */
+}
+
+.service-card-green { 
+  background: #1e3d30; 
+  border: 1px solid #2d5d48;
+}
+
+.service-card-green *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #d1fae5 !important; /* Force light green text */
+}
+
+.service-card-green h3,
+.service-card-green h4,
+.service-card-green .font-display {
+  color: #ecfdf5 !important; /* Even lighter for headings */
+}
+
+.service-card-orange { 
+  background: #3d2e1e; 
+  border: 1px solid #5d4a2d;
+}
+
+.service-card-orange *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #fed7aa !important; /* Force light orange text */
+}
+
+.service-card-orange h3,
+.service-card-orange h4,
+.service-card-orange .font-display {
+  color: #fff7ed !important; /* Even lighter for headings */
+}
+
+.service-card-yellow { 
+  background: #3d3b1e; 
+  border: 1px solid #5d5a2d;
+}
+
+.service-card-yellow *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #fef3c7 !important; /* Force light yellow text */
+}
+
+.service-card-yellow h3,
+.service-card-yellow h4,
+.service-card-yellow .font-display {
+  color: #fefce8 !important; /* Even lighter for headings */
+}
+
+.service-card-slate { 
+  background: #1e293b; 
+  border: 1px solid #334155;
+}
+
+.service-card-slate *:not(.bg-white):not([class*="bg-primary"]):not([class*="bg-secondary"]) {
+  color: #e2e8f0 !important; /* Force light slate text */
+}
+
+.service-card-slate h3,
+.service-card-slate h4,
+.service-card-slate .font-display {
+  color: #f1f5f9 !important; /* Even lighter for headings */
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -591,3 +732,5 @@ body {
   --tw-prose-body: var(--foreground);
   --tw-prose-headings: var(--foreground);
 }
+
+/* Logo dark theme adjustments - no longer needed, logo is natively white */
